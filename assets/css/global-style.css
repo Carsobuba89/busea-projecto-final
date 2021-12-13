@@ -1,0 +1,1548 @@
+
+/** Stylos Globais da pagina */
+
+/* html {
+  font-size: 62.5%;
+} */
+body{
+  font-size: 1rem;
+}
+
+.global-container{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/*** CORPO DA PAGINA ****/
+.main-container{
+  width: 100%;
+  padding: 16px 48px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content{
+  max-width: 80%;
+  text-align: center;
+  
+}
+
+.header-content h2{
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 0;
+  color: green;
+}
+
+.header-content p{
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.body-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-content-left{
+  flex: 3;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+}
+.bg-content-simular{
+  background-color: #F0EEEE;
+}
+
+.body-content-right{
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+
+.my-sections {
+  padding: 16px 60px;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Estilos de menu de navegaçao
+     ========================================================================== */
+.nav-header{
+ /*  width: 100%; 
+  height: auto;*/
+  background-color: yellowgreen;
+}
+
+.navegation {
+  margin-left: 60px;
+  margin-right: 60px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.navegation .top-navbar{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.navegation .top-navbar a{
+  font-size: 0.8rem;
+  margin-left: 15px;
+  color: rgb(4, 37, 4);
+  text-decoration: none;
+}
+
+.navegation .top-navbar a:hover{
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  line-height: 1;
+}
+
+.navbar .logo{  
+  width: 100px;
+  border-radius: 10px;
+  background: #fdd85c;
+  text-align: center;
+} 
+
+.navbar .logo a {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(4, 37, 4);
+}
+
+.nav-menu {
+  display: inline-flex;
+}
+
+.nav-menu .nav-item {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.nav-menu .nav-item .nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(4, 37, 4);
+}
+
+.nav-menu .nav-item .nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-menu .nav-item .active-link{
+  text-decoration: underline;
+}
+
+.account{
+  display: none;
+  width: 50px;
+}
+
+.account a {
+  color: rgb(4, 37, 4);
+}
+
+.account a .far {
+  background: #fdd85c;
+  border-radius: 50px;
+  font-size: 1.8rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+/* Estilos de Slider com imagem na pagina principal
+     ========================================================================== */
+#slides{
+  --slide-actual: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: gray;
+}
+
+.slide-button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: black;
+  margin: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 1;
+  transition: color 0.1s;
+}
+
+.slide-button:hover{
+  color: green;
+}
+
+.slide-button-next{ 
+  right: 0;
+}
+
+.container-slides{
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s;
+  transform: translateX(calc(-100% * var(--slide-actual)));
+  /* transform: translateX(-100%); */
+}
+
+.slide{
+  flex: 0 0 100%;
+
+}
+.slide-content{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  /* margin: auto; */
+  padding: 16px 48px;
+  background-size: cover;
+  background-position: center;
+
+}
+.slide-content-1{
+  background-image: url(../images/slides-img/pexels-rodnae-productions-7363161.jpg);
+}
+.slide-content-2{
+  background-image: url(../images/slides-img/pexels-tiger-lily-4484045.jpg);
+}
+.slide-content-3{
+  background-image: url(../images/slides-img/seguimento2.jpg);
+}
+
+.slide-text-bloc {
+  background-color: rgba(25, 25, 25, 0.4); 
+  /* background-color: rgba(51, 170, 51, .3); */
+  max-width: 35%;
+  padding: 10px 10px 30px;
+  color: white;
+}
+
+.slide-text-bloc h1 {
+  text-transform: lowercase;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 0;
+}
+
+.slide-text-bloc p {
+  font-size: 1rem;
+  font-weight: 570;
+}
+
+.slide-text-bloc .btn-slide {
+  margin-top: 10px;
+  background: none;
+  border: none;
+}
+
+
+.slide-text-bloc a {
+  padding: 15px 20px;
+  background-color: #f5c31e;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+
+}
+
+.slide-text-bloc a:hover {
+  background-color: yellowgreen;
+  color: rgb(4, 37, 4);
+} 
+
+/* Estilos de input seguimento de encomenda na pagina principal
+     ========================================================================== */
+.follow-up {
+  /* width: 100%; */
+  background: rgb(240, 238, 238);
+}
+
+.follow-up .follow-up-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.follow-up .follow-up-div-text {
+  flex: 1;
+}
+
+
+.follow-up-div-input {
+  flex: 1;
+}
+.follow-up-input {
+  min-width: 60%;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 5px 10px;
+  line-height: 2;
+  border: 1px solid green;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.follow-up-input:focus {
+  outline: 0;
+}
+
+.btn-follow-up {
+  font-size: 1rem;
+  font-weight: 400;
+  background: #f5c31e;
+  color: white;
+  min-width: 20%;
+  padding: 10px;
+  border: 1px solid yellowgreen;
+  cursor: pointer;
+}
+
+.btn-follow-up:hover {
+  background: yellowgreen;
+  color: rgb(4, 37, 4);
+}
+
+
+/* Estilos de Informaçao Agencias na pagina principal
+     ========================================================================== */
+
+/* .info-agency {
+  width: 100%;
+} */
+
+.info-agency-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-agency-header-bloc {
+  width: 80%;
+  text-align: center;
+}
+.info-agency-header-bloc h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.info-agency-header-bloc p {
+  font-weight: 500;
+}
+
+.info-agency-body {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.info-agency-bloc {
+  max-width: 32%;
+  background: rgb(240, 238, 238);
+}
+
+/* #bloc2{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+} */
+.info-agency-text {
+  /* width: 100%; */
+  max-height: 290px;
+  padding: 12px;
+  overflow: hidden;
+}
+.info-agency-text h3 {
+  margin: 0;
+  padding-top: 5px;
+}
+
+.info-agency-text p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  /* font-weight: 400; */
+}
+
+.info-agency-img {
+  width: 100%;
+  height: 198px;
+ /*  height: auto; */
+}
+
+.btn-info-agency {
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  border: 2px solid;
+  border-radius: 20px;
+  text-align: center;
+}
+.btn-info-agency:hover {
+  border: 2px solid green;
+  background: rgb(240, 238, 238);
+  color: rgb(4, 37, 4);
+  transition: 0.15s ease-in-out;
+}
+
+
+/* Estilos de Noticias na pagina principal
+     ========================================================================== */
+
+/* .news {
+  width: 100%;
+} */
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid forestgreen;
+}
+
+.news-title h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+.news-arrow {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  padding: 5px 10px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.news-arrow:hover {
+  background: #F0EEEE;
+  color: green;
+}
+
+
+.news-body{
+  /* width: 100%; */
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.news-body-carousel{
+  display: flex;
+  flex-wrap: nowrap;
+  /* justify-content: center;
+  align-items: center;
+  margin-top: 20px; */
+}
+
+.news-body-bloc {
+  min-width: 30%;
+  transition: .4s ease all;
+  border-left: 4px solid #f0eeee;
+  padding: 0 15px 12px;
+ /* overflow: hidden; */
+}
+
+
+/* #news-bloco3 {
+  border-right: 4px solid #f0eeee;
+} */
+
+.news-body-bloc h3 {
+  font-size: 1.1rem;
+  font-weight: 580;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.news-body-bloc p{
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.news-body-bloc time {
+  font-size: 0.8rem;
+  display: block;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.news-body-bloc a {
+  text-decoration: none;
+  color: rgb(4, 37, 4);
+  font-size: 1rem;
+  text-align: center;
+  padding: 5px 10px;
+  border: 2px solid green;
+  border-radius: 20px;
+  background-color: #f0eeee;
+}
+
+.news-body-bloc a:hover {
+  background: green;
+  color: white;
+  transition: 0.15s ease-in-out;
+}
+
+/*** ####### INFO-ENCOMENDAS STYLES ######### ***/
+
+/* .encomenda-info {
+  width: 100%;
+} */
+
+.encomenda-container {
+  margin-top: 20px;
+}
+
+.encomenda-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.encomenda-header-bloc {
+  width: 80%;
+  text-align: center;
+}
+
+.encomenda-header-bloc h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 0;
+  color: green;
+}
+
+.encomenda-header-bloc p {
+  font-weight: 500;
+}
+
+.encomenda-bloco {
+  display: flex;
+  justify-content: center;
+ /*  align-items: stretch; */
+  margin-bottom: 20px;
+}
+
+#encomenda-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.encomenda-img {
+  width: 44%;
+}
+
+.encomenda-texto {
+  width: 56%;
+  padding: 10px 20px;
+  background-color: #f0eeee;
+  height: 239px;
+}
+
+.encomenda-texto p {
+  line-height: 1.5;
+}
+
+.btn-encomenda{
+  background: none;
+  border: none;
+
+}
+
+.btn-encomenda a{
+  text-decoration: none;
+  background-color: green;
+  color: white;
+  padding: 5px 15px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.btn-encomenda a:hover {
+  background-color: #f0eeee;
+  color: rgb(4, 37, 4);
+  border-color: green;
+}
+
+/** Estilo de pagina de seguimento */
+.info-serv-encomenda-container{
+  display: flex;
+  padding: 5px 20px;
+}
+
+.wrap-img-info-serv{
+  width: 80%;  
+}
+
+.title-4{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.paragraph-spec{
+  width: 60%;
+  margin: 0 auto;
+  background-color: burlywood;
+  padding: 12px;
+  line-height: 2;
+  
+}
+
+
+
+/*** SEGUIMENTO DE ENCOMENDA STYLOS**/
+
+.card-container{
+  background-color: #F0EEEE;
+  border: 1px solid black;
+}
+
+.header-card{
+ display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(58, 129, 58);
+  color: white;
+  padding: 10px 25px;
+  
+}
+
+.header-card h2{
+  margin: 0;
+}
+
+.header-card a{
+ color: white;
+}.body-card{
+  padding: 15px; 
+}
+
+.form-request{
+  margin-bottom: 25px;
+}
+
+.form-group-card{
+  display: flex;
+  flex-wrap: wrap;
+ width: 100%;
+ text-align: center;
+}
+
+.form-group-card input{
+ width: 70%;
+ font-size: 1.7rem;
+ font-weight: 400;
+ padding: 5px 10px;
+ line-height: 2;
+ border: 1px solid green;
+}
+
+.form-group-card input:focus{
+  outline: none;
+}
+
+.form-group-card button{
+ font-size: 1.6rem;
+ font-weight: 500;
+ background: green;
+ color: white;
+ width: 25%;
+ padding: 13px 10px;
+ border: 1px solid green;
+ cursor: pointer;
+}
+
+.form-group-card button:hover{
+ background: lightgrey;
+ color: rgb(4, 37, 4);
+}
+.ref-errado, .ref-errado-1{
+  display: none;
+  color: red;
+  font-size: 1.3rem;
+}
+.mostrar, .mostrar-1{
+  display: block;
+}
+
+.form-reponse{
+  display: none;
+  overflow-x: auto;
+}
+
+.resultadoPesquisa{
+  display: block;
+}
+
+.form-reponse table{
+  border-collapse: collapse;
+  width: 100%;
+}
+.form-reponse th{
+  background-color: rgb(42, 92, 42);
+  color: white;
+}
+.form-reponse th, td{
+ border: 1px solid green;
+ padding: 0.5rem;
+
+}
+
+.info-seguimento{
+  padding: 15px 5px;
+} 
+
+.wrap-aside{
+  padding-top: 15px;
+}  
+
+
+
+/*** AGENCIAS - ENCONTRAR LOJAS**/
+.btn-accordeon{
+  background-color: rgb(58, 129, 58);
+  color: white;
+  font-size: 1.8rem;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 1px solid #F0EEEE;
+}
+
+.active-accordeon, .btn-accordeon:hover{
+  /* background-color: #F0EEEE; */
+  background-color: rgb(85, 146, 85);
+  color: rgb(4, 37, 4);
+  
+}
+
+.btn-accordeon:after {
+  content: '\002B'; 
+ /*  content: '\02795';  */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active-accordeon:after {
+  content: "\2212";
+  color: rgb(4, 37, 4);
+}
+
+.div-body{
+   display: none;
+   padding: 5px 20px;
+   overflow: hidden;
+   transition: 0.5s ease-out;
+
+}
+
+.open-div-body{
+  display: block;
+} 
+
+/**** ##### STYLO DE SIMULACAO DE ENCOMENDA #### *****/
+
+.form-simular .form-group div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-simular .col-label{
+  /* flex: 1; */
+  float: left;
+  width: 25%;
+  padding: 5px ;
+}
+.form-simular .col-input-25{
+  /* flex: 1; */
+  float: left;
+  width: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-simular .col-input-25 .medida{
+  background-color: white;
+  font-weight: bold;
+  padding: 8px;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-color:  green;
+}
+
+.form-simular .col-input-75{
+  /* flex: 3; */
+  float: left;
+  width: 75%;
+}
+
+.form-simular input[type=text], .form-simular input[type=number], select{
+  width: 100%;
+  padding: 12px;
+  /* border-radius: 4px; */
+  border: 1px solid green;
+}
+.form-simular input[type=text]:focus, .form-simular input[type=number]:focus, select:focus{
+   outline: none;
+   border: 1px solid greenyellow;
+}
+
+.form-simular .col-label label{
+  margin-left: 15px;
+}
+
+.btn-wrap{
+  text-align: center;
+  margin-bottom: 15px;
+  
+}
+.btn-orcamento{
+  background-color: rgb(73, 156, 73);
+  color: white;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.btn-orcamento:hover{
+  background-color: green;
+}
+
+.resultado-simulacao-erro{
+  display: none;
+}
+.resultado-simulacao-sucesso{
+  display: none;
+}
+.campo-vazio{
+  display: block;
+  color: red;
+  font-weight: bold;
+}
+
+.sucesso{
+  display: block;
+  color: green;
+  font-weight: bold;
+}
+
+
+/**** ##### SIGN UP AND LOGIN STYLES----------- *****/
+.main-container{
+  width: 100%;
+  padding: 16px 48px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.header-container-sign{
+  max-width: 80%;
+  
+}
+
+ .header-container-sign .header-content h1{
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 0;
+  color: green;
+}
+
+.header-container-sign .header-content p{
+  font-weight: 500;
+}
+
+.terms-of-contrat{
+  background-color: #F0EEEE;
+  max-height: 25vh;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  overflow: auto;
+}
+
+.terms-of-contrat h2{
+  margin-top: 0;
+  font-size: 1.7rem;
+}
+
+.terms-of-contrat p{
+  font-size: 1.5rem;
+}
+
+.body-container-sign{
+  max-width: 80%;
+}
+.btn-sign-up-wrap{
+ text-align: center;
+ padding: 10px 5px;
+}
+.body-container-sign .btn{
+  width: 25%;
+  padding: 12px 20px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.body-container-sign .btn-login{
+  background-color: rgb(58, 58, 240);
+  color: white;
+  transition: color 0.2s;
+}
+
+.body-container-sign .btn-login:hover{
+  background-color: rgb(32, 32, 245);
+}
+
+.body-container-sign .btn-registo{
+  background-color: rgb(91, 238, 91);
+  color: white;
+}
+
+.body-container-sign .btn-registo:hover{
+  background-color:rgb(29, 238, 29);
+}
+.blue{
+  color: #4a77c5;
+}
+
+.container-login-form{
+  display: none;
+}
+.container-login-form-open{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.content-login-form{
+  max-width: 70%;
+  /* margin: 0 auto; */
+  background-color: #F0EEEE;
+  padding: 15px 20px;
+}
+
+.content-login-form .form-group input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid green;
+
+}
+
+.content-login-form .form-group input:focus{
+  outline: none;
+  border: 1px solid greenyellow;
+
+}
+
+.erocampoe, .erocampop{
+  display: none;
+}
+
+.emailError, .pwdError{
+  color: red;
+  display: block;
+}
+
+.btn-iniciar-sessao{
+  width: 50%;
+  padding: 12px 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+.container-registo-form{
+  display: none;
+  max-width: 100%;
+  margin-top: 20px;
+  background-color: #F0EEEE;
+}
+.container-registo-form-open{
+  display: block;
+  /* max-width: 100%;
+  margin-top: 20px;
+  background-color: #F0EEEE; */
+}
+.registo-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+.registo-form form{
+  padding: 15px;
+}
+
+.header-form{
+  background-color: green ;
+  color: white;
+  font-weight: 900;
+  padding: 15px 0;
+
+}
+
+.header-form ol{
+  margin: 0;
+  padding: 0;
+}
+
+.header-form li{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+legend{
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+ 
+.registo-form select,
+.registo-form input[type=text], 
+.registo-form input[type=email], 
+.registo-form input[type=number], 
+.registo-form input[type=password]{
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid green;
+  margin-bottom: 15px;
+}
+
+.registo-form select:focus,
+.registo-form input[type=text]:focus, 
+.registo-form input[type=email]:focus, 
+.registo-form input[type=number]:focus, 
+.registo-form input[type=password]:focus{
+   outline: none;
+   border: 1px solid greenyellow;
+}
+
+.registo-form label{
+  padding: 12px 12px 12px 0;
+  /* display: inline-block; */
+}
+
+.registo-form .col-label{
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+}
+
+.registo-form .col-input, .registo-form .col-select{
+    float: left;
+    width: 70%;
+    margin-top: 2px;
+}
+
+.registo-form span{
+  display: none;
+}
+
+.btn-registo-wrap{
+  text-align: center;
+}
+
+.registo-form .btn-registo{
+  width: 30%;
+  padding: 12px 20px;
+  margin-top: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
+
+.form-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/*** #### FOOTER STYLES #### ****/
+.footer-container{
+    background-color: yellowgreen;
+    color: rgb(4, 37, 4);
+    padding: 15px 60px;
+}
+
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-bloc h4{
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+
+.footer-bloc ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.footer-bloc li{
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style: none;
+}
+
+
+
+/******   ###################  MEDIUM SCREEN ###################### MEDIUM SCREEN   ##########*******/
+@media screen and (max-width: 980px) {
+  #header, 
+  .my-sections,
+  .main-container{
+    padding: 10px 15px;
+  }
+
+  /* ### Header Styles for mediun screnn ### */
+
+/*   #header {
+    padding: 10px 15px;
+  } */
+
+  .logo {
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.15s ease-in-out;
+  }
+
+  .nav-item {
+    font-size: 1.3rem;
+    padding-left: 10px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .account .sign-up {
+    display: none;
+  }
+
+  /* #### Slide Styles for mediun screnn #### */
+
+  .slide-content {
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .slide-text-bloc {
+    /* background-color: inherit; */
+    max-width: 70%;
+  }
+
+  .slide-text-bloc h2 {
+    font-size: 1.8rem;
+  }
+  .slide-text-bloc p {
+    font-size: 1.5rem;
+  }
+
+  /***** IMAGEM NO TOPO DA PAGINA******/
+  .content-top-image{
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.bloc-text-top-image{
+    width: 70%;
+}
+
+.bloc-text-top-image h1{
+    font-size: 1.8rem;
+}
+
+.bloc-text-top-image P{
+    font-size: 1.5rem;
+}
+
+/***** CORPO DA PAGINA ****/
+
+
+.header-content h2{
+  font-size: 1.9rem;
+}
+
+.header-content p{
+  font-size: 1.6rem;
+  
+}
+
+  /**** NEWS STYLES FOR MEDIUN SCREEN ****/
+
+  .news-body-bloc {
+    min-width: 49%;
+    padding: 12px;
+   
+  }
+  
+  /**** SEGUIMENTO DE ENCOMENDAS MEDIUN SCREEN ****/
+  .form-group-card input{
+    width: 65%;
+    font-size: 1.6rem;
+    padding: 5px 5px;  
+ }
+
+ .form-group-card button{
+    width: 33%;
+    font-size: 1.5rem;
+    padding: 12px 5px;
+    
+ } 
+
+
+  /* #### INFO AGENCY STYLES FOR MEDIUM SCREEN #### */
+
+  .info-agency-header-bloc {
+    width: 90%;
+  }
+
+  .info-agency-bloc {
+    max-width: 49%;
+  }
+
+  #bloc3 {
+    display: none;
+  }
+
+  /* ### STYLO SIMULAÇAO DE ENCOMENDA MEDIUN SCREEN */
+
+  .form-simular .form-group div{
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  
+  .form-simular .col-label{
+    width: 35%;
+    padding: 0;
+  }
+  .form-simular .col-input-25{
+    width: 65%;
+  }
+  .form-simular .col-input-75{
+    width: 65%;
+  }
+  .form-simular .col-label label{
+    margin-left: 0;
+  }
+
+  /* #### FORMULARIO DE LOGIN E REGISTO STYLES #### */
+  .content-login-form{
+    max-width: 90%;
+  }
+  
+
+  .body-container-sign .btn{
+    width: 40%;
+    padding: 12px;
+    font-size: 1.6rem;
+  }
+
+  .btn-iniciar-sessao{
+    width: 60%;
+    padding: 12px;
+    font-size: 1.6rem;
+  }
+
+  .registo-form .col-label, .registo-form .col-input, .registo-form select{
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+/******   ###################  SMALL SCREEN ###################### SMALL SCREEN   ##########*******/
+@media only screen and (max-width: 560px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 50px;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 2;
+  }
+
+  .active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /** #### Slide Style for small screen*/
+
+  
+  .slide-text-bloc{
+    max-width: 100%;
+  }
+
+  /** IMAGEM NO TOPO DA PAGINA**/
+  .bloc-text-top-image{
+    width: 100%;
+}
+
+/** CORPO DA PAGINA **/
+.header-content{
+  max-width: 100%;
+}
+
+.body-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+  
+
+  /** ##### INPUT SEGUIMENTO STYLES FOR SMALL SCREEN*/
+  .follow-up-div-text {
+    flex: inherit;
+    width: 100%;
+  }
+
+  .follow-up-div-input {
+    flex: inherit;
+    width: 100%;
+  }
+
+  /* #### INFO AGENCY STYLES FOR SMALL SCREEN #### */
+  .info-agency-header-bloc {
+    width: 100%;
+  }
+
+  .info-agency-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+    /* width: 100%; */
+  }
+
+  .info-agency-bloc {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .info-agency-header-bloc h2 {
+    font-size: 1.7em;
+  }
+
+  /**** NEWS STYLES FOR SMALL SCREEN  ****/
+  #news .news-header {
+    flex-wrap: wrap;
+  }
+  
+  #news .news-title{
+    margin-bottom: 5px;
+  }
+
+  #news .news-header h2 {
+   font-size: 2rem;
+  }
+
+  .wrap-arrow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .news-body-bloc{
+    min-width: 99%;
+    border-left: inherit;
+    
+  }
+  
+  #news-bloco2 {
+    border-right: inherit;
+  }
+  /* .news-body-carousel {
+    flex-direction: column;
+  } */
+
+  /****  INFO-ENCOMENDAS STYLES FOR SMALL SCREEN   ****/
+  .encomenda-header-bloc {
+    width: 100%;
+  }
+
+  .encomenda-bloco {
+    flex-direction: column;
+  }
+
+  .encomenda-header-bloc h2 {
+    font-size: 1.6em;
+  }
+
+  #encomenda-reverse {
+    flex-direction: column;
+  }
+
+  .wrap-img-info-serv{
+    width: 100%;
+  }
+
+  .encomenda-img {
+    width: 100%;
+  }
+
+  .encomenda-texto {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+
+  /* #### STYLOS SIMULACAO DE ENCOMENDA SMALL SCREEN #### */
+.form-simular .col-label{
+    width: 100%;
+}
+.form-simular .col-input-25{
+    width: 100%;
+}
+.form-simular .col-input-75{
+    width: 100%;
+}
+
+  /* #### Formulario de login e registo ###*/
+
+  .body-container-sign .btn{
+    width: 80%;
+   
+  }
+  .registo-form .btn-registo{
+    width: 80%;
+    
+  }
+  .header-container-sign{
+    max-width: 100%;
+  }
+
+  .body-container-sign{
+    max-width: 100%;
+  }
+
+  .content-login-form{
+    max-width: 95%;
+    
+  }
+  .btn-iniciar-sessao{
+    width: 100%;
+    font-size: 1.6rem;
+  }
+
+}
+
+
+
+
