@@ -19,7 +19,9 @@ print_r($_url_parts);
 echo "</pre>"; */
 
 $controllers = [
-    "inicio"
+    "inicio",
+    "registar",
+    "agencia"
 ];
 
 $controller = !empty($_url_parts[1]) ? $_url_parts[1] : "inicio";

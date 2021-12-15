@@ -1,7 +1,7 @@
 
 <nav class="navegation">
     <div class="top-navbar">
-        <a href="/criar_conta">Criar Conta</a>
+        <a href="/registar">Criar Conta</a>
         <a href="/autenticar">Iniciar Sessao</a>
         <a href="">Apoio ao Cliente</a>
     </div><!-- .top-navbar -->

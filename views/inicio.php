@@ -312,6 +312,6 @@
     </footer>
  </div><!-- .global-container -->
 
-        <script src="../assets/js/globalScript.js"></script> 
+        <script src="/assets/js/globalScript.js"></script> 
 </body>
 </html>

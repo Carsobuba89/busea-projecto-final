@@ -11,7 +11,6 @@ body{
 .global-container{
   width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 /*** CORPO DA PAGINA ****/
@@ -35,7 +34,7 @@ body{
 }
 
 .header-content h2{
-  font-size: 2em;
+  font-size: 1.7rem;
   font-weight: bold;
   margin-top: 0;
   padding-top: 0;
@@ -43,7 +42,7 @@ body{
 }
 
 .header-content p{
-  font-size: 1.7rem;
+  /* font-size: 1.1rem; */
   font-weight: 500;
 }
 
@@ -262,13 +261,13 @@ body{
 
 .slide-text-bloc h1 {
   text-transform: lowercase;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin-top: 0;
 }
 
 .slide-text-bloc p {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   font-weight: 570;
 }
 
@@ -365,7 +364,7 @@ body{
   text-align: center;
 }
 .info-agency-header-bloc h2 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
   margin-top: 0;
   padding-top: 0;
@@ -550,7 +549,7 @@ body{
 }
 
 .encomenda-header-bloc h2 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
   margin-top: 0;
   padding-top: 0;
@@ -888,26 +887,26 @@ body{
 
 
 /**** ##### SIGN UP AND LOGIN STYLES----------- *****/
-.main-container{
+.main-container-sign{
   width: 100%;
-  padding: 16px 48px;
+  padding: 15px 60px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .header-container-sign{
-  max-width: 80%;
+  max-width: 70%;
   
 }
 
- .header-container-sign .header-content h1{
-  font-size: 2em;
+ .header-container-sign .header-content-sign h1{
+  font-size: 1.8rem;
   font-weight: bold;
   margin-top: 0;
   padding-top: 0;
   color: green;
 }
 
-.header-container-sign .header-content p{
+.header-container-sign .header-content-sign p{
   font-weight: 500;
 }
 
@@ -920,20 +919,20 @@ body{
 }
 
 .terms-of-contrat h2{
+  font-size: 1.2rem;
   margin-top: 0;
-  font-size: 1.7rem;
 }
 
-.terms-of-contrat p{
+/* .terms-of-contrat p{
   font-size: 1.5rem;
-}
+} */
 
 .body-container-sign{
-  max-width: 80%;
+  max-width: 70%;
 }
-.btn-sign-up-wrap{
- text-align: center;
- padding: 10px 5px;
+.info-sign-up-wrap h3{
+  font-weight: 500;
+ padding: 5px;
 }
 .body-container-sign .btn{
   width: 25%;
@@ -965,7 +964,7 @@ body{
 }
 
 .body-container-sign .btn-registo:hover{
-  background-color:rgb(29, 238, 29);
+  background-color:rgb(37, 85, 37);
 }
 .blue{
   color: #4a77c5;
@@ -1026,7 +1025,7 @@ body{
 }
 
 .container-registo-form{
-  display: none;
+  /* display: none; */
   max-width: 100%;
   margin-top: 20px;
   background-color: #F0EEEE;
@@ -1066,18 +1065,33 @@ body{
   margin-left: 10px;
 }
 
+fieldset{
+  margin-bottom: 10px;
+}
+
 legend{
-  text-transform: uppercase;
-  font-weight: 900;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
  
 .registo-form select,
+.registo-form textarea,
 .registo-form input[type=text], 
 .registo-form input[type=email], 
-.registo-form input[type=number], 
+.registo-form input[type=number],  
 .registo-form input[type=password]{
-  width: 100%;
+  width: 95%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid green;
+  margin-bottom: 15px;
+}
+
+
+.registo-form input[type=time], 
+.registo-form input[type=file]{
+  width: 50%;
   padding: 12px;
   border-radius: 4px;
   border: 1px solid green;
@@ -1085,12 +1099,15 @@ legend{
 }
 
 .registo-form select:focus,
+.registo-form textarea:focus,
 .registo-form input[type=text]:focus, 
+.registo-form input[type=time]:focus,
 .registo-form input[type=email]:focus, 
 .registo-form input[type=number]:focus, 
+.registo-form input[type=file]:focus,
 .registo-form input[type=password]:focus{
    outline: none;
-   border: 1px solid greenyellow;
+   border: 1px solid rgb(45, 73, 3);
 }
 
 .registo-form label{
@@ -1104,7 +1121,10 @@ legend{
     margin-top: 6px;
 }
 
-.registo-form .col-input, .registo-form .col-select{
+.registo-form .col-input,
+.registo-form .col-textarea,
+.registo-form .col-input-file,
+ .registo-form .col-select{
     float: left;
     width: 70%;
     margin-top: 2px;
