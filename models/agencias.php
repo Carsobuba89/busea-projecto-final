@@ -26,10 +26,10 @@ class Agencias extends Base{
                 [
                     $registro["nome_agencia"],
                     $registro["descricao"],
-                    $nome_imagem,
+                    $registro["imagem_agencia"],
                     $registro["hora_abertura"],
                     $registro["hora_fecho"],
-                    $codigo_conta
+                    $registro["codigo_conta"]
                 ]
             );
 

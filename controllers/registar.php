@@ -78,18 +78,25 @@ if($action === "agencia"){
 
         }
 
+        $novo_nome = trim(htmlspecialchars(strip_tags($novo_nome)));
+        //var_dump($novo_nome);
         foreach($_POST as $key => $value){
             $_POST[$key] = trim(htmlspecialchars(strip_tags($value)));
         }
 
-        echo "Tudo Ok ate agora";
+        $dados_agencia = array( 
+            "nome_agencia" => $_POST["nome_agencia"], 
+            "descricao" => $_POST["descricao"], 
+            "imagem_agencia" => $novo_nome,
+            "hora_abertura" => $_POST["hora_abertura"],
+            "hora_fecho" => $_POST["hora_fecho"],
+            "codigo_conta" => $_SESSION["codigo"]
+        );
 
-        
-
-        /* require("models/agencias.php");
+        require("models/agencias.php");
         $modelAgencias = new Agencias();
 
-        $codigo_agencia = $modelAgencias->create($_POST); */
+        $codigo_agencia = $modelAgencias->create($dados_agencia);
     }
 
 
