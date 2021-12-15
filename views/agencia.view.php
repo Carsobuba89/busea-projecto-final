@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/global-style.css">
     <title>criar agencia</title>
 </head>
 <body>
@@ -13,8 +15,8 @@
             <div class="header-container-sign">
                 <div class="header-content-sign">
                     <article>
-                        <h1>Faça o seu registo agora </h1>
-                        <p>De acordo com a legislação, leia o seguinte texto na íntegra antes de continuar voluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
+                        <h1>Parabens, a sua conta foi criada com sucesso, estas quase para terminar, mais duas etapas</h1>
+                        <p>Estas na segunda etapa da criacao dasua agencia oluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
                     </article>
                 </div><!--.header-content-->
                     
@@ -26,14 +28,14 @@
                     <div class="container-registo-form">
                         <div class="header-form">
                             <ol>
-                                <li>2 informacoes sobre agencia</li>
+                                <li>2 informacoes da sua agencia</li>
                             </ol>
                         </div><!--.header-form-->
                      <div class="registo-form" >
 
-                        <form method="post" action="./registar/agencia" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo ROOT; ?>/registar/agencia" enctype="multipart/form-data">
             
-                            <h4>Criar uma agencia</h4>
+                            <h4>Cria a sua agencia</h4>
                             <p>Todos campos sao obrigatorios.</p>
 
                             
@@ -51,10 +53,10 @@
                                 </div><!--.form-group-->
                                 <div class="form-group">
                                     <div class="col-label">
-                                        <label for="nomeEmpresa">Descriçao da agencia</label>
+                                        <label for="descricao">Descriçao da agencia</label>
                                     </div><!--.col-label-->
                                     <div class="col-textarea">
-                                        <textarea name="descricao" id="descricao" cols="50" rows="6" required></textarea>
+                                        <textarea name="descricao" id="descricao" cols="50" rows="6" minlength="60" required></textarea>
                                     </div><!--.col-textarea-->
                                     <span>Descreva a sua empresa de maneira breve.</span>
                                 </div><!--.form-group-->
@@ -73,16 +75,16 @@
                                         <label for="hora_abertura">Hora de Abertura</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="hora_abertura" name="hora_abertura"  required>
+                                        <input type="text" id="hora_abertura" name="hora_abertura" minlength="3" maxlength="6" required>
                                     </div><!--.col-input-->
                                     <span></span>
                                 </div><!--.form-group-->
                                 <div class="form-group">
                                     <div class="col-label">
-                                        <label for="contahora_fecho">Hora de fecho</label>
+                                        <label for="hora_fecho">Hora de fecho</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="contahora_fecho" name="contahora_fecho" required>
+                                        <input type="text" id="hora_fecho" name="hora_fecho" minlength="3" maxlength="6" required>
                                     </div><!--.col-input-->
                                     <span></span>
                                 </div><!--.form-group-->
@@ -93,7 +95,7 @@
                                     </div><!--.col-label-->
                                     <div class="col-select">
                                         <select name="pais" id="paisSelecionado">
-                                            <option value=""> Escolha o pais</option>
+                                            <option value="escolha"> Escolha o pais</option>
                                             <?php
                                             
                                                 foreach($paises as $pais){
@@ -141,7 +143,7 @@
                                         <label for="email">Email</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="email" id="email" name="email" placeholder="carsobuba@yahoo.com" required>
+                                        <input type="email" id="email" name="email" placeholder="carsobuba@yahoo.com" minlength="8" maxlength="252" required>
                                     </div><!--.col-input-->
                                     <span></span>
                                 </div><!--.form-group-->
@@ -150,7 +152,7 @@
                                         <label for="num_telefone">Telefone</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="num_telefone" name="num_telefone" placeholder="+351 932 303 976" required>
+                                        <input type="text" id="num_telefone" name="num_telefone" placeholder="+351 932 303 976" minlength="7" maxlength="20" required>
                                     </div><!--.col-input-->
                                     <span></span>
                                 </div><!--.form-group-->

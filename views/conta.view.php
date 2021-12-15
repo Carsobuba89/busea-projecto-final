@@ -63,7 +63,7 @@
                         </div><!--.header-form-->
                      <div class="registo-form" >
 
-                        <form method="post" action="<?php echo ROOT; ?>/registar/conta" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo ROOT; ?>/registar/conta">
             
                             <h4>Regista-se na Busea</h4>
                             <p>Todos campos sao obrigatorios.</p>

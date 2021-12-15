@@ -31,7 +31,7 @@ class Contas extends Base{
             in_array( $registro["perguntaSecreta"], $perguntas_secretas) &&
             filter_var($registro["email"], FILTER_VALIDATE_EMAIL) 
         ){
-            $message = "Primeira etapa de criaçao da conta foi bem sucedida";
+            //$message = "Primeira etapa de criaçao da conta foi bem sucedida";
 
             $query = $this->db->prepare("
                 INSERT INTO contas

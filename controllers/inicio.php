@@ -10,6 +10,6 @@
 
    }
    else{
-       require("views/inicio.php");
+       require("views/inicio.view.php");
    }
 ?>
