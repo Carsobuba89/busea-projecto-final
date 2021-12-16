@@ -21,7 +21,6 @@
         if(isset($message)){
             echo '<p role="alert">'.$message.'</p>';
         }
-
     ?>
         <div class="main-container-sign">
             <div class="header-container-sign">

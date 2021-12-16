@@ -9,12 +9,13 @@ if($action === "conta"){
 
     if( isset($_POST["send"]) ){
 
-        if($_POST["consentimento"] !== "on"){
+        if( !isset($_POST["consentimento"])){
 
             $message = "Verifique si aceitaste os termos e condiçes antes de submeter o formulario";
+            
         }
 
-        if( $_POST["password"] === $_POST["passwordRepeated"] ){
+        if( $_POST["password"] === $_POST["passwordRepeated"] && !isset($message) ){
             
             foreach($_POST as $key => $value){
                 $_POST[$key] = trim(htmlspecialchars(strip_tags($value)));
@@ -24,8 +25,8 @@ if($action === "conta"){
             //var_dump( $contaCriada);
 
             if( !empty($codigo_conta) ){
-                $_SESSION["codigo"] = $codigo_conta;
-                $_SESSION["nome"] = $_POST["username"];
+                $_SESSION["codigo_conta"] = $codigo_conta;
+                $_SESSION["nome_utilisador"] = $_POST["username"];
                 $_SESSION["email"] = $_POST["email"];
 
                 header("Location:".ROOT."/registar/agencia");
@@ -42,7 +43,9 @@ if($action === "conta"){
 
     require("views/conta.view.php");
 
-}//FINAL DE IF NO CASO ACÇAO FOR CONTA
+}
+
+/** ############ INICIO DE CODIGO SI A ROTA FOR AGENCIA ###############*/
 
 if($action === "agencia"){
 
@@ -65,7 +68,7 @@ if($action === "agencia"){
             isset($_FILES["imagem_agencia"]) &&
             $_FILES["imagem_agencia"]["error"] == 0 &&
             $_FILES["imagem_agencia"]["size"] > 0 &&
-            $_FILES["imagem_agencia"]["size"] < 4000000
+            $_FILES["imagem_agencia"]["size"] < 3000000
         ){
 
             $extensao = strtolower(substr($_FILES['imagem_agencia']['name'],-4));
@@ -74,7 +77,7 @@ if($action === "agencia"){
 
             $directotio = './assets/images/img-agencias/';
 
-            move_uploaded_file($_FILES['imagem_agencia']['tmp_name'], $directotio.$novo_nome);
+            //move_uploaded_file($_FILES['imagem_agencia']['tmp_name'], $directotio.$novo_nome);
 
         }
 
@@ -84,24 +87,65 @@ if($action === "agencia"){
             $_POST[$key] = trim(htmlspecialchars(strip_tags($value)));
         }
 
+        /*** ######### INSERIR DADOS DA AGENCIA ############  */
         $dados_agencia = array( 
             "nome_agencia" => $_POST["nome_agencia"], 
             "descricao" => $_POST["descricao"], 
             "imagem_agencia" => $novo_nome,
             "hora_abertura" => $_POST["hora_abertura"],
             "hora_fecho" => $_POST["hora_fecho"],
-            "codigo_conta" => $_SESSION["codigo"]
+            "codigo_conta" => $_SESSION["codigo_conta"]
         );
 
         require("models/agencias.php");
         $modelAgencias = new Agencias();
 
         $codigo_agencia = $modelAgencias->create($dados_agencia);
+
+        if(!empty($codigo_agencia)){
+
+            move_uploaded_file($_FILES['imagem_agencia']['tmp_name'], $directotio.$novo_nome);
+
+            $_SESSION["codigo_agencia"] = $codigo_agencia;
+            $_SESSION["nome_agencia"] = $_POST["nome_agencia"];
+            $_SESSION["imagem_agencia"] = $novo_nome;
+
+        }
+
+        /*** ######### INSERIR DADOS DE ENDEREÇO DA AGENCIA ############  */
+        $dados_endereco = array(
+            "adresso" => $_POST["adresso"],
+            "cidade" => $_POST["cidade"],
+            "codigo_postal" => $_POST["codigo_postal"],
+            "codigo_pais" => $_POST["pais"],
+            "email" => $_SESSION["email"],
+            "num_telefone" => $_POST["num_telefone"],
+            "codigo_agencia" => $_SESSION["codigo_agencia"]
+        );
+
+        require("models/adressos.php");
+        $modelEnderecos = new Adressos();
+
+        $dados_enderecos = $modelEnderecos->create($dados_endereco);
+
+        if(!empty($dados_enderecos)){
+
+        $message = "Registo da agencia correu com sucesso";
+        header("Location:".ROOT."/registar/agente");
+
+        }
+
+
     }
 
-
-
     require("views/agencia.view.php");
+}
+
+/** ############ INICIO DE CODIGO SI A ROTA FOR AGENCIA ###############*/
+
+if($action === "agente"){
+
+    require("views/agente.view.php");
 }
 
 

@@ -9,6 +9,11 @@
     <title>criar agencia</title>
 </head>
 <body>
+    <?php
+        if(isset($message)){
+            echo '<p role="alert">'.$message.'</p>';
+        }
+    ?>
 
 <main>
         <div class="main-container-sign">
@@ -111,10 +116,10 @@
 
                                 <div class="form-group">
                                     <div class="col-label">
-                                        <label for="localidade">Cidade</label>
+                                        <label for="cidade">Cidade</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="localidade" name="localidade" placeholder="Barreiro" required minlength="4" maxlength="40">
+                                        <input type="text" id="cidade" name="cidade" placeholder="Barreiro" required minlength="4" maxlength="60">
                                     </div><!--.col-input-->
                                     
                                 </div><!--.form-group-->
@@ -138,15 +143,15 @@
                                     <span>Entrar adresso completo (codigo postal si for o caso).</span>
                                 </div><!--.form-group-->
 
-                                <div class="form-group">
+                                <!--div class="form-group">
                                     <div class="col-label">
                                         <label for="email">Email</label>
-                                    </div><!--.col-label-->
-                                    <div class="col-input">
+                                    </--><!--.col-label-->
+                                    <!--div class="col-input">
                                         <input type="email" id="email" name="email" placeholder="carsobuba@yahoo.com" minlength="8" maxlength="252" required>
-                                    </div><!--.col-input-->
-                                    <span></span>
-                                </div><!--.form-group-->
+                                    </div--><!--.col-input-->
+                                    <!--span></span>
+                                </div--><!--.form-group-->
                                 <div class="form-group">
                                     <div class="col-label">
                                         <label for="num_telefone">Telefone</label>
