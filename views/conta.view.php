@@ -21,6 +21,8 @@
         if(isset($message)){
             echo '<p role="alert">'.$message.'</p>';
         }
+
+        require("views/templates/menu.registro.php");
     ?>
         <div class="main-container-sign">
             <div class="header-container-sign">
@@ -130,7 +132,7 @@
                                         <label for="respostaSecreta">Resposta Secreta</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="respostaSecreta" name="respostaSecreta" minlength="4" maxlength="120" required>
+                                        <input type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required>
                                     </div><!--.col-input-->
                                 </div><!--.form-group-->
 

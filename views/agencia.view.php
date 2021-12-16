@@ -13,7 +13,11 @@
         if(isset($message)){
             echo '<p role="alert">'.$message.'</p>';
         }
+
+        require("views/templates/menu.registro.php");
     ?>
+
+    
 
 <main>
         <div class="main-container-sign">

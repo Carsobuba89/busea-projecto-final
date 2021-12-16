@@ -59,8 +59,8 @@ if($action === "agencia"){
         $codigo_paises[] = $pais["codigo"];
     }
 
-    echo "<pre>";    print_r( $_POST); echo "</pre>";
-    echo "<pre>";    print_r( $_FILES); echo "</pre>";
+    /* echo "<pre>";    print_r( $_POST); echo "</pre>";
+    echo "<pre>";    print_r( $_FILES); echo "</pre>"; */
 
     if(isset($_POST["send"]) && in_array($_POST["pais"], $codigo_paises)){
 
