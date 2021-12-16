@@ -849,8 +849,8 @@ body{
 .btn-wrap{
   text-align: center;
   margin-bottom: 15px;
-  
 }
+
 .btn-orcamento{
   background-color: rgb(73, 156, 73);
   color: white;
@@ -870,9 +870,11 @@ body{
 .resultado-simulacao-erro{
   display: none;
 }
+
 .resultado-simulacao-sucesso{
   display: none;
 }
+
 .campo-vazio{
   display: block;
   color: red;
@@ -885,7 +887,6 @@ body{
   font-weight: bold;
 }
 
-
 /**** ##### SIGN UP AND LOGIN STYLES----------- *****/
 .main-container-sign{
   width: 100%;
@@ -895,7 +896,6 @@ body{
 }
 .header-container-sign{
   max-width: 70%;
-  
 }
 
  .header-container-sign .header-content-sign h1{
@@ -1030,19 +1030,20 @@ body{
   margin-top: 20px;
   background-color: #F0EEEE;
 }
+
 .container-registo-form-open{
   display: block;
   /* max-width: 100%;
   margin-top: 20px;
   background-color: #F0EEEE; */
 }
+
 .registo-form{
   display: flex;
   justify-content: center;
   align-items: center;
-  
- 
 }
+
 .registo-form form{
   padding: 15px;
 }
@@ -1052,7 +1053,6 @@ body{
   color: white;
   font-weight: 900;
   padding: 15px 0;
-
 }
 
 .header-form ol{
@@ -1074,6 +1074,12 @@ legend{
   font-weight: 600;
 }
 
+.form-group .padding-form{
+  background: whitesmoke;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
  
 .registo-form select,
 .registo-form textarea,
@@ -1082,14 +1088,14 @@ legend{
 .registo-form input[type=file], 
 .registo-form input[type=number],  
 .registo-form input[type=password]{
-  width: 95%;
+  width: 90%;
   padding: 12px;
   border-radius: 4px;
   border: 1px solid green;
   margin-bottom: 15px;
 }
 
-
+.registo-form input[type=date],
 .registo-form input[type=time]{
   width: 50%;
   padding: 12px;
@@ -1102,6 +1108,7 @@ legend{
 .registo-form textarea:focus,
 .registo-form input[type=text]:focus, 
 .registo-form input[type=time]:focus,
+.registo-form input[type=date]:focus,
 .registo-form input[type=email]:focus, 
 .registo-form input[type=number]:focus, 
 .registo-form input[type=file]:focus,

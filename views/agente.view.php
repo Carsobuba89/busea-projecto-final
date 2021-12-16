@@ -16,7 +16,6 @@
 
         require("views/templates/menu.registro.php");
     ?>
-
 <main>
         <div class="main-container-sign">
             <div class="header-container-sign">
@@ -45,8 +44,6 @@
                             <h4>Criar um agente para sua agencia</h4>
                             <p>Os campos de endereço nao sao obrigatorios.</p>
 
-                            
-
                             <fieldset>
                                 <legend>Informaçao da agente</legend>
 
@@ -70,10 +67,10 @@
 
                                 <div class="form-group">
                                     <div class="col-label">
-                                        <label for="data_nascemento">Data de Nascemento</label>
+                                        <label for="data_nascimento">Data de Nascemento</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="date" name="data_nascemento" id="data_nascemento" value="1989-05-09" required>
+                                        <input type="date" name="data_nascimento" id="data_nascimento" value="1989-05-09" required>
                                     </div><!--.col-textarea-->
                                 </div><!--.form-group-->
 
@@ -113,9 +110,9 @@
                                     <span></span>
                                 </div><!--.form-group-->
 
-                                <div class="form-group">
+                                <div class="form-group padding-form">
                                     <div class="col-label">
-                                        <label for="copiar">Copiar Endereço da Agencia ?</label>
+                                        <label for="copiar">Copiar Endereço ?</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
                                         <input type="checkbox" name="sim" id="sim" >
@@ -193,17 +190,12 @@
                                     <span></span>
                                 </div><!--.form-group-->
                                 
-
                             </fieldset><!--.informaçao de contacto-->
-
-                             
 
                               <div class="btn-registo-wrap">
                                 <button type="submit" class="btn-registo" name="send">Registar-se</button>
                             </div>
         
-
-
                         </form>
                     </div><!--.registo-form-->
                 </div><!--.container-registo-form-->

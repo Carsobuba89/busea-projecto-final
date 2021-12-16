@@ -1,4 +1,10 @@
 <?php
+require("models/paises.php");
+$modelPaises = new Paises();
+
+$paises = $modelPaises->getAll();
+
+/** ############ INICIO DE CODIGO SI A ROTA FOR CONTA ###############*/
 
 if($action === "conta"){
 
@@ -48,11 +54,6 @@ if($action === "conta"){
 /** ############ INICIO DE CODIGO SI A ROTA FOR AGENCIA ###############*/
 
 if($action === "agencia"){
-
-    require("models/paises.php");
-    $modelPaises = new Paises();
-
-    $paises = $modelPaises->getAll();
 
     $codigo_paises = [];
     foreach($paises as $pais){
