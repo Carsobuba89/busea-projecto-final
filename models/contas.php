@@ -28,13 +28,12 @@ class Contas extends Base{
             $query = $this->db->prepare("
                 SELECT codigo, nome_utilisador, palavra_passe
                 FROM contas
-                WHERE nome_utilisador = ? AND palavra_passe = ?
+                WHERE nome_utilisador = ? 
             ");
 
             $query->execute(
                 [
-                    $registro["username"],
-                    $registro["password"]
+                    $registro["username"]
                 ]
             );
 
@@ -42,7 +41,6 @@ class Contas extends Base{
         }
 
         return [];
-
     }//FINAL DE GET CONTA LOGIN 
 
     public function create($registro){

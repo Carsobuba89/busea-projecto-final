@@ -22,7 +22,7 @@
             echo '<p role="alert">'.$message.'</p>';
         }
 
-        require("views/templates/menu.registro.php");
+        require("views/templates/menu.acesso.php");
     ?>
         <div class="main-container-sign">
             <div class="header-container-sign">

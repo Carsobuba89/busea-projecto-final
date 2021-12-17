@@ -15,6 +15,15 @@
     <title>Iniciar Sessao </title>
 </head>
 <body>
+
+<?php
+    if(isset($message)){
+        echo '<p role="alert">'.$message.'</p>';
+    }
+
+    require("views/templates/menu.acesso.php");
+?>
+
   
 
     <main>
