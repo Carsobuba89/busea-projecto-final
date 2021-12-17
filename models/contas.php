@@ -17,6 +17,34 @@ class Contas extends Base{
 
     }//FINAL DE GET ALL CONTAS 
 
+    public function getContaLogin($registro){
+
+        if(
+            mb_strlen($registro["username"]) >= 6 &&
+            mb_strlen($registro["username"]) <= 30 &&
+            mb_strlen($registro["password"]) >= 8 &&
+            mb_strlen($registro["password"]) <= 1000
+        ){
+            $query = $this->db->prepare("
+                SELECT codigo, nome_utilisador, palavra_passe
+                FROM contas
+                WHERE nome_utilisador = ? AND palavra_passe = ?
+            ");
+
+            $query->execute(
+                [
+                    $registro["username"],
+                    $registro["password"]
+                ]
+            );
+
+            return $query->fetch();
+        }
+
+        return [];
+
+    }//FINAL DE GET CONTA LOGIN 
+
     public function create($registro){
 
         $perguntas_secretas = array("marcaTelemovel", "lugarNascimento", "nomeEscola", "nomeMae", "numeroSapato");
