@@ -970,9 +970,9 @@ body{
   color: #4a77c5;
 }
 
-.container-login-form{
+/* .container-login-form{
   display: none;
-}
+} */
 .container-login-form-open{
   display: flex;
   justify-content: center;
@@ -987,7 +987,7 @@ body{
 }
 
 .content-login-form .form-group input{
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   border-radius: 4px;

@@ -21,6 +21,7 @@ echo "</pre>"; */
 $controllers = [
     "inicio",
     "registar",
+    "acesso",
     "admin_page"
 ];
 
