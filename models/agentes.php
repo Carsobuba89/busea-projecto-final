@@ -8,7 +8,7 @@ class Agentes extends Base{
         if(
             mb_strlen($registro["nome_agente"]) >= 6  &&
             mb_strlen($registro["nome_agente"]) <= 60 &&
-            checkdate($registro["data_nascimento"]) &&
+            /* checkdate($registro["data_nascimento"]) && */
             mb_strlen($registro["lugar_nascimento"]) >= 3 &&
             mb_strlen($registro["lugar_nascimento"]) <= 60 &&
             mb_strlen($registro["numero_bi"]) >= 3 &&
@@ -41,9 +41,9 @@ class Agentes extends Base{
                         adresso, 
                         cidade, 
                         codigo_postal, 
-                        codigo_agemcia
+                        codigo_agencia
                     )
-                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ");
 
             $codigo_registro = $query->execute(
@@ -54,13 +54,14 @@ class Agentes extends Base{
                     $registro["lugar_nascimento"],
                     $registro["numero_bi"],
                     $registro["genero"],
-                    $registro["codigo_pais_agente"],
+                    $registro["codigo_pais"],
                     $registro["cidade"],
                     $registro["adresso"],
                     $registro["codigo_postal"],
                     $registro["email"],
                     $registro["num_telefone"],
                     $registro["codigo_agencia"]
+
                 ]
             );
 

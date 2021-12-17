@@ -20,7 +20,8 @@ echo "</pre>"; */
 
 $controllers = [
     "inicio",
-    "registar"
+    "registar",
+    "admin_page"
 ];
 
 $controller = !empty($_url_parts[1]) ? $_url_parts[1] : "inicio";
