@@ -20,6 +20,9 @@ echo "</pre>"; */
 
 $controllers = [
     "inicio",
+    "servicos",
+    "seguimentos",
+    "simulacoes",
     "registar",
     "acesso",
     "admin_page"

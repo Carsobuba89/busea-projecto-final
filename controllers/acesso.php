@@ -4,8 +4,8 @@ $modelContas = new Contas();
 
 if($action === "login"){
 
-    echo "<pre>";    print_r( $_POST); echo "</pre>";
-    echo "<pre>";    print_r( $_SESSION); echo "</pre>";
+    /* echo "<pre>";    print_r( $_POST); echo "</pre>";
+    echo "<pre>";    print_r( $_SESSION); echo "</pre>"; */
 
     if(isset($_POST["send"])){
 

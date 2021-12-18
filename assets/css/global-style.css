@@ -1,81 +1,4 @@
 
-/** Stylos Globais da pagina */
-
-/* html {
-  font-size: 62.5%;
-} */
-body{
-  font-size: 1rem;
-}
-
-.global-container{
-  width: 100%;
-  height: auto;
-}
-
-/*** CORPO DA PAGINA ****/
-.main-container{
-  width: 100%;
-  padding: 16px 48px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.header-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-content{
-  max-width: 80%;
-  text-align: center;
-  
-}
-
-.header-content h2{
-  font-size: 1.7rem;
-  font-weight: bold;
-  margin-top: 0;
-  padding-top: 0;
-  color: green;
-}
-
-.header-content p{
-  /* font-size: 1.1rem; */
-  font-weight: 500;
-}
-
-.body-container{
-  display: flex;
-  justify-content: space-between;
-}
-
-.body-content-left{
-  flex: 3;
-  padding: 15px 10px;
-  margin-bottom: 10px;
-}
-.bg-content-simular{
-  background-color: #F0EEEE;
-}
-
-.body-content-right{
-  flex: 1;
-  margin-bottom: 10px;
-}
-
-
-.my-sections {
-  padding: 16px 60px;
-}
-
-.responsive-img {
-  width: 100%;
-  height: auto;
-}
-
-
 /* Estilos de menu de navegaçao
      ========================================================================== */
 .nav-header{
@@ -98,9 +21,9 @@ body{
 }
 
 .navegation .top-navbar a{
+  color: rgb(4, 37, 4);
   font-size: 0.8rem;
   margin-left: 15px;
-  color: rgb(4, 37, 4);
   text-decoration: none;
 }
 
@@ -110,9 +33,15 @@ body{
 
 .navbar {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   line-height: 1;
+}
+
+.navbar .navbar-left {
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 .navbar .logo{  
@@ -154,20 +83,22 @@ body{
   text-decoration: underline;
 }
 
-.account{
+/* .account{
   display: none;
   width: 50px;
-}
+} */
 
 .account a {
+  text-decoration: none;
+  margin-left: 15px;
   color: rgb(4, 37, 4);
 }
 
-.account a .far {
+/* .account a .far {
   background: #fdd85c;
   border-radius: 50px;
   font-size: 1.8rem;
-}
+} */
 
 .hamburger {
   display: none;
@@ -527,6 +458,8 @@ body{
   transition: 0.15s ease-in-out;
 }
 
+
+
 /*** ####### INFO-ENCOMENDAS STYLES ######### ***/
 
 /* .encomenda-info {
@@ -563,7 +496,6 @@ body{
 .encomenda-bloco {
   display: flex;
   justify-content: center;
- /*  align-items: stretch; */
   margin-bottom: 20px;
 }
 
@@ -580,7 +512,6 @@ body{
   width: 56%;
   padding: 10px 20px;
   background-color: #f0eeee;
-  height: 239px;
 }
 
 .encomenda-texto p {
@@ -610,6 +541,10 @@ body{
   color: rgb(4, 37, 4);
   border-color: green;
 }
+
+
+
+
 
 /** Estilo de pagina de seguimento */
 .info-serv-encomenda-container{
@@ -678,7 +613,7 @@ body{
 
 .form-group-card input{
  width: 70%;
- font-size: 1.7rem;
+ font-size: 1.2rem;
  font-weight: 400;
  padding: 5px 10px;
  line-height: 2;
@@ -690,7 +625,7 @@ body{
 }
 
 .form-group-card button{
- font-size: 1.6rem;
+ font-size: 1.2rem;
  font-weight: 500;
  background: green;
  color: white;
@@ -740,9 +675,9 @@ body{
   padding: 15px 5px;
 } 
 
-.wrap-aside{
+/* .wrap-aside{
   padding-top: 15px;
-}  
+}   */
 
 
 
@@ -1199,6 +1134,140 @@ legend{
     padding-bottom: 5px;
     list-style: none;
 }
+
+/** Stylos Globais da pagina */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* html {
+  font-size: 62.5%;
+} */
+body{
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: rgb(4, 37, 4);
+}
+
+.my-sections {
+  padding: 16px 60px;
+}
+
+.responsive-img {
+  width: 100%;
+  height: 100%;
+}
+
+.global-container{
+  width: 100%;
+  height: auto;
+}
+
+/*** ########### CORPO DA PAGINA #################### ****/
+.main-container{
+  width: 100%;
+  padding: 16px 48px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content{
+  max-width: 80%;
+  text-align: center;
+  
+}
+
+.header-content h2{
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 0;
+  color: green;
+}
+
+.header-content p{
+  /* font-size: 1.1rem; */
+  font-weight: 500;
+}
+
+.body-container{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.body-content-left{
+  flex: 1;
+  padding: 15px 10px;
+}
+
+.body-content-right{
+  flex: 3;
+  padding: 15px 10px;
+}
+
+.form-simular{
+  padding: 10px;
+  background-color: #F0EEEE;
+}
+
+/*** IMAGEM NO TOPO DA PAGINA ****/
+.container-top-image{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.service-img{
+  background-image: url(../images/img-page/pexels-rodnae-productions-6646871.jpg);
+}
+.seguimento-img{
+  background-image: url(../images/img-page/pexels-canva-studio-3153198.jpg);
+}
+
+.agencia-img{
+  background-image: url(../images/img-page/agencia.jpg);
+}
+
+ .simular-img{
+  background-image: url(../images/img-page/seguimento2.jpg);
+}
+
+.content-top-image{
+height: 60vh;
+background-size: cover;
+background-position: center center;
+padding: 16px 46px;
+display: flex;
+justify-content: right;
+align-items: center;
+}
+
+
+.bloc-text-top-image{
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 35%;
+  padding: 15px 10px;
+}
+
+.bloc-text-top-image h1{
+  text-transform: capitalize;
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.bloc-text-top-image P{
+  /* font-size: 1.4rem; */
+  font-weight: 600;
+}
+
 
 
 

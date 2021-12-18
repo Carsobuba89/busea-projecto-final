@@ -19,7 +19,7 @@
                 <li class="nav-item"><a href="'. ROOT .'/acesso/logout" class="nav-link">Terminar sessao</a></li>';
             }else{
                 echo '<li class="nav-item"><a href="'. ROOT .'/registar/conta" class="nav-link">Criar Conta</a></li>
-                     <li class="nav-item"><a href="'. ROOT .'/acesso/login" class="nav-link active-link">Iniciar Sessao</a></li>
+                     <li class="nav-item"><a href="'. ROOT .'/acesso/login" class="nav-link">Iniciar Sessao</a></li>
                 ';
             }
         ?>
