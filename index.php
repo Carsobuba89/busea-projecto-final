@@ -23,6 +23,7 @@ $controllers = [
     "servicos",
     "seguimentos",
     "simulacoes",
+    "agencias",
     "registar",
     "acesso",
     "admin_page"

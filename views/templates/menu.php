@@ -4,6 +4,7 @@
         <a href="">Apoio ao Cliente Busea</a>
         <a href="">+351 932 303 968</a>
         <a href="">buseaparaclientes@gmail.com</a>
+        <a href="">Livro de reclamaçoes</a>
     </div><!-- .top-navbar -->
     <div class="navbar">
         <div class="navbar-left">
@@ -19,7 +20,7 @@
                 <li class="nav-item"><a href="/servicos" class="nav-link">Serviços</a></li>
                 <li class="nav-item"><a href="/seguimentos" class="nav-link">Seguimento</a></li>
                 <li class="nav-item"><a href="/simulacoes" class="nav-link">Simulador</a></li>
-                <li class="nav-item"><a href="encontrar-loja.html" class="nav-link">Agencias</a></li>
+                <li class="nav-item"><a href="/agencias" class="nav-link">Agencias</a></li>
             </ul>
         </div><!-- .navbar-left -->
 

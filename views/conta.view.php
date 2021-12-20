@@ -17,6 +17,7 @@
     
 
 <main>
+  <header class="nav-header">
     <?php
         if(isset($message)){
             echo '<p role="alert">'.$message.'</p>';
@@ -24,31 +25,32 @@
 
         require("views/templates/menu.acesso.php");
     ?>
-        <div class="main-container-sign">
-            <div class="header-container-sign">
-                <div class="header-content-sign">
+  </header>  
+    <div class="main-container-sign">
+        <div class="header-container-sign">
+            <div class="header-content-sign">
+                <article>
+                    <h1>Faça o seu registo agora </h1>
+                    <p>De acordo com a legislação, leia o seguinte texto na íntegra antes de continuar voluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
+                </article>
+            </div><!--.header-content-->
+                <div class="terms-of-contrat">
                     <article>
-                        <h1>Faça o seu registo agora </h1>
-                        <p>De acordo com a legislação, leia o seguinte texto na íntegra antes de continuar voluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
+                        <h2>Informaçao de Dados pessoais </h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, pariatur. Mollitia laboriosam explicabo sapiente quis voluptatibus quia eos, voluptatum nobis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur natus voluptas, consequatur vero veritatis deserunt?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eveniet corrupti blanditiis molestiae architecto sed? Illum, accusamus cupiditate sed quos pariatur quia hic? Ad saepe sunt quos, ratione quidem magni, iste sapiente in, pariatur veniam quae omnis asperiores esse deleniti.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa totam pariatur ullam doloremque vel, porro quae facilis quisquam eum, vitae nostrum aut fugiat quas.</p>
+                        <p>Para qualquer problema ligado à gestão dos seus dados pessoais, o Utilizador terá o direito de apresentar queixa junto de qualquer autoridade de supervisão competente. Pode optar por impedir que este site agregue e analise as ações que fizer aqui. Ao fazer isto irá proteger a sua privacidade, mas irá também impedir o proprietário do site de aprender com as suas ações e de criar uma melhor experiência para si e para outros utilizadores. </p>
+                        <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quasi quia, deleniti a odio illum!</strong></p>
+                        <div>
+                            <input type="checkbox" name="consentimento" id="consentimento" checked>
+                            <label for="consentimento"> Não deixou de participar. Desmarque esta caixa para cancelar participação.</label>
+                            <label for="consentimento" style="display: none;">Atualmente está excluído. Marque esta caixa para participar.</label>
+                        </div>
                     </article>
-                </div><!--.header-content-->
-                    <div class="terms-of-contrat">
-                        <article>
-                            <h2>Informaçao de Dados pessoais </h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, pariatur. Mollitia laboriosam explicabo sapiente quis voluptatibus quia eos, voluptatum nobis.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur natus voluptas, consequatur vero veritatis deserunt?</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eveniet corrupti blanditiis molestiae architecto sed? Illum, accusamus cupiditate sed quos pariatur quia hic? Ad saepe sunt quos, ratione quidem magni, iste sapiente in, pariatur veniam quae omnis asperiores esse deleniti.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa totam pariatur ullam doloremque vel, porro quae facilis quisquam eum, vitae nostrum aut fugiat quas.</p>
-                            <p>Para qualquer problema ligado à gestão dos seus dados pessoais, o Utilizador terá o direito de apresentar queixa junto de qualquer autoridade de supervisão competente. Pode optar por impedir que este site agregue e analise as ações que fizer aqui. Ao fazer isto irá proteger a sua privacidade, mas irá também impedir o proprietário do site de aprender com as suas ações e de criar uma melhor experiência para si e para outros utilizadores. </p>
-                            <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quasi quia, deleniti a odio illum!</strong></p>
-                            <div>
-                                <input type="checkbox" name="consentimento" id="consentimento" checked>
-                                <label for="consentimento"> Não deixou de participar. Desmarque esta caixa para cancelar participação.</label>
-                                <label for="consentimento" style="display: none;">Atualmente está excluído. Marque esta caixa para participar.</label>
-                            </div>
-                        </article>
-                    </div><!--.terms-of-contrat-->    
-                </div><!--.header-container-->
+                </div><!--.terms-of-contrat-->    
+            </div><!--.header-container-->
         
             <div class="body-container-sign" >
                 <div class="body content">

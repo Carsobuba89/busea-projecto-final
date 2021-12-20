@@ -17,7 +17,7 @@
 
 	<header class="nav-header">
         <?php
-            require("./views/templates/menu.php");
+            require("views/templates/menu.php");
         ?>
     </header>
   
@@ -45,16 +45,96 @@
             <div class="body-container">
                 <div class="body-content-left">
 
-                    <div class="wrap-aside">
-                        <img src="../assets/images/img-page/pexels-tima-miroshnichenko-6168999.jpg" alt="" class="responsive-img">
-                    </div>
-                   
+                    <?php
+                        require("views/templates/sidebar_servicos.php");
+
+                    ?>
+
                 </div><!--.body-content-left-->
 
                 <div class="body-content-right">
-                   <h1> main contente here </h1>
-                    
+
+                    <div class="content-services">
+
+                        <h3>Utilize os nossos serviços do envio especializado.</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos veritatis corporis alias fugit esse dicta blanditiis soluta! Veniam nemo, distinctio itaque blanditiis et iusto! Aperiam ex, excepturi eveniet laborum, amet rem impedit beatae ipsum cupiditate doloremque consequuntur praesentium porro recusandae iste iure, distinctio expedita eos.
+                            <img src="https://via.placeholder.com/300x200" alt="">
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus tempora facilis repellendus iure doloremque inventore libero eveniet hic magnam obcaecati nostrum illum quos ipsam, nesciunt ducimus. Ducimus aut sunt expedita repellat? Maxime molestiae odit obcaecati!
+                        </p>
+
+                    </div><!-- .content-services -->
+
+                    <div class="content-services">
+
+                        <h3>Tipos de envios</h3>
+
+                        <div class="slides-service-container">
+
+                            <div class="slide-service-content">
+                                <div class="slide-service-img">
+                                     <img src="https://via.placeholder.com/200x120.png" alt="">
+                                </div><!-- .slide-service-img -->
+                               
+                                <div class="slide-service-description">
+                                     <h4>Titulo de slides</h4>
+                                     <p>
+                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, hic! Lorem ipsum dolor sit amet.
+                                     </p>
+                                </div><!-- .slide-service -->
+                            </div><!-- .slide-service-content -->
+
+                            <div class="slide-service-content">
+                                <div class="slide-service-img">
+                                     <img src="https://via.placeholder.com/200x120.png" alt="">
+                                </div><!-- .slide-service-img -->
+                               
+                                <div class="slide-service-description">
+                                     <h4>Titulo de slides</h4>
+                                     <p>
+                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, hic! Lorem ipsum dolor sit amet.
+                                     </p>
+                                </div><!-- .slide-service -->
+                            </div><!-- .slide-service-content -->
+
+                            <div class="slide-service-content">
+                                <div class="slide-service-img">
+                                     <img src="https://via.placeholder.com/200x120.png" alt="">
+                                </div><!-- .slide-service-img -->
+                               
+                                <div class="slide-service-description">
+                                     <h4>Titulo de slides</h4>
+                                     <p>
+                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, hic! Lorem ipsum dolor sit amet.
+                                     </p>
+                                </div><!-- .slide-service -->
+                            </div><!-- .slide-service-content -->
+
+                        </div><!-- .slides-service-container -->
+
+                        <div class="content-services">
+                            <article>
+                                <h3>O que fazer antes de contactar uma agencia</h3>
+                                <p>
+                                    <img src="https://via.placeholder.com/300x200" alt="">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos veritatis corporis alias fugit esse dicta blanditiis soluta! Veniam nemo, distinctio itaque blanditiis et iusto! Aperiam ex, excepturi eveniet laborum, amet rem impedit beatae ipsum cupiditate doloremque consequuntur praesentium porro recusandae iste iure, distinctio expedita eos.
+                                </p>
+                            </article>
+
+                            <article>
+                                <h3>Saiba como fazer envios frequentes</h3>
+                                <p>
+                                    <img src="https://via.placeholder.com/300x200" alt="">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos veritatis corporis alias fugit esse dicta blanditiis soluta! Veniam nemo, distinctio itaque blanditiis et iusto! Aperiam ex, excepturi eveniet laborum, amet rem impedit beatae ipsum cupiditate doloremque consequuntur praesentium porro recusandae iste iure, distinctio expedita eos.
+                                </p>
+                            </article>   
+                        </div><!-- .content-services -->
+                    </div><!-- .content-services -->                
                 </div><!--.body-content-right-->
+
+                
             </div><!--.body-container-->
         </div><!--.main-container-->
     </main>
@@ -66,6 +146,6 @@
     </footer>
 
     
-    <script src="js/globalScript.js"></script>
+   <!--  <script src="js/globalScript.js"></script> -->
 </body>
 </html>

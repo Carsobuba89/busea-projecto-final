@@ -26,9 +26,9 @@
             
         </ul>
 
-        <div class="account">
+        <!-- <div class="account">
             <a href="sign-up-login.html"><i class="far fa-user-circle"></i></a> 
-        </div>
+        </div> -->
 
         <div class="hamburger">
             <span class="bar"></span>
