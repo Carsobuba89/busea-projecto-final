@@ -23,8 +23,8 @@
             <div class="header-container-sign">
                 <div class="header-content-sign">
                     <article>
-                        <h1>Parabens, a sua agencia foi criada com sucesso, estas na ultima fassi deste processo, mais uma etapa</h1>
-                        <p>Estas na triceira e ultima etapa da criacao dasua agencia oluptatum agni quidem similique architecto, id velit aperiam.</p>
+                        <h1>Parabens, <?= $_SESSION["nome_agencia"] ?> foi criada com sucesso, estas na ultima fassi deste processo</h1>
+                        <p>Estas na triceira e ultima etapa da criacao da sua agencia oluptatum agni quidem similique architecto, id velit aperiam.</p>
                     </article>
                 </div><!--.header-content-->
                     
@@ -100,7 +100,7 @@
                                     <div class="col-label">
                                         <label for="genero">Genero</label>
                                     </div><!--.col-label-->
-                                    <div class="col-input">
+                                    <div class="col-input genero-style">
 
                                         <input type="checkbox" name="masculino" id="masculino" >
                                         <label for="masculino"> M </label>
@@ -112,29 +112,22 @@
                                     <span></span>
                                 </div><!--.form-group-->
 
-                                <div class="form-group padding-form">
-                                    <div class="col-label">
-                                        <label for="copiar">Copiar Endereço ?</label>
-                                    </div><!--.col-label-->
-                                    <div class="col-input">
-                                        <input type="checkbox" name="sim" id="sim" >
-                                        <label for="sim"> Clique no quadrado para manter os dados de endereço da agencia. </label>
-                                    </div><!--.col-input-->
-                                    <span></span>
-                                </div><!--.form-group-->
-
                                 <div class="form-group">
                                     <div class="col-label">
                                         <label for="pais">Pais</label>
                                     </div><!--.col-label-->
                                     <div class="col-select">
                                         <select name="pais" id="paisSelecionado">
-                                            <option value="escolha"> Escolha o pais</option>
+                                            <!-- <option value="escolha"> Escolha o pais</option> -->
                                             <?php
                                             
                                                 foreach($paises as $pais){
+                                                    $selected = "";
+                                                    if($pais["codigo"] === $_SESSION["pais"]){
+                                                        $selected = "selected";
+                                                    }
                                                     echo '
-                                                        <option value="'. $pais["codigo"] .'">'. $pais["nome"] .'</option>
+                                                        <option value="'. $pais["codigo"] .'" '.$selected.'>'. $pais["nome"] .'</option>
                                                     ';
                                                 }
                                             ?>
@@ -148,7 +141,7 @@
                                         <label for="cidade">Cidade</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="cidade" name="cidade" placeholder="Barreiro" required minlength="4" maxlength="60">
+                                        <input type="text" id="cidade" name="cidade" value="<?= $_SESSION["cidade"]; ?>" minlength="4" maxlength="60">
                                     </div><!--.col-input-->
                                     
                                 </div><!--.form-group-->
@@ -157,7 +150,7 @@
                                         <label for="adresso">Adresso</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="adresso" name="adresso" placeholder="Av. Alfredo Dinis N 67 - 2 direita" required minlength="8" maxlength="120">
+                                        <input type="text" id="adresso" name="adresso" value="<?= $_SESSION["adresso"]; ?>" minlength="8" maxlength="120">
                                     </div><!--.col-input-->
                                     <span>Entrar adresso completo (codigo postal si for o caso).</span>
                                 </div><!--.form-group-->
@@ -167,7 +160,7 @@
                                         <label for="codigo_postal">Codigo postal</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="codigo_postal" name="codigo_postal" placeholder="2835-202" required minlength="4" maxlength="20">
+                                        <input type="text" id="codigo_postal" name="codigo_postal" value="<?= $_SESSION["codigo_postal"]; ?>" minlength="4" maxlength="20">
                                     </div><!--.col-input-->
                                     <span>Entrar adresso completo (codigo postal si for o caso).</span>
                                 </div><!--.form-group-->
@@ -177,7 +170,7 @@
                                         <label for="email">Email</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="email" id="email" name="email" placeholder="carsobuba@yahoo.com" minlength="8" maxlength="252" required>
+                                        <input type="email" id="email" name="email" value="<?= $_SESSION["email_agencia"]; ?>" minlength="8" maxlength="252">
                                     </div><!--.col-input-->
                                     <span></span>
                                 </div--><!--.form-group-->
@@ -187,7 +180,7 @@
                                         <label for="num_telefone">Telefone</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="text" id="num_telefone" name="num_telefone" placeholder="+351 932 303 976" minlength="7" maxlength="20" required>
+                                        <input type="text" id="num_telefone" name="num_telefone" value="<?= $_SESSION["num_telefone"]; ?>"  minlength="7" maxlength="20" >
                                     </div><!--.col-input-->
                                     <span></span>
                                 </div><!--.form-group-->

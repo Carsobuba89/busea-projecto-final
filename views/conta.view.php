@@ -19,13 +19,15 @@
 <main>
   <header class="nav-header">
     <?php
-        if(isset($message)){
-            echo '<p role="alert">'.$message.'</p>';
-        }
-
         require("views/templates/menu.acesso.php");
     ?>
   </header>  
+
+  <?php
+        if(isset($message)){
+            echo '<p role="alert">'.$message.'</p>';
+        }
+?>
     <div class="main-container-sign">
         <div class="header-container-sign">
             <div class="header-content-sign">
@@ -55,7 +57,7 @@
             <div class="body-container-sign" >
                 <div class="body content">
                     <div class="info-sign-up-wrap">
-                        <h3>O registo por completo é efectuado em 2 etapas, prencha os dados correctamente e segue </h3>
+                        <h3>O registo por completo é efectuado em 3 etapas, prencha os dados correctamente e segue </h3>
                     </div>
 
                     <div class="container-registo-form">

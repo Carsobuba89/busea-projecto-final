@@ -25,8 +25,8 @@
             <div class="header-container-sign">
                 <div class="header-content-sign">
                     <article>
-                        <h1>Parabens, a sua conta foi criada com sucesso, estas quase para terminar, mais duas etapas</h1>
-                        <p>Estas na segunda etapa da criacao dasua agencia oluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
+                        <h1>Parabens <?= $_SESSION["nome_utilisador"]; ?>, a sua conta foi criada com sucesso. mais 2 etapas</h1>
+                        <p>Estas na etapa da criacao da sua agencia oluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
                     </article>
                 </div><!--.header-content-->
                     
@@ -47,8 +47,6 @@
             
                             <h4>Cria a sua agencia</h4>
                             <p>Todos campos sao obrigatorios.</p>
-
-                            
 
                             <fieldset>
                                 <legend>Informaçao da agencia</legend>
@@ -148,15 +146,16 @@
                                     <span>Entrar adresso completo (codigo postal si for o caso).</span>
                                 </div><!--.form-group-->
 
-                                <!--div class="form-group">
+                                <div class="form-group">
                                     <div class="col-label">
                                         <label for="email">Email</label>
-                                    </--><!--.col-label-->
-                                    <!--div class="col-input">
-                                        <input type="email" id="email" name="email" placeholder="carsobuba@yahoo.com" minlength="8" maxlength="252" required>
+                                    </div><!--.col-label-->
+                                    <div class="col-input">
+                                        <input type="email" id="email" name="email" value="<?= $_SESSION["email_utilisador"]; ?>" minlength="8" maxlength="252">
                                     </div--><!--.col-input-->
-                                    <!--span></span>
-                                </div--><!--.form-group-->
+                                    <span></span>
+                                </div><!--.form-group-->
+                                
                                 <div class="form-group">
                                     <div class="col-label">
                                         <label for="num_telefone">Telefone</label>

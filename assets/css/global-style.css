@@ -980,6 +980,7 @@
 }
 
 .registo-form form{
+  width: 90%;
   padding: 15px;
 }
 
@@ -1070,6 +1071,10 @@ legend{
     float: left;
     width: 70%;
     margin-top: 2px;
+}
+
+.genero-style{
+  margin-bottom: 10px;
 }
 
 .registo-form span{

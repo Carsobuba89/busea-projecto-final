@@ -10,19 +10,20 @@
     <title>Bem Vindo na nossa plataforma de gestao de encomendas</title>
 </head>
 <body>
-    
+<header class="nav-header">  
 <?php
-echo "<pre>";    print_r( $_SESSION); echo "</pre>";
-
+    require("views/templates/menu.acesso.php");
+?>
+</header>
+<?php
     if(isset($message)){
         echo '<p role="alert">'.$message.'</p>';
     }
-
-    require("views/templates/menu.acesso.php");
 ?>
 
-
     <h1>Monotorizaçao de encomendas</h1>
-    
+    <?php
+        echo "<pre>";    print_r( $_SESSION); echo "</pre>";
+    ?>
 </body>
 </html>
