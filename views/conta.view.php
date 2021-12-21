@@ -57,7 +57,7 @@
             <div class="body-container-sign" >
                 <div class="body content">
                     <div class="info-sign-up-wrap">
-                        <h3>O registo por completo é efectuado em 3 etapas, prencha os dados correctamente e segue </h3>
+                        <h3>O registo por completo é efectuado em 4 etapas, prencha os dados correctamente e segue </h3>
                     </div>
 
                     <div class="container-registo-form">

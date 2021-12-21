@@ -25,7 +25,7 @@
             <div class="header-container-sign">
                 <div class="header-content-sign">
                     <article>
-                        <h1>Parabens <?= $_SESSION["nome_utilisador"]; ?>, a sua conta foi criada com sucesso. mais 2 etapas</h1>
+                        <h1>Parabens <?= $_SESSION["nome_utilisador"]; ?>, a sua conta foi criada com sucesso. mais 3 etapas</h1>
                         <p>Estas na etapa da criacao da sua agencia oluptatum quia ipsum! Magni quidem similique architecto, id velit aperiam.</p>
                     </article>
                 </div><!--.header-content-->

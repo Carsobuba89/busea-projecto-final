@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../assets/css/normalize.css">
     <link rel="stylesheet" href="../assets/css/global-style.css">
     
-    <title>Bem Vindo na nossa plataforma de gestao de encomendas</title>
+    <title>Gestao de encomendas</title>
 </head>
 <body>
 <header class="nav-header">  
 <?php
-    require("views/templates/menu.acesso.php");
+    require("views/templates/menu.admin.php");
 ?>
 </header>
 <?php
@@ -21,7 +21,8 @@
     }
 ?>
 
-    <h1>Monotorizaçao de encomendas</h1>
+    <h2>A sua conta, agencia e agentes foram criados com sucessoo</h2>
+    <p>Aqui pode actualizar os seus dados assim que necessario, antes de mais indica o agente responsavel e activa os agentes para começar a gerir encomendas</p>
     <?php
         echo "<pre>";    print_r( $_SESSION); echo "</pre>";
     ?>
