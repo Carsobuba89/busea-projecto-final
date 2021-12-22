@@ -1274,6 +1274,32 @@ align-items: center;
 }
 
 
+/* Estilos de pagina administracao das agencias Back End
+     ========================================================================== */
+.body-container-admin{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.div-form{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+
+.dados-agencia{
+  grid-row: 2/4;
+}
+
+.div-form .form-group{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+
+
 
 
 /******   ###################  MEDIUM SCREEN ###################### MEDIUM SCREEN   ##########*******/

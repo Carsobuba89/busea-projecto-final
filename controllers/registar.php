@@ -352,7 +352,7 @@ if($action === "conta"){
                 $_SESSION["email_agente2"] = $_POST["email"];
                 $_SESSION["num_telefone_agente2"] = $_POST["num_telefone"];
 
-                header("Location:".ROOT."/admin_page/admin_agencia");
+                header("Location:".ROOT."/admin_page");
 
             }
 

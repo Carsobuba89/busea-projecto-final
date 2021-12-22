@@ -11,7 +11,7 @@
 
             <ul class="nav-menu">
                 <li class="nav-item"><a href="/encomendas" class="nav-link active-link">Encomendas</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">Agencias</a></li> 
+                <li class="nav-item"><a href="/admin_page/admin_dados_agencia" class="nav-link">Gerir Agencia</a></li> 
                 <li class="nav-item"><a href="/" class="nav-link">Gestao de Conteudos</a></li>
             </ul>
         </div><!-- .navbar-left -->
