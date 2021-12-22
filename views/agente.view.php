@@ -114,7 +114,7 @@
                                         <label for="pais">Pais de Residencia</label>
                                     </div><!--.col-label-->
                                     <div class="col-select">
-                                        <select name="pais" id="paisSelecionado">
+                                        <select name="pais" id="pais">
                                             <!-- <option value="escolha"> Escolha o pais</option> -->
                                             <?php                                 
                                                 foreach($paises as $pais){
