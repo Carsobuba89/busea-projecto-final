@@ -3,6 +3,67 @@ require_once("base.php");
 
 class Agentes extends Base{
 
+    public function getAll(){
+
+        $query = $this->db->prepare("
+        SELECT 
+            codigo_agente, 
+            nome, avatar, 
+            data_nascimento, 
+            lugar_nascimento,
+            num_doc_identificacao,
+            genero, numero_telefone, 
+            email,
+            pais, 
+            adresso, 
+            cidade, 
+            codigo_postal,
+            codigo_agencia,
+            activo, 
+            data_criacao, 
+            data_actualisacao 
+        FROM 
+            agentes 
+        ");
+
+        $query->execute();
+
+        return $query->fetchAll( PDO::FETCH_ASSOC );
+    }
+
+    public function obterAgentes($codigo_agencia){
+
+        $query = $this->db->prepare("
+            SELECT codigo_agente, nome 
+            FROM agentes 
+            WHERE codigo_agencia = ?
+        ");
+
+        $query->execute([$codigo_agencia]);
+
+        return $query->fetchAll( PDO::FETCH_ASSOC );
+    }
+
+    public function atualisarActivacao($dados){
+
+        $query = $this->db->prepare("
+            UPDATE agentes
+            SET activo = ?
+            WHERE codigo_agente = ?
+
+        ");
+
+        $query->execute(
+            [
+                $dados["valorAInserir"],
+                $dados["codigo_agente"]
+            ]
+        );
+
+        /* return $query->fetchAll( PDO::FETCH_ASSOC ); */
+
+    }
+
     public function create($registro){
 
         if(

@@ -101,8 +101,6 @@ if($action === "conta"){
                 "codigo_conta" => $_SESSION["codigo_conta"]
             );
 
-            var_dump($dados_agencia);
-
             require("models/agencias.php");
             $modelAgencias = new Agencias();
 

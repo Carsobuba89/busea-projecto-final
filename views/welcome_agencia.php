@@ -31,38 +31,68 @@
             <div class="header-content">
                 <h2>A sua conta, agencia e agentes foram criados com sucesso, antes de mais confirme os dados</h2>
                 <p>
-                    Aqui pode actualizar os seus dados si necessario, antes de mais indica o <strong> agente responsavel</strong> e <strong>activa os agentes</strong> para começar a monotorizar encomendas de melhor forma.
+                    Antes de mais indica o <strong> agente responsavel</strong> e <strong>activa os agentes</strong> para começar a monotorizar Encomendas.
                 </p> 
-                <p>Nao precisa de fazer nada si tudo esta correcto, caso acontrario corrija a informaçao e guarda a alteraçao</p>
+                <p>No caso de algo que queira corrigir clique no butao alterar dados ou no menu gerir agencia</p>
             </div><!--.header-content-->
        </div><!--.header-container-->
 
         <div class="body-container-admin">
 
             <div class="div-form dados-activacao">
-                activacao
-            </div><!--.div-form dados-activacao -->
-
-            <div class="div-form dados-responsavel">
-                
-                <h3>Indica o responsavel da sua agencia</h3>   
-                    
-                <form method="post" action="">
+                <h3>Activar ou Desactivar agente</h3>
+                <form method="post" action="<?= ROOT ?>/admin_page/activacao">
             
                     <div class="form-group">
                         <div class="col-label">
-                            <label for="responsavel">Agente Responsavel </label>
+                            <label for="codigo_agente">Activaçao do Agente </label>
                         </div><!--.col-label-->
                         <div class="col-select">
-                            <select name="responsavel" id="responsavel">
-                                <option value="escolher"> Escolher agente</option>
-                                <option value="">Agente 1</option>
-                                <option value="">agente 2</option>
+                            <select name="codigo_agente" id="codigo_agente">
+                                <option value="escolher"> Escolher agente </option>
+                                <?php
+                                    foreach($agentesAgencia as $agente){
+                                        echo '
+                                         <option value="'.$agente["codigo_agente"].'">'.$agente["nome"].'</option>
+                                        ';
+                                    }           
+                                ?>
                             </select>
                         </div><!--.col-select-->
                     </div><!--.form-group-->
 
-                    <button type="submit" class="btn-registo" name="send">Registar-se</button>
+                    <button type="submit" class="btn-registo" name="activar">Activar</button>
+                    <button type="submit" class="btn-registo" name="desactivar">Desactivar</button>
+
+                </form>
+
+            </div><!--.div-form dados-activacao -->
+
+            <div class="div-form dados-responsavel">
+       
+                <h3>Indica o responsavel da sua agencia</h3>   
+                    
+                <form method="post" action="<?= ROOT ?>/admin_page/responsabilizacao">
+            
+                    <div class="form-group">
+                        <div class="col-label">
+                            <label for="codigo_agente">Indicar Agente</label>
+                        </div><!--.col-label-->
+                        <div class="col-select">
+                            <select name="codigo_agente" id="codigo_agente">
+                            <option value="escolher"> Escolher agente Responsavel </option>
+                                <?php
+                                    foreach($agentesAgencia as $agente){
+                                        echo '
+                                         <option value="'.$agente["codigo_agente"].'">'.$agente["nome"].'</option>
+                                        ';
+                                    }
+                                ?>
+                            </select>
+                        </div><!--.col-select-->
+                    </div><!--.form-group-->
+
+                    <button type="submit" class="btn-registo" name="responsabilizar">Guardar</button>
 
                 </form>
 
@@ -133,50 +163,20 @@
             <div class="div-form dados-conta">
                 <h3>Dados da Conta de acesso da agencia</h3>
 
-                <form action="">
+                <blockquote>
 
-                    <div class="form-group">
-                        <div class="col-label">
-                            <label for="username">Nome de Utilisador </label>
-                        </div><!--.col-label-->
-                        <div class="col-input">
-                            <input value="<?= $_SESSION["nome_utilisador"] ?>" type="text" id="username" name="username" minlength="6" maxlength="30" required >
-                        </div><!--.col-input-->
-                    </div><!--.form-group-->
+                    <dl>
+                        <dt>Nome de Utilisador</dt>
+                        <dd><?= $_SESSION["nome_utilisador"] ?></dd>
+                        <dt>Email</dt>
+                        <dd><?= $_SESSION["email_utilisador"] ?></dd>
+                        <dt>Pergunta Secreta</dt>
+                        <dd><?= $_SESSION["perguntaSecreta"] ?></dd>
+                        <dt>Resposta Secreta</dt>
+                        <dd><?= $_SESSION["respostaSecreta"] ?></dd>
+                    </dl>
 
-                    <div class="form-group">
-                        <div class="col-label">
-                            <label for="email">Email</label>
-                        </div><!--.col-label-->
-                        <div class="col-input">
-                            <input value="<?= $_SESSION["email_utilisador"] ?>" type="email" id="email" name="email" minlength="8" maxlength="252" required>
-                        </div><!--.col-input-->
-                    </div><!--.form-group-->
-
-                    <div class="form-group">
-                        <div class="col-label">
-                            <label for="perguntaSecreta">Pergunta Secreta</label>
-                        </div><!--.col-label-->
-                        <div class="col-input">
-                            <input value="<?= $_SESSION["perguntaSecreta"] ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required disabled>
-                        </div><!--.col-input-->
-                    </div><!--.form-group-->
-
-                    <div class="form-group">
-                        <div class="col-label">
-                            <label for="respostaSecreta">Resposta Secreta</label>
-                        </div><!--.col-label-->
-                        <div class="col-input">
-                            <input value="<?= $_SESSION["respostaSecreta"] ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required>
-                        </div><!--.col-input-->
-                    </div><!--.form-group-->
-
-                    <div class="form-group">
-                        <button type="submit" class="btn-registo" name="send">Guardar alteraçao</button>
-                    </div>
-
-                </form>
-
+                </blockquote>
                 
             </div><!--.div-form dados-conta -->
 

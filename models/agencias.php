@@ -39,6 +39,22 @@ class Agencias extends Base{
 
     }
 
+
+    public function atualisarResponsabilidade($dados){
+
+        $query = $this->db->prepare("
+            UPDATE agencias
+            SET responsavel = ?
+            WHERE codigo_conta = ?
+        ");
+
+        $query->execute([
+            $dados["codigo_agente"],
+            $dados["codigo_conta"]
+        ]);
+
+    }
+
 }
 
 ?>
