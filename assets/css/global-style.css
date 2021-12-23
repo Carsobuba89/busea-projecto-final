@@ -1284,22 +1284,61 @@ align-items: center;
 
 .div-form{
   border: 1px solid black;
-  border-collapse: collapse;
   padding: 5px 10px;
+}
+
+
+.div-form1{
+  padding: 10px;
+}
+
+.dados-activacao{
+  background: rgb(203, 240, 130);
+}
+
+.dados-responsavel{
+  background: rgb(231, 231, 128);
 }
 
 .dados-agencia{
   grid-row: 2/4;
 }
 
-.div-form .form-group{
+.div-form1 .form-group{
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.div-form .wrap-img{
+.div-form1 select{
+  width: 60%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.div-form .wrap-img,
+.div-form1 .wrap-img{
   width: 398px;
   height: 300px;
+}
+
+
+.div-form1 dd{
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-bottom: 1rem;
+}
+
+.nav-welcome{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.nav-welcome a{
+  padding: 10px 15px;
+  background: rgb(236, 235, 235);
+  margin-left: 15px;
+  border-radius: 20px;
+  
 }
 
 
