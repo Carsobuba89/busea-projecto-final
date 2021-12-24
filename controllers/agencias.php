@@ -1,8 +1,8 @@
 <?php
 
-if($controller === "agencias"){
+/* if($controller === "agencias"){ */
 
     require("views/agencias.view.php");
-}
+/* } */
 
 ?>

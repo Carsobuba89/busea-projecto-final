@@ -29,11 +29,11 @@
     <div class="main-container">
        <div class="header-container">
             <div class="header-content">
-                <h2>A sua conta, agencia e agentes foram criados com sucesso, antes de mais confirme os dados</h2>
+                <h2>Painel de administraçao da agencia</h2>
                 <p>
-                    Aqui pode actualizar os seus dados si necessario, antes de mais indica o <strong> agente responsavel</strong> e <strong>activa os agentes</strong> para começar a monotorizar encomendas de melhor forma.
+                    Aqui pode alterar os dados da agencia, enderço, conta da agencia e os dados dos agentes activos si necessario, tambem pode alterar o <strong> agente responsavel</strong> e <strong>activar ou desactivar os agentes</strong> da sua agencia.
                 </p> 
-                <p>Nao precisa de fazer nada si tudo esta correcto, caso acontrario corrija a informaçao e guarda a alteraçao</p>
+                <p>Depois de qualquer alteraçao deve salvar os dados em clicar no butao de Guardar Alteraçao </p>
             </div><!--.header-content-->
        </div><!--.header-container-->
 
@@ -42,7 +42,7 @@
             <div class="div-form dados-activacao">
 
                 <h3>Activar ou Desactivar agente</h3>
-                <form method="post" action="<?= ROOT ?>/admin_page/activacao">
+                <form method="post" action="<?= ROOT ?>/admin_agencias/activacaoAdmin">
             
                     <div class="form-group">
                         <div class="col-label">
@@ -71,13 +71,13 @@
 
             <div class="div-form dados-responsavel">
                 
-                <h3>Indica o responsavel da sua agencia</h3>   
+                <h3>Alterar o responsavel da sua agencia</h3>   
                     
-                <form method="post" action="<?= ROOT ?>/admin_page/responsabilizacao">
+                <form method="post" action="<?= ROOT ?>/admin_agencias/responsabilizacaoAdmin">
             
                     <div class="form-group">
                         <div class="col-label">
-                            <label for="codigo_agente">Indicar Agente</label>
+                            <label for="codigo_agente">Indicar Agente Responsavel</label>
                         </div><!--.col-label-->
                         <div class="col-select">
                             <select name="codigo_agente" id="codigo_agente">
@@ -162,7 +162,7 @@
             </div><!--.div-form dados-agencia -->
 
             <div class="div-form dados-conta">
-                <h3>Dados da Conta de acesso da agencia</h3>
+                <h3>Dados atuais da Conta de acesso da agencia</h3>
 
                 <form method="post" action="<?= ROOT ?>/acesso/alteracaoConta">
 

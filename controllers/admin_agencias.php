@@ -6,13 +6,10 @@
 
     //$agentes = $modelAgentes->getAll();
 
-    /** ACTIVAR OU DISACTIVAR AGENTES */
-    if($action === "activacao" && isset($_SESSION["codigo_conta"])){
-
-        /* $codigo_agentes = [];
-        foreach($agentes as $agente){
-            $codigo_agentes = $agente["codigo_agente"]; */
-        
+    /** ACTIVAR OU DISACTIVAR AGENTES Na pagina WELCOME e na gestao de agencias */
+    if( 
+        ($action === "activacao" || $action === "activacaoAdmin") && 
+        isset($_SESSION["codigo_conta"])){
 
         if(isset($_POST["activar"]) && is_numeric($_POST["codigo_agente"])){
 
@@ -23,7 +20,12 @@
 
             $modelAgentes->atualisarActivacao($dados);
             
-            header("Location:".ROOT."/admin_agencias");
+            if($action === "activacao"){
+                header("Location:".ROOT."/admin_agencias");
+            }
+            else if($action === "activacaoAdmin"){
+                header("Location:".ROOT."/admin_agencias/admin_agencia");
+            }
             
         }
         else if(isset($_POST["desactivar"]) && is_numeric($_POST["codigo_agente"])){
@@ -34,8 +36,13 @@
             );
 
             $modelAgentes->atualisarActivacao($dados);
-            
-            header("Location:".ROOT."/admin_agencias");
+
+            if($action === "activacao"){
+                header("Location:".ROOT."/admin_agencias");
+            }
+            else if($action === "activacaoAdmin"){
+                header("Location:".ROOT."/admin_agencias/admin_agencia");
+            }
             
         }
 
@@ -46,7 +53,9 @@
     $modelAgencias = new Agencias();
 
     /** INDICAR REPONSAVEL DA AGENCIA */
-    if($action === "responsabilizacao" && isset($_SESSION["codigo_conta"])){
+    if(
+        ($action === "responsabilizacao" || $action === "responsabilizacaoAdmin") && 
+        isset($_SESSION["codigo_conta"])){
 
         if(isset($_POST["responsabilizar"]) && is_numeric($_POST["codigo_agente"])){
 
@@ -56,8 +65,13 @@
             );
 
             $modelAgencias->atualisarResponsabilidade($dados);
-            
-            header("Location:".ROOT."/admin_agencias");
+
+            if($action === "responsabilizacao"){            
+                header("Location:".ROOT."/admin_agencias");
+            }
+            else if($action === "responsabilizacaoAdmin"){
+                header("Location:".ROOT."/admin_agencias/admin_agencia");
+            }
             
         }
 
