@@ -40,29 +40,60 @@
         <div class="body-container-admin">
 
             <div class="div-form dados-activacao">
-                activacao
+
+                <h3>Activar ou Desactivar agente</h3>
+                <form method="post" action="<?= ROOT ?>/admin_page/activacao">
+            
+                    <div class="form-group">
+                        <div class="col-label">
+                            <label for="codigo_agente">Activaçao do Agente </label>
+                        </div><!--.col-label-->
+                        <div class="col-select">
+                            <select name="codigo_agente" id="codigo_agente">
+                                <option value="escolher"> Escolher agente </option>
+                                <?php
+                                    foreach($agentesAgencia as $agenteAgencia){
+                                        echo '
+                                         <option value="'.$agenteAgencia["codigo_agente"].'">'.$agenteAgencia["nome"].'</option>
+                                        ';
+                                    }           
+                                ?>
+                            </select>
+                        </div><!--.col-select-->
+                    </div><!--.form-group-->
+
+                    <button type="submit" class="btn-registo" name="activar">Activar</button>
+                    <button type="submit" class="btn-registo" name="desactivar">Desactivar</button>
+
+                </form>
+
             </div><!--.div-form dados-activacao -->
 
             <div class="div-form dados-responsavel">
                 
                 <h3>Indica o responsavel da sua agencia</h3>   
                     
-                <form method="post" action="">
+                <form method="post" action="<?= ROOT ?>/admin_page/responsabilizacao">
             
                     <div class="form-group">
                         <div class="col-label">
-                            <label for="responsavel">Agente Responsavel </label>
+                            <label for="codigo_agente">Indicar Agente</label>
                         </div><!--.col-label-->
                         <div class="col-select">
-                            <select name="responsavel" id="responsavel">
-                                <option value="escolher"> Escolher agente</option>
-                                <option value="">Agente 1</option>
-                                <option value="">agente 2</option>
+                            <select name="codigo_agente" id="codigo_agente">
+                            <option value="escolher"> Escolher agente Responsavel </option>
+                                <?php
+                                    foreach($agentesAgencia as $agenteAgencia){
+                                        echo '
+                                         <option value="'.$agenteAgencia["codigo_agente"].'">'.$agenteAgencia["nome"].'</option>
+                                        ';
+                                    }
+                                ?>
                             </select>
                         </div><!--.col-select-->
                     </div><!--.form-group-->
 
-                    <button type="submit" class="btn-registo" name="send">Registar-se</button>
+                    <button type="submit" class="btn-registo" name="responsabilizar">Guardar</button>
 
                 </form>
 
@@ -262,9 +293,9 @@
 
             <div class="div-form dados-agente1">
             
-                <h3>Dados de agente <?= $agente["nome_agente"] ?></h3>
+                <h3>Dados de agente <?= $agente[0]["nome"] ?></h3>
 
-                <form method="post" action="<?php echo ROOT; ?>/alterar/agente" enctype="multipart/form-data">
+                <form method="post" action="<?php echo ROOT; ?>/agentes/alteracaoAgente" enctype="multipart/form-data">
                     <p>Guardar os dados depois de fazer alguma alteraçao.</p>
 
                     <div class="form-group">
@@ -272,7 +303,7 @@
                             <label for="nome_agente">Nome da agente</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["nome_agente"] ?>" type="text" id="nome_agente" name="nome_agente" placeholder="ex: Bacar Nhabali" required minlength="6" maxlength="60">
+                            <input value="<?= $agente[0]["nome"] ?>" type="text" id="nome_agente" name="nome_agente" placeholder="ex: Bacar Nhabali" required minlength="6" maxlength="60">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -283,7 +314,7 @@
                         <div class="col-input-file">
                             <input type="file" id="imagem_agente" name="imagem_agente" accept="image/*">
                             <div class="wrap-img"> 
-                                <img src="../assets/images/img-agentes/<?= $_SESSION["caminho_img_agente"] ?>" alt="" class="responsive-img"> 
+                                <img src="../assets/images/img-agentes/<?= $agente[0]["avatar"] ?>" alt="" class="responsive-img"> 
                             </div><!-- .wrap-img -->
                         </div><!--.col-input-file-->
                     </div><!--.form-group-->
@@ -293,7 +324,7 @@
                             <label for="data_nascimento">Data de Nascemento</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["data_nascimento"] ?>" type="date" name="data_nascimento" id="data_nascimento" required>
+                            <input value="<?= $agente[0]["data_nascimento"] ?>" type="date" name="data_nascimento" id="data_nascimento" required>
                         </div><!--.col-textarea-->
                     </div><!--.form-group-->
 
@@ -302,7 +333,7 @@
                             <label for="lugar_nascimento">Lugar de Nascimento</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["lugar_nascimento"] ?>" type="text" id="lugar_nascimento" name="lugar_nascimento" minlength="3" maxlength="60" required>
+                            <input value="<?= $agente[0]["lugar_nascimento"] ?>" type="text" id="lugar_nascimento" name="lugar_nascimento" minlength="3" maxlength="60" required>
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -312,7 +343,7 @@
                             <label for="numero_bi">Numero de Identificaçao</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["numero_bi"] ?>" type="text" id="numero_bi" name="numero_bi" minlength="3" maxlength="14" required>
+                            <input value="<?= $agente[0]["num_doc_identificacao"] ?>" type="text" id="numero_bi" name="numero_bi" minlength="3" maxlength="14" required>
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -322,9 +353,9 @@
                             <label for="genero">Genero</label>
                         </div><!--.col-label-->
                         <div class="col-input genero-style">
-                            <input type="checkbox" name="masculino" id="masculino" <?php if($_SESSION["genero"] == "M"){ echo "checked";} ?> >
+                            <input type="checkbox" name="masculino" id="masculino" <?php if($agente[0]["genero"] == "M"){ echo "checked";} ?> >
                             <label for="masculino"> M </label>
-                            <input type="checkbox" name="feminino" id="feminino" <?php if($_SESSION["genero"] == "F"){ echo "checked";} ?> >
+                            <input type="checkbox" name="feminino" id="feminino" <?php if($agente[0]["genero"] == "F"){ echo "checked";} ?> >
                             <label for="feminino"> F </label>
                         </div><!--.col-input-->
                         <span></span>
@@ -332,7 +363,7 @@
 
                     <div class="form-group">
                         <div class="col-label">
-                            <label for="pais">Pais de Residencia</label>
+                            <label for="pais">Pais da Residencia</label>
                         </div><!--.col-label-->
                         <div class="col-select">
                             <select name="pais" id="paisSelecionado">
@@ -340,7 +371,7 @@
                                 <?php                                 
                                     foreach($paises as $pais){
                                         $selected = "";
-                                        if($pais["codigo"] === $_SESSION["pais_agente"]){
+                                        if($pais["codigo"] === $agente[0]["pais"]){
                                             $selected = "selected";
                                         }
                                         echo '
@@ -357,7 +388,7 @@
                             <label for="cidade">Cidade</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["cidade_agente"] ?>" type="text" id="cidade" name="cidade" value="<?= $_SESSION["cidade"]; ?>" minlength="4" maxlength="60">
+                            <input value="<?= $agente[0]["cidade"] ?>" type="text" id="cidade" name="cidade"  minlength="4" maxlength="60">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -366,7 +397,7 @@
                             <label for="adresso">Adresso</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["adresso_agente"] ?>" type="text" id="adresso" name="adresso" value="<?= $_SESSION["adresso"]; ?>" minlength="8" maxlength="120">
+                            <input value="<?= $agente[0]["adresso"] ?>" type="text" id="adresso" name="adresso"  minlength="8" maxlength="120">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -375,7 +406,7 @@
                             <label for="codigo_postal">Codigo postal</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["codigo_postal_agente"] ?>" type="text" id="codigo_postal" name="codigo_postal" value="<?= $_SESSION["codigo_postal"]; ?>" minlength="4" maxlength="20">
+                            <input value="<?= $agente[0]["codigo_postal"] ?>" type="text" id="codigo_postal" name="codigo_postal"  minlength="4" maxlength="20">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -384,7 +415,7 @@
                             <label for="email">Email</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["email_agente"] ?>" type="email" id="email" name="email"  minlength="8" maxlength="252">
+                            <input value="<?= $agente[0]["email"] ?>" type="email" id="email" name="email"  minlength="8" maxlength="252">
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -394,13 +425,13 @@
                             <label for="num_telefone">Telefone</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["num_telefone_agente"] ?>" type="text" id="num_telefone" name="num_telefone" value="<?= $_SESSION["num_telefone"]; ?>"  minlength="7" maxlength="20" >
+                            <input value="<?= $agente[0]["numero_telefone"] ?>" type="text" id="num_telefone" name="num_telefone"  minlength="7" maxlength="20" >
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
 
                     <div class="btn-registo-wrap">
-                        <button type="submit" class="btn-registo" name="send">Guardar alteraçao</button>
+                        <button type="submit" class="btn-registo" name="alterarAgente">Guardar alteraçao</button>
                     </div>
 
                 </form>
@@ -409,9 +440,9 @@
 
             <div class="div-form dados-agente2">
                 
-                <h3>Dados de agente <?= $_SESSION["nome_agente2"] ?></h3>
+                <h3>Dados de agente <?= $agente[1]["nome"] ?></h3>
 
-                <form method="post" action="<?php echo ROOT; ?>/alterar/agente" enctype="multipart/form-data">
+                <form method="post" action="<?php echo ROOT; ?>/agentes/alteracaoAgente2" enctype="multipart/form-data">
                     <p>Guardar os dados depois de fazer alguma alteraçao.</p>
 
                     <div class="form-group">
@@ -419,7 +450,7 @@
                             <label for="nome_agente">Nome da agente</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["nome_agente2"] ?>" type="text" id="nome_agente" name="nome_agente" placeholder="ex: Bacar Nhabali" required minlength="6" maxlength="60">
+                            <input value="<?= $agente[1]["nome"] ?>" type="text" id="nome_agente" name="nome_agente" placeholder="ex: Bacar Nhabali" required minlength="6" maxlength="60">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -430,7 +461,7 @@
                         <div class="col-input-file">
                             <input type="file" id="imagem_agente" name="imagem_agente" accept="image/*" required>
                             <div class="wrap-img"> 
-                                <img src="../assets/images/img-agentes/<?= $_SESSION["caminho_img_agente2"] ?>" alt="" class="responsive-img"> 
+                                <img src="../assets/images/img-agentes/<?= $agente[1]["avatar"] ?>" alt="" class="responsive-img"> 
                             </div><!-- .wrap-img -->
                         </div><!--.col-input-file-->
                     </div><!--.form-group-->
@@ -440,7 +471,7 @@
                             <label for="data_nascimento">Data de Nascemento</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["data_nascimento2"] ?>" type="date" name="data_nascimento" id="data_nascimento" required>
+                            <input value="<?= $agente[1]["data_nascimento"] ?>" type="date" name="data_nascimento" id="data_nascimento" required>
                         </div><!--.col-textarea-->
                     </div><!--.form-group-->
 
@@ -449,7 +480,7 @@
                             <label for="lugar_nascimento">Lugar de Nascimento</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["lugar_nascimento2"] ?>" type="text" id="lugar_nascimento" name="lugar_nascimento" minlength="3" maxlength="60" required>
+                            <input value="<?= $agente[1]["lugar_nascimento"] ?>" type="text" id="lugar_nascimento" name="lugar_nascimento" minlength="3" maxlength="60" required>
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -459,7 +490,7 @@
                             <label for="numero_bi">Numero de Identificaçao</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["numero_bi2"] ?>" type="text" id="numero_bi" name="numero_bi" minlength="3" maxlength="14" required>
+                            <input value="<?= $agente[1]["num_doc_identificacao"] ?>" type="text" id="numero_bi" name="numero_bi" minlength="3" maxlength="14" required>
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -469,9 +500,9 @@
                             <label for="genero">Genero</label>
                         </div><!--.col-label-->
                         <div class="col-input genero-style">
-                            <input type="checkbox" name="masculino" id="masculino" <?php if($_SESSION["genero2"] == "M"){ echo "checked";} ?> >
+                            <input type="checkbox" name="masculino" id="masculino" <?php if($agente[1]["genero"] == "M"){ echo "checked";} ?> >
                             <label for="masculino"> M </label>
-                            <input type="checkbox" name="feminino" id="feminino" <?php if($_SESSION["genero2"] == "F"){ echo "checked";} ?> >
+                            <input type="checkbox" name="feminino" id="feminino" <?php if($agente[1]["genero"] == "F"){ echo "checked";} ?> >
                             <label for="feminino"> F </label>
                         </div><!--.col-input-->
                         <span></span>
@@ -487,7 +518,7 @@
                                 <?php                                 
                                     foreach($paises as $pais){
                                         $selected = "";
-                                        if($pais["codigo"] === $_SESSION["pais_agente2"]){
+                                        if($pais["codigo"] === $agente[1]["pais"]){
                                             $selected = "selected";
                                         }
                                         echo '
@@ -504,7 +535,7 @@
                             <label for="cidade">Cidade</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["cidade_agente2"] ?>" type="text" id="cidade" name="cidade" value="<?= $_SESSION["cidade"]; ?>" minlength="4" maxlength="60">
+                            <input value="<?= $agente[1]["cidade"] ?>" type="text" id="cidade" name="cidade" minlength="4" maxlength="60">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -513,7 +544,7 @@
                             <label for="adresso">Adresso</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["adresso_agente2"] ?>" type="text" id="adresso" name="adresso" value="<?= $_SESSION["adresso"]; ?>" minlength="8" maxlength="120">
+                            <input value="<?= $agente[1]["adresso"] ?>" type="text" id="adresso" name="adresso" minlength="8" maxlength="120">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -522,7 +553,7 @@
                             <label for="codigo_postal">Codigo postal</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["codigo_postal_agente2"] ?>" type="text" id="codigo_postal" name="codigo_postal" value="<?= $_SESSION["codigo_postal"]; ?>" minlength="4" maxlength="20">
+                            <input value="<?= $agente[1]["codigo_postal"] ?>" type="text" id="codigo_postal" name="codigo_postal" minlength="4" maxlength="20">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -531,7 +562,7 @@
                             <label for="email">Email</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["email_agente2"] ?>" type="email" id="email" name="email"  minlength="8" maxlength="252">
+                            <input value="<?= $agente[1]["email"] ?>" type="email" id="email" name="email"  minlength="8" maxlength="252">
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -541,13 +572,13 @@
                             <label for="num_telefone">Telefone</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["num_telefone_agente2"] ?>" type="text" id="num_telefone" name="num_telefone" value="<?= $_SESSION["num_telefone"]; ?>"  minlength="7" maxlength="20" >
+                            <input value="<?= $agente[1]["numero_telefone"] ?>" type="text" id="num_telefone" name="num_telefone"  minlength="7" maxlength="20" >
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
 
                     <div class="btn-registo-wrap">
-                        <button type="submit" class="btn-registo" name="send">Guardar alteraçao</button>
+                        <button type="submit" class="btn-registo" name="alterarAgente">Guardar alteraçao</button>
                     </div>
 
                 </form>

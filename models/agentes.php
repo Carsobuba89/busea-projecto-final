@@ -31,18 +31,55 @@ class Agentes extends Base{
         return $query->fetchAll( PDO::FETCH_ASSOC );
     }
 
-    public function obterAgentes($codigo_agencia){
+    public function obterAgentes($codigo_conta){
 
         $query = $this->db->prepare("
-            SELECT codigo_agente, nome 
-            FROM agentes 
-            WHERE codigo_agencia = ?
+            SELECT 
+                a.codigo_agente,
+                a.nome 
+            FROM 
+                agentes As a
+            INNER JOIN 
+                agencias AS ag USING(codigo_agencia)
+            WHERE 
+                ag.codigo_conta = ?
         ");
 
-        $query->execute([$codigo_agencia]);
+        $query->execute([$codigo_conta]);
 
         return $query->fetchAll( PDO::FETCH_ASSOC );
     }
+
+    public function getItemAgente($codigo_conta){
+
+        $query = $this->db->prepare("
+            SELECT 
+                codigo_agente, 
+                nome, 
+                avatar, 
+                data_nascimento, 
+                lugar_nascimento,
+                num_doc_identificacao,
+                genero, 
+                numero_telefone, 
+                email,
+                pais, 
+                adresso, 
+                cidade, 
+                codigo_postal
+            FROM 
+                agentes As ag 
+            INNER JOIN 
+                agencias AS a USING(codigo_agencia)
+            WHERE 
+                a.codigo_conta = ? AND ag.activo > 0
+        ");
+
+        $query->execute([$codigo_conta]);
+
+        return $query->fetchAll( PDO::FETCH_ASSOC );
+    }
+
 
     public function atualisarActivacao($dados){
 
@@ -115,12 +152,12 @@ class Agentes extends Base{
                     $registro["lugar_nascimento"],
                     $registro["numero_bi"],
                     $registro["genero"],
-                    $registro["codigo_pais"],
-                    $registro["cidade"],
-                    $registro["adresso"],
-                    $registro["codigo_postal"],
-                    $registro["email"],
                     $registro["num_telefone"],
+                    $registro["email"],
+                    $registro["codigo_pais"],
+                    $registro["adresso"],
+                    $registro["cidade"],
+                    $registro["codigo_postal"],
                     $registro["codigo_agencia"]
 
                 ]

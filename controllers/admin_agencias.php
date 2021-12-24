@@ -4,7 +4,7 @@
     require("models/agentes.php");
     $modelAgentes = new Agentes();
 
-    $agentes = $modelAgentes->getAll();
+    //$agentes = $modelAgentes->getAll();
 
     /** ACTIVAR OU DISACTIVAR AGENTES */
     if($action === "activacao" && isset($_SESSION["codigo_conta"])){
@@ -71,7 +71,10 @@
 
     //VIEW DA PAGINA ADMIN AGENCIA E WELCOME 
     if( $action === "admin_agencia" && isset($_SESSION["codigo_conta"])){
-        
+
+        //recuperar os dados de agentes pertencentes da agencia conectado
+        $agentesAgencia = $modelAgentes->obterAgentes($_SESSION["codigo_conta"]);
+
         //Invocaçao de tabela contas no banco de dados
         require("models/contas.php");
         $modelContas = new Contas();
@@ -89,8 +92,8 @@
         //recuperar os dados de adresso correspondente
         $adresso = $modelAdressos->getItemAdresso($_SESSION["codigo_conta"]);
 
-        
-
+        //recuperar os dados de agente correspondente
+        $agente = $modelAgentes->getItemAgente($_SESSION["codigo_conta"]);
 
         require("views/admin_agencia.php");
 
@@ -106,7 +109,7 @@
             "numeroSapato" => "qual e o numero dos seus calçados favoritos"
 
         );
-
+        //recuperar os dados de agentes pertencentes da agencia conectado
         $agentesAgencia = $modelAgentes->obterAgentes($_SESSION["codigo_agencia"]);
 
         require("views/welcome_agencia.php");

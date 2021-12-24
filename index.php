@@ -24,6 +24,7 @@ $controllers = [
     "seguimentos",
     "simulacoes",
     "agencias",
+    "agentes",
     "registar",
     "acesso",
     "admin_agencias",
