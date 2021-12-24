@@ -1304,11 +1304,13 @@ align-items: center;
   grid-row: 2/4;
 }
 
+.div-form .form-group,
 .div-form1 .form-group{
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
+.div-form select,
 .div-form1 select{
   width: 60%;
   margin-top: 10px;
@@ -1333,6 +1335,7 @@ align-items: center;
   justify-content: center;
   margin-top: 30px;
 }
+
 .nav-welcome a{
   padding: 10px 15px;
   background: rgb(236, 235, 235);

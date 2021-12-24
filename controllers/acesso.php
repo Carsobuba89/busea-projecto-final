@@ -2,6 +2,7 @@
 require("models/contas.php");
 $modelContas = new Contas();
 
+//LOGIN CODE
 if($action === "login"){
 
     /* echo "<pre>";    print_r( $_POST); echo "</pre>";
@@ -22,7 +23,7 @@ if($action === "login"){
             $_SESSION["codigo_conta"] = $conta["codigo"];
             $_SESSION["nome_utilisador"] = $conta["nome_utilisador"];
 
-            header("Location:".ROOT."/admin_page/welcome");
+            header("Location:".ROOT."/admin_agencias/admin_agencia");
 
         }else{
             $message = "Dados de Login Incorrecto, verifica e tenta de novo";
@@ -34,16 +35,16 @@ if($action === "login"){
     require("views/login.php");
 }
 
+//LOGOUT CODE
 if($action === "logout"){
 
     session_destroy();
     header("Location:".ROOT."/acesso/login");
 
 }
-/* else{
-    header("HTTP/1.1 400 Bad request");
-    die("400 Bad Request");
-} */
+
+
+
 
 
 

@@ -26,7 +26,9 @@ $controllers = [
     "agencias",
     "registar",
     "acesso",
-    "admin_page"
+    "admin_agencias",
+    "admin_encomendas",
+    "admin_conteudos"
 ];
 
 $controller = !empty($_url_parts[1]) ? $_url_parts[1] : "inicio";

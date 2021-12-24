@@ -23,7 +23,7 @@
 
             $modelAgentes->atualisarActivacao($dados);
             
-            header("Location:".ROOT."/admin_page");
+            header("Location:".ROOT."/admin_agencias");
             
         }
         else if(isset($_POST["desactivar"]) && is_numeric($_POST["codigo_agente"])){
@@ -35,7 +35,7 @@
 
             $modelAgentes->atualisarActivacao($dados);
             
-            header("Location:".ROOT."/admin_page");
+            header("Location:".ROOT."/admin_agencias");
             
         }
 
@@ -57,7 +57,7 @@
 
             $modelAgencias->atualisarResponsabilidade($dados);
             
-            header("Location:".ROOT."/admin_page");
+            header("Location:".ROOT."/admin_agencias");
             
         }
 
@@ -71,6 +71,25 @@
 
     //VIEW DA PAGINA ADMIN AGENCIA E WELCOME 
     if( $action === "admin_agencia" && isset($_SESSION["codigo_conta"])){
+        
+        //Invocaçao de tabela contas no banco de dados
+        require("models/contas.php");
+        $modelContas = new Contas();
+
+        //recuperar os dados da agencia correspondente
+        $agencia = $modelAgencias->getItemAgencia($_SESSION["codigo_conta"]);
+
+        //recuperar os dados da conta correspondente
+        $conta = $modelContas->getItemConta($_SESSION["codigo_conta"]);
+
+        //Invocaçao de tabela adresso no banco de dados
+        require("models/adressos.php");
+        $modelAdressos = new Adressos();
+
+        //recuperar os dados de adresso correspondente
+        $adresso = $modelAdressos->getItemAdresso($_SESSION["codigo_conta"]);
+
+        
 
 
         require("views/admin_agencia.php");

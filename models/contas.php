@@ -17,6 +17,26 @@ class Contas extends Base{
 
     }//FINAL DE GET ALL CONTAS 
 
+    public function getItemConta($codigo_conta){
+
+        $query = $this->db->prepare("
+            SELECT codigo,
+                nome_utilisador,
+                 email, 
+                 pergunta_secreta, 
+                 resposta_secreta
+            FROM 
+                contas
+            WHERE 
+                codigo = ?
+        ");
+
+        $query->execute([$codigo_conta]);
+
+        return $query->fetch();
+
+    }//FINAL DE GET ITEM CONTA1
+
     public function getContaLogin($registro){
 
         if(

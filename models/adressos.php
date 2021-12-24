@@ -2,7 +2,29 @@
 require_once("base.php");
 class adressos extends Base{
 
-    public function getAll(){
+    public function getItemAdresso($codigo_conta){
+
+        $query = $this->db->prepare("
+            SELECT 
+                ad.codigo, 
+                ad.adresso, 
+                ad.cidade, 
+                ad.codigo_postal, 
+                ad.pais, 
+                ad.email, 
+                ad.telefone
+            FROM 
+                adressos AS ad
+            INNER JOIN 
+                agencias AS ag USING(codigo_agencia)
+            WHERE 
+                ag.codigo_conta = ?
+
+        ");
+
+        $query->execute([$codigo_conta]);
+
+        return $query->fetch();
 
     }
 

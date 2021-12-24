@@ -3,6 +3,29 @@ require_once("base.php");
 
 class Agencias extends Base{
 
+    public function getItemAgencia($codigo_conta){
+
+        $query = $this->db->prepare("
+            SELECT 
+                codigo_agencia, 
+                nome_agencia, 
+                descricao_agencia, 
+                imagem_agencia,
+                responsavel,
+                hora_abertura,
+                hora_fecho,
+                codigo_conta
+            FROM 
+                agencias
+            WHERE 
+                codigo_conta = ? AND responsavel > 0
+        ");
+
+        $query->execute([$codigo_conta]);
+
+        return $query->fetch();
+    }
+
     public function create($registro){
 
         if(

@@ -71,14 +71,14 @@
             <div class="div-form dados-agencia">
                 <h3>Dados da agencia</h3>
 
-                <form action="">
+                <form method="post" action="<?= ROOT ?>/agencias/alteracaoDadosAgencia">
                     
                     <div class="form-group">
                         <div class="col-label">
                             <label for="nome_agencia">Nome da agencia</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["nome_agencia"] ?>" type="text" id="nome_agencia" name="nome_agencia" required minlength="6" maxlength="120">
+                            <input value="<?= $agencia["nome_agencia"] ?>" type="text" id="nome_agencia" name="nome_agencia" required minlength="6" maxlength="120">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
                     <div class="form-group">
@@ -86,7 +86,7 @@
                             <label for="descricao">Descriçao da agencia</label>
                         </div><!--.col-label-->
                         <div class="col-textarea">
-                            <textarea name="descricao" id="descricao" cols="25" rows="8" minlength="60" required><?= $_SESSION["descricao"] ?></textarea>
+                            <textarea name="descricao" id="descricao" cols="25" rows="8" minlength="60" required><?= $agencia["descricao_agencia"] ?></textarea>
                         </div><!--.col-textarea--> 
                     </div><!--.form-group-->
 
@@ -97,7 +97,7 @@
                         <div class="col-input-file">
                             <input type="file" id="imagem_agencia" name="imagem_agencia" accept="image/*" required>
                             <div class="wrap-img"> 
-                                <img src="../assets/images/img-agencias/<?= $_SESSION["caminho_img_agencia"] ?>" alt="" class="responsive-img"> 
+                                <img src="../assets/images/img-agencias/<?= $agencia["imagem_agencia"] ?>" alt="" class="responsive-img"> 
                             </div><!-- .wrap-img -->
                         </div><!--.col-input-file-->
                     </div><!--.form-group-->
@@ -107,7 +107,7 @@
                             <label for="hora_abertura">Hora de Abertura</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["hora_abertura"] ?>" type="text" id="hora_abertura" name="hora_abertura" minlength="3" maxlength="6" required>
+                            <input value="<?= $agencia["hora_abertura"] ?>" type="text" id="hora_abertura" name="hora_abertura" minlength="3" maxlength="6" required>
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->
@@ -117,13 +117,13 @@
                             <label for="hora_fecho">Hora de fecho</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["hora_fecho"] ?>" type="text" id="hora_fecho" name="hora_fecho" minlength="3" maxlength="6" required>
+                            <input value="<?= $agencia["hora_fecho"] ?>" type="text" id="hora_fecho" name="hora_fecho" minlength="3" maxlength="6" required>
                         </div><!--.col-input-->
                         <span></span>
                     </div><!--.form-group-->          
 
                     <div class="btn-registo-wrap">
-                        <button type="submit" class="btn-registo" name="send">Guardar Alteraçao</button>
+                        <button type="submit" class="btn-registo" name="alterarDadosAgencia">Guardar Alteraçao</button>
                     </div>
     
                 </form>
@@ -133,14 +133,14 @@
             <div class="div-form dados-conta">
                 <h3>Dados da Conta de acesso da agencia</h3>
 
-                <form action="">
+                <form method="post" action="<?= ROOT ?>/acesso/alteracaoConta">
 
                     <div class="form-group">
                         <div class="col-label">
                             <label for="username">Nome de Utilisador </label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["nome_utilisador"] ?>" type="text" id="username" name="username" minlength="6" maxlength="30" required >
+                            <input value="<?= $conta["nome_utilisador"] ?>" type="text" id="username" name="username" minlength="6" maxlength="30" required >
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -149,7 +149,7 @@
                             <label for="email">Email</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["email_utilisador"] ?>" type="email" id="email" name="email" minlength="8" maxlength="252" required>
+                            <input value="<?= $conta["email"] ?>" type="email" id="email" name="email" minlength="8" maxlength="252" required>
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -158,7 +158,7 @@
                             <label for="perguntaSecreta">Pergunta Secreta</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["perguntaSecreta"] ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required disabled>
+                            <input value="<?= $conta["pergunta_secreta"]  ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required>
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -167,16 +167,15 @@
                             <label for="respostaSecreta">Resposta Secreta</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["respostaSecreta"] ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required>
+                            <input value="<?= $conta["resposta_secreta"] ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required>
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
                     <div class="form-group">
-                        <button type="submit" class="btn-registo" name="send">Guardar alteraçao</button>
+                        <button type="submit" class="btn-registo" name="alterarConta">Guardar alteraçao</button>
                     </div>
 
                 </form>
-
                 
             </div><!--.div-form dados-conta -->
 
@@ -184,7 +183,7 @@
                 
                 <h3>Endereço da Agencia</h3>
 
-                <form action="">
+                <form method="post" action="<?php ROOT ?>/agencias/alteracaoEndereco">
 
                     <div class="form-group">
                         <div class="col-label">
@@ -195,7 +194,7 @@
                                 <?php                                 
                                     foreach($paises as $pais){
                                         $selected = "";
-                                        if($pais["codigo"] === $_SESSION["pais"]){
+                                        if($pais["codigo"] === $adresso["pais"]){
                                             $selected = "selected";
                                         }
                                         echo '
@@ -212,7 +211,7 @@
                             <label for="cidade">Cidade</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["cidade"] ?>" type="text" id="cidade" name="cidade" placeholder="Barreiro" minlength="4" maxlength="60">
+                            <input value="<?= $adresso["cidade"] ?>" type="text" id="cidade" name="cidade" placeholder="Barreiro" minlength="4" maxlength="60">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -221,7 +220,7 @@
                             <label for="adresso">Adresso</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["adresso"] ?>" type="text" id="adresso" name="adresso"   minlength="8" maxlength="120">
+                            <input value="<?= $adresso["adresso"] ?>" type="text" id="adresso" name="adresso"   minlength="8" maxlength="120">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -230,7 +229,7 @@
                             <label for="codigo_postal">Codigo postal</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["codigo_postal"] ?>" type="text" id="codigo_postal" name="codigo_postal"   minlength="4" maxlength="20">
+                            <input value="<?= $adresso["codigo_postal"] ?>" type="text" id="codigo_postal" name="codigo_postal"   minlength="4" maxlength="20">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -239,7 +238,7 @@
                             <label for="email">Email</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["email_agencia"] ?>" type="email" id="email" name="email"   minlength="8" maxlength="252">
+                            <input value="<?= $adresso["email"] ?>" type="email" id="email" name="email"   minlength="8" maxlength="252">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -248,13 +247,13 @@
                             <label for="num_telefone">Telefone</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $_SESSION["num_telefone"] ?>" type="text" id="num_telefone" name="num_telefone"  minlength="7" maxlength="20" required>
+                            <input value="<?= $adresso["telefone"] ?>" type="text" id="num_telefone" name="num_telefone"  minlength="7" maxlength="20" required>
                         </div><!--.col-input-->  
                     </div><!--.form-group-->
 
                     <div class="form-group">
-                        <button type="submit" class="btn-registo" name="send">Guardar alteraçao</button>
-                        <button type="submit" class="btn-registo" name="send">Adicionar um outro adresso</button>
+                        <button type="submit" class="btn-registo" name="alterarEndereco">Guardar alteraçao</button>
+                        <button type="submit" class="btn-registo" name="guardarEndereco">Adicionar um outro adresso</button>
                     </div>
 
                 </form>
@@ -263,7 +262,7 @@
 
             <div class="div-form dados-agente1">
             
-                <h3>Dados de agente <?= $_SESSION["nome_agente"] ?></h3>
+                <h3>Dados de agente <?= $agente["nome_agente"] ?></h3>
 
                 <form method="post" action="<?php echo ROOT; ?>/alterar/agente" enctype="multipart/form-data">
                     <p>Guardar os dados depois de fazer alguma alteraçao.</p>
