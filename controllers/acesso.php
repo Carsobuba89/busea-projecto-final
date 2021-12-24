@@ -43,6 +43,25 @@ if($action === "logout"){
 
 }
 
+//ALTERAR OS DADOS DE CONTA
+if($action === "alteracaoConta" && isset($_SESSION["codigo_conta"])){
+
+    echo "<pre>";    print_r( $_POST); echo "</pre>";
+
+    if(isset($_POST["alterarConta"]) && is_numeric($_SESSION["codigo_conta"])){
+
+        foreach($_POST as $key => $value){
+            $_POST[$key] = trim(htmlspecialchars(strip_tags($value)));
+        }
+
+        $modelContas->alterarContaAgencia($_POST, $_SESSION["codigo_conta"]);
+
+        header("Location:".ROOT."/admin_agencias/admin_agencia");
+
+    }
+
+}
+
 
 
 

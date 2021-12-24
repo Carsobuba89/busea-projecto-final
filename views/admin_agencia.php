@@ -189,7 +189,7 @@
                             <label for="perguntaSecreta">Pergunta Secreta</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $conta["pergunta_secreta"]  ?>" type="text" id="respostaSecreta" name="respostaSecreta" minlength="1" maxlength="30" required>
+                            <input value="<?= $conta["pergunta_secreta"]  ?>" type="text" id="perguntaSecreta" name="perguntaSecreta" minlength="1" maxlength="30" required>
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 

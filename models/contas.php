@@ -106,6 +106,32 @@ class Contas extends Base{
     }//FINAL DE CREATE CONTA
 
 
+    public function alterarContaAgencia($dados_conta, $codigo_conta){
+
+        $query = $this->db->prepare("
+            UPDATE contas 
+            SET  
+                nome_utilisador = ?, 
+                email = ?,
+                pergunta_secreta = ?,
+                resposta_secreta = ?
+            WHERE codigo = ?
+        ");
+
+        $query->execute([
+
+            $dados_conta["username"],
+            $dados_conta["email"],
+            $dados_conta["perguntaSecreta"],
+            $dados_conta["respostaSecreta"],
+            $codigo_conta
+
+        ]);
+
+        
+    }
+
+
 
 }
 
