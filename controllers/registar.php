@@ -181,7 +181,8 @@ if($action === "conta"){
                 $_FILES["imagem_agente"]["size"] > 0 &&
                 $_FILES["imagem_agente"]["size"] < 4000000 
             ){
-                $extensao = strtolower(substr($_FILES['imagem_agente']['name'], -4));
+                $extensao = explode(".", $_FILES['imagem_agente']['name']);
+                $extensao = end($extensao);
 
                 $novo_nome =date("Y.m.d-H.i.s") ."_" .$_POST["nome_agente"] . $extensao;
 
@@ -281,7 +282,8 @@ if($action === "conta"){
                 $_FILES["imagem_agente"]["size"] > 0 &&
                 $_FILES["imagem_agente"]["size"] < 4000000 
             ){
-                $extensao = strtolower(substr($_FILES['imagem_agente']['name'], -4));
+                $extensao = explode(".", $_FILES['imagem_agente']['name']);
+                $extensao = end($extensao);
 
                 $novo_nome =date("Y.m.d-H.i.s") ."_" .$_POST["nome_agente"] . $extensao;
 
