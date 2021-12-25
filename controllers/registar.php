@@ -63,8 +63,8 @@ if($action === "conta"){
             $codigo_paises[] = $pais["codigo"];
         }
 
-        /* echo "<pre>";    var_dump( $_POST); echo "</pre>";
-        echo "<pre>";    print_r( $_FILES); echo "</pre>"; */
+        echo "<pre>";    var_dump( $_POST); echo "</pre>";
+        echo "<pre>";    print_r( $_FILES); echo "</pre>";
 
         if(isset($_POST["send"]) && in_array($_POST["pais"], $codigo_paises)){
             
@@ -75,7 +75,9 @@ if($action === "conta"){
                 $_FILES["imagem_agencia"]["size"] < 4000000
             ){
 
-                $extensao = strtolower(substr($_FILES['imagem_agencia']['name'],-4));
+                //$extensao = strtolower(substr($_FILES['imagem_agencia']['name'],-4));
+                $extensao = explode(".", $_FILES['imagem_agencia']['name']);
+                $extensao = end($extensao);
 
                 $novo_nome = date("Y.m.d-H.i.s") . "_" .$_POST["nome_agencia"] . $extensao;
 
@@ -120,12 +122,6 @@ if($action === "conta"){
             }
 
             /***### INSERIR DADOS DE ENDEREÇO DA AGENCIA ###  */
-            /* $email = "";
-            if($_SESSION["email_utilisador"] === $_POST["email"]){
-                $email = $_SESSION["email_utilisador"];
-            }else{
-                $email = $_POST["email"];
-            } */
 
             $dados_endereco = array(
                 "adresso" => $_POST["adresso"],

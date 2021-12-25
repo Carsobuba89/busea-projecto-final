@@ -1,6 +1,6 @@
 <?php
 require_once("base.php");
-class adressos extends Base{
+class Adressos extends Base{
 
     public function getItemAdresso($codigo_conta){
 
@@ -64,6 +64,53 @@ class adressos extends Base{
 
             return $codigo_enderecos ? $this->db->lastInsertId() : 0;
 
+        }
+
+    }
+
+
+    public function alterarEnderecoAgencia($enderco){
+
+        if(
+            
+            mb_strlen($enderco["adresso"]) >= 8 &&
+            mb_strlen($enderco["adresso"]) <= 120 &&
+            mb_strlen($enderco["cidade"]) >= 4 &&
+            mb_strlen($enderco["cidade"]) <= 40 &&
+            mb_strlen($enderco["codigo_postal"]) >= 4 &&
+            mb_strlen($enderco["codigo_postal"]) <= 20 &&
+            filter_var($enderco["email"], FILTER_VALIDATE_EMAIL) &&
+            mb_strlen($enderco["num_telefone"]) >= 7 &&
+            mb_strlen($enderco["num_telefone"]) <= 20 
+
+        ){
+
+            $query = $this->db->prepare("
+                UPDATE adressos
+                SET 
+                    adresso = ?,
+                    cidade = ?,
+                    codigo_postal = ?,
+                    pais = ?,
+                    email = ?,
+                    telefone = ?
+                WHERE 
+                    codigo = ?
+            ");
+
+            $query->execute([
+                
+                $enderco["adresso"],
+                $enderco["cidade"],
+                $enderco["codigo_postal"],
+                $enderco["pais"],
+                $enderco["email"],
+                $enderco["num_telefone"],
+                $enderco["codigo_adresso"]
+            ]);
+            
+        }else{
+            $message = "Dados incorrectos, verifica e tenta de novo";
         }
 
     }

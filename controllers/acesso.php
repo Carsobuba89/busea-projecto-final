@@ -46,7 +46,7 @@ if($action === "logout"){
 //ALTERAR OS DADOS DE CONTA
 if($action === "alteracaoConta" && isset($_SESSION["codigo_conta"])){
 
-    echo "<pre>";    print_r( $_POST); echo "</pre>";
+    /* echo "<pre>";    print_r( $_POST); echo "</pre>"; */
 
     if(isset($_POST["alterarConta"]) && is_numeric($_SESSION["codigo_conta"])){
 

@@ -108,27 +108,38 @@ class Contas extends Base{
 
     public function alterarContaAgencia($dados_conta, $codigo_conta){
 
-        $query = $this->db->prepare("
-            UPDATE contas 
-            SET  
-                nome_utilisador = ?, 
-                email = ?,
-                pergunta_secreta = ?,
-                resposta_secreta = ?
-            WHERE codigo = ?
-        ");
+        if(
+            mb_strlen($dados_conta["username"]) >= 6 &&
+            mb_strlen($dados_conta["username"]) <= 30 && 
+            mb_strlen($dados_conta["perguntaSecreta"]) >= 4 &&
+            mb_strlen($dados_conta["perguntaSecreta"]) <= 120 &&
+            mb_strlen($dados_conta["respostaSecreta"]) >= 4 &&
+            mb_strlen($dados_conta["respostaSecreta"]) <= 120 &&
+            filter_var($dados_conta["email"], FILTER_VALIDATE_EMAIL) 
+        ){
 
-        $query->execute([
+            $query = $this->db->prepare("
+                UPDATE contas 
+                SET  
+                    nome_utilisador = ?, 
+                    email = ?,
+                    pergunta_secreta = ?,
+                    resposta_secreta = ?
+                WHERE codigo = ?
+            ");
 
-            $dados_conta["username"],
-            $dados_conta["email"],
-            $dados_conta["perguntaSecreta"],
-            $dados_conta["respostaSecreta"],
-            $codigo_conta
+            $query->execute([
 
-        ]);
+                $dados_conta["username"],
+                $dados_conta["email"],
+                $dados_conta["perguntaSecreta"],
+                $dados_conta["respostaSecreta"],
+                $codigo_conta
 
-        
+            ]);
+
+        }
+
     }
 
 

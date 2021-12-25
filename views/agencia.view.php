@@ -151,7 +151,7 @@
                                         <label for="email">Email</label>
                                     </div><!--.col-label-->
                                     <div class="col-input">
-                                        <input type="email" id="email" name="email" value="<?= $_SESSION["email_utilisador"]; ?>" minlength="8" maxlength="252">
+                                        <input type="email" id="email" name="email" value="" minlength="8" maxlength="252">
                                     </div--><!--.col-input-->
                                     <span></span>
                                 </div><!--.form-group-->

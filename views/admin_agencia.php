@@ -212,13 +212,13 @@
 
             <div class="div-form dados-endereco">
                 
-                <h3>Endereço da Agencia</h3>
+                <h3>Atualisar o endereço da Agencia principal</h3>
 
                 <form method="post" action="<?php ROOT ?>/agencias/alteracaoEndereco">
 
                     <div class="form-group">
                         <div class="col-label">
-                            <label for="pais">Pais</label>
+                            <label for="pais">Localizaçao da agencia principal</label>
                         </div><!--.col-label-->
                         <div class="col-select">
                             <select name="pais" id="pais">
@@ -242,7 +242,7 @@
                             <label for="cidade">Cidade</label>
                         </div><!--.col-label-->
                         <div class="col-input">
-                            <input value="<?= $adresso["cidade"] ?>" type="text" id="cidade" name="cidade" placeholder="Barreiro" minlength="4" maxlength="60">
+                            <input value="<?= $adresso["cidade"] ?>" type="text" id="cidade" name="cidade"  minlength="4" maxlength="60">
                         </div><!--.col-input-->
                     </div><!--.form-group-->
 
@@ -282,9 +282,11 @@
                         </div><!--.col-input-->  
                     </div><!--.form-group-->
 
+                    <input type="hidden" name="codigo_adresso" value="<?= $adresso["codigo"] ?>">
+
                     <div class="form-group">
                         <button type="submit" class="btn-registo" name="alterarEndereco">Guardar alteraçao</button>
-                        <button type="submit" class="btn-registo" name="guardarEndereco">Adicionar um outro adresso</button>
+                        <button type="submit" class="btn-registo" name="guardarNovoEndereco">Adicionar um outro Endereço</button>
                     </div>
 
                 </form>
