@@ -23,7 +23,7 @@ if($action === "login"){
             $_SESSION["codigo_conta"] = $conta["codigo"];
             $_SESSION["nome_utilisador"] = $conta["nome_utilisador"];
 
-            header("Location:".ROOT."/admin_agencias/admin_agencia");
+            header("Location:".ROOT."/admin_encomendas");
 
         }else{
             $message = "Dados de Login Incorrecto, verifica e tenta de novo";

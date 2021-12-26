@@ -8,11 +8,13 @@ class Agentes extends Base{
         $query = $this->db->prepare("
         SELECT 
             codigo_agente, 
-            nome, avatar, 
+            nome, 
+            avatar, 
             data_nascimento, 
             lugar_nascimento,
             num_doc_identificacao,
-            genero, numero_telefone, 
+            genero, 
+            numero_telefone, 
             email,
             pais, 
             adresso, 
@@ -164,6 +166,76 @@ class Agentes extends Base{
             );
 
             return $codigo_registro ? $this->db->lastInsertId() : 0;
+
+        }
+
+    }
+
+    public function alterarDadosAgente($dadosAgente){
+
+        if(
+            mb_strlen($dadosAgente["nome_agente"]) >= 6  &&
+            mb_strlen($dadosAgente["nome_agente"]) <= 60 &&
+            /* checkdate($dadosAgente["data_nascimento"]) && */
+            mb_strlen($dadosAgente["lugar_nascimento"]) >= 3 &&
+            mb_strlen($dadosAgente["lugar_nascimento"]) <= 60 &&
+            mb_strlen($dadosAgente["numero_bi"]) >= 3 &&
+            mb_strlen($dadosAgente["numero_bi"]) <= 14 &&
+            isset($dadosAgente["genero"]) &&
+            mb_strlen($dadosAgente["adresso"]) >= 8 &&
+            mb_strlen($dadosAgente["adresso"]) <= 120 &&
+            mb_strlen($dadosAgente["cidade"]) >= 4 &&
+            mb_strlen($dadosAgente["cidade"]) <= 40 &&
+            mb_strlen($dadosAgente["codigo_postal"]) >= 4 &&
+            mb_strlen($dadosAgente["codigo_postal"]) <= 20 &&
+            filter_var($dadosAgente["email"], FILTER_VALIDATE_EMAIL) &&
+            mb_strlen($dadosAgente["num_telefone"]) >= 7 &&
+            mb_strlen($dadosAgente["num_telefone"]) <= 20 &&
+            intval($dadosAgente["codigo_agente"])
+        ){
+
+            $query = $this->db->prepare("
+                UPDATE agentes
+                SET 
+                    nome = ?,
+                    avatar = ?,
+                    data_nascimento = ?,
+                    lugar_nascimento = ?,
+                    num_doc_identificacao = ?,
+                    genero = ?,
+                    numero_telefone = ?,
+                    email = ?,
+                    pais = ?,
+                    adresso = ?,
+                    cidade = ?,
+                    codigo_postal = ?
+                WHERE 
+                    codigo_agente = ?
+            ");
+
+            $query->execute([
+
+                    $dadosAgente["nome_agente"],
+                    $dadosAgente["imagem_agente"],
+                    $dadosAgente["data_nascimento"],
+                    $dadosAgente["lugar_nascimento"],
+                    $dadosAgente["numero_bi"],
+                    $dadosAgente["genero"],
+                    $dadosAgente["num_telefone"],
+                    $dadosAgente["email"],
+                    $dadosAgente["codigo_pais"],
+                    $dadosAgente["adresso"],
+                    $dadosAgente["cidade"],
+                    $dadosAgente["codigo_postal"],
+                    $dadosAgente["codigo_agente"]
+
+                ]);
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
 
         }
 

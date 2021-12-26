@@ -7,10 +7,13 @@
 
     $paises = $modelPaises->getAll();
 
-    if($action === "alteracaoAgente" && isset($_SESSION["codigo_conta"])){
+    if( 
+        ($action === "alteracaoAgente" || $action === "alteracaoAgente2") && 
+        isset($_SESSION["codigo_conta"])
+    ){
 
-        echo "<pre>"; print_r($_POST); echo "</pre>";
-        echo "<pre>"; print_r($_FILES); echo "</pre>"; exit;
+        /* echo "<pre>"; print_r($_POST); echo "</pre>";
+        echo "<pre>"; print_r($_FILES); echo "</pre>"; exit; */
 
         $codigo_paises = [];
         foreach($paises as $pais){
@@ -18,7 +21,7 @@
         }
 
         if(
-            isset($_POST["alterarAgente"]) && 
+            (isset($_POST["alterarAgente"]) || isset($_POST["alterarAgente2"]) ) && 
             is_numeric($_SESSION["codigo_conta"]) &&
             in_array($_POST["pais"], $codigo_paises)
         ){

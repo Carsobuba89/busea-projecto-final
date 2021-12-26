@@ -12,7 +12,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="/admin_encomendas" class="nav-link active-link">Encomendas</a></li>
                 <li class="nav-item"><a href="/admin_agencias/admin_agencia" class="nav-link">Gerir Agencia</a></li> 
-                <li class="nav-item"><a href="/admin_conteudos" class="nav-link">Gestao de Conteudos</a></li>
+                <li class="nav-item"><a href="/admin_conteudos" class="nav-link">Gerir Conteudos</a></li>
             </ul>
         </div><!-- .navbar-left -->
     

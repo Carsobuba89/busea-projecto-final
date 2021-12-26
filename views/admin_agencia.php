@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -465,7 +465,8 @@
                             <label for="imagem_agente">Avatar do agente</label>
                         </div><!--.col-label-->
                         <div class="col-input-file">
-                            <input type="file" id="imagem_agente" name="imagem_agente" accept="image/*" required>
+                            <input type="file" id="imagem_agente" name="imagem_agente" accept="image/*">
+                            <input type="hidden" name="imagem_agente_old" value="<?= $agente[1]["avatar"] ?>">
                             <div class="wrap-img"> 
                                 <img src="../assets/images/img-agentes/<?= $agente[1]["avatar"] ?>" alt="" class="responsive-img"> 
                             </div><!-- .wrap-img -->
@@ -519,7 +520,7 @@
                             <label for="pais">Pais de Residencia</label>
                         </div><!--.col-label-->
                         <div class="col-select">
-                            <select name="pais" id="paisSelecionado">
+                            <select name="pais" id="pais">
                                 <!-- <option value="escolha"> Escolha o pais</option> -->
                                 <?php                                 
                                     foreach($paises as $pais){
@@ -583,8 +584,9 @@
                         <span></span>
                     </div><!--.form-group-->
 
+                    <input type="hidden" name="codigo_agente" value="<?= $agente[1]["codigo_agente"] ?>">
                     <div class="btn-registo-wrap">
-                        <button type="submit" class="btn-registo" name="alterarAgente">Guardar alteraçao</button>
+                        <button type="submit" class="btn-registo" name="alterarAgente2">Guardar alteraçao</button>
                     </div>
 
                 </form>
