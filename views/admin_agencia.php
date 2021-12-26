@@ -102,7 +102,7 @@
             <div class="div-form dados-agencia">
                 <h3>Dados da agencia</h3>
 
-                <form method="post" action="<?= ROOT ?>/agencias/alteracaoDadosAgencia">
+                <form method="post" action="<?= ROOT ?>/agencias/alteracaoDadosAgencia" enctype="multipart/form-data">
                     
                     <div class="form-group">
                         <div class="col-label">
@@ -126,7 +126,8 @@
                             <label for="imagem_agencia">Imagem da agencia </label>
                         </div><!--.col-label-->
                         <div class="col-input-file">
-                            <input type="file" id="imagem_agencia" name="imagem_agencia" accept="image/*" required>
+                            <input type="file" id="imagem_agencia" name="imagem_agencia" accept="image/*">
+                            <input type="hidden" name="imagem_agencia_old" value="<?= $agencia["imagem_agencia"] ?>">
                             <div class="wrap-img"> 
                                 <img src="../assets/images/img-agencias/<?= $agencia["imagem_agencia"] ?>" alt="" class="responsive-img"> 
                             </div><!-- .wrap-img -->
@@ -153,6 +154,7 @@
                         <span></span>
                     </div><!--.form-group-->          
 
+                    <input type="hidden" name="codigo_agencia" value="<?= $agencia["codigo_agencia"] ?>">
                     <div class="btn-registo-wrap">
                         <button type="submit" class="btn-registo" name="alterarDadosAgencia">Guardar Alteraçao</button>
                     </div>
@@ -311,10 +313,11 @@
 
                     <div class="form-group">
                         <div class="col-label">
-                            <label for="imagem_agente">Avatar do agente</label>
+                            <label for="imagem_agente">Carregar a imagem do agente</label>
                         </div><!--.col-label-->
                         <div class="col-input-file">
                             <input type="file" id="imagem_agente" name="imagem_agente" accept="image/*">
+                            <input type="hidden" name="imagem_agente_old" value="<?= $agente[0]["avatar"] ?>">
                             <div class="wrap-img"> 
                                 <img src="../assets/images/img-agentes/<?= $agente[0]["avatar"] ?>" alt="" class="responsive-img"> 
                             </div><!-- .wrap-img -->
@@ -368,7 +371,7 @@
                             <label for="pais">Pais da Residencia</label>
                         </div><!--.col-label-->
                         <div class="col-select">
-                            <select name="pais" id="paisSelecionado">
+                            <select name="pais" id="pais">
                                 <!-- <option value="escolha"> Escolha o pais</option> -->
                                 <?php                                 
                                     foreach($paises as $pais){
@@ -432,6 +435,7 @@
                         <span></span>
                     </div><!--.form-group-->
 
+                    <input type="hidden" name="codigo_agente" value="<?= $agente[0]["codigo_agente"] ?>">
                     <div class="btn-registo-wrap">
                         <button type="submit" class="btn-registo" name="alterarAgente">Guardar alteraçao</button>
                     </div>

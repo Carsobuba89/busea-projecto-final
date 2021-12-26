@@ -202,8 +202,6 @@ if($action === "conta"){
                 $genero = "M";
             }else if(isset($_POST["feminino"])){
                 $genero = "F";
-            }else{
-                $genero = "X";
             }
 
             $dados_agente = array(

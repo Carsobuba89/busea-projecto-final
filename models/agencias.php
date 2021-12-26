@@ -48,7 +48,7 @@ class Agencias extends Base{
             $codigo_registro = $query->execute(
                 [
                     $registro["nome_agencia"],
-                    $registro["descricao"],
+                    nl2br($registro["descricao"]),
                     $registro["imagem_agencia"],
                     $registro["hora_abertura"],
                     $registro["hora_fecho"],
@@ -76,6 +76,49 @@ class Agencias extends Base{
             $dados["codigo_conta"]
         ]);
 
+    }
+
+    public function alterarDadosAgencia($dadosAgencia){
+
+        if(
+            mb_strlen($dadosAgencia["nome_agencia"]) >= 6  &&
+            mb_strlen($dadosAgencia["nome_agencia"]) <= 120 &&
+            mb_strlen($dadosAgencia["descricao"]) >= 60 &&
+            mb_strlen($dadosAgencia["descricao"]) <= 16777 &&
+            mb_strlen($dadosAgencia["hora_abertura"]) >= 3 &&
+            mb_strlen($dadosAgencia["hora_abertura"]) <= 6 &&
+            mb_strlen($dadosAgencia["hora_fecho"]) >= 3 &&
+            mb_strlen($dadosAgencia["hora_fecho"]) <= 6 
+        ){
+            $query = $this->db->prepare("
+                UPDATE agencias
+                SET 
+                    nome_agencia = ?,
+                    descricao_agencia = ?,
+                    imagem_agencia = ?,
+                    hora_abertura = ?,
+                    hora_fecho = ?
+                WHERE
+                    codigo_agencia = ?
+            ");
+
+            $query->execute([
+                $dadosAgencia["nome_agencia"],
+                nl2br($dadosAgencia["descricao"]),
+                $dadosAgencia["imagem_agencia"],
+                $dadosAgencia["hora_abertura"],
+                $dadosAgencia["hora_fecho"],
+                $dadosAgencia["codigo_agencia"]
+
+            ]);
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
     }
 
 }
