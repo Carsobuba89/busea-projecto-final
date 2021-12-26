@@ -158,36 +158,30 @@
 
 .slide{
   flex: 0 0 100%;
+  width: 100%;
+  height: 90vh;
+  
 
 }
-.slide-content{
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  width: 100%;
-  height: 80vh;
-  /* margin: auto; */
-  padding: 16px 48px;
+
+.slide img{
   background-size: cover;
   background-position: center;
+}
 
-}
-.slide-content-1{
-  background-image: url(../images/slides-img/pexels-rodnae-productions-7363161.jpg);
-}
-.slide-content-2{
-  background-image: url(../images/slides-img/pexels-tiger-lily-4484045.jpg);
-}
-.slide-content-3{
-  background-image: url(../images/slides-img/seguimento2.jpg);
+.slide-content{
+  padding: 16px 48px;
 }
 
 .slide-text-bloc {
+  position: absolute;
+  top: 25%;
   background-color: rgba(25, 25, 25, 0.4); 
   /* background-color: rgba(51, 170, 51, .3); */
-  max-width: 35%;
+  width: 40%;
   padding: 10px 10px 30px;
   color: white;
+  z-index: 1; 
 }
 
 .slide-text-bloc h1 {

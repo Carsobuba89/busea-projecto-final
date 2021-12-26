@@ -9,16 +9,10 @@
                 <a href="" class="aside-link">Encomendas</a>
             </li>
             <li class="aside-item">
-                <a href="" class="aside-link">Seguimento</a>
+                <a href="" class="aside-link">Noticias</a>
             </li>
             <li class="aside-item">
-                <a href="" class="aside-link">faturaçao</a>
-            </li>
-            <li class="aside-item">
-                <a href="" class="aside-link">Contratos</a>
-            </li>
-            <li class="aside-item">
-                <a href="" class="aside-link">Pequena empresa</a>
+                <a href="" class="aside-link">Como Fazer</a>
             </li>
             <li class="aside-item">
                 <a href="" class="aside-link">Reclamaçoes</a>

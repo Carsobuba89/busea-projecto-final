@@ -38,59 +38,29 @@
 
             <div class="container-slides">
 
+                <?php foreach($slides as $key => $value) { ?>
                 <div class="slide">
-                    <div class="slide-content slide-content-1">
+
+                    <img src="../assets/images/slides-img/<?= $slides[$key]["imagem"] ?>" class="responsive-img" alt="slides imagem">
+                    
+                    <div class="slide-content"> 
+
                         <div class="slide-text-bloc">
                             <article>
-                                <h1>Cria a sua conta agora</h1>
+                                <h1><?= $slides[$key]["titulo"] ?></h1>
                                 <p>
-                                    Para beneficiar dos nossos serviços crie uma conta de 
-                                    forma gratuita e segura, depois podes monitorizar as suas encomendas facilmente e tambem vai puder fazer seguimento de estado das encomendas.
+                                    <?= $slides[$key]["conteudo"] ?>
                                 </p>
                                 <button class="btn-slide">
-                                    <a href="sign-up-login.html" target="_blank">Saber mais</a>
+                                    <a href="/conteudo_details/<?= $slides[$key]["codigo"] ?>" target="_blank">Saber mais</a>
                                 </button>
                             </article>
                             
                         </div><!--.slide-text-bloc-->
+                        
                     </div><!--.slide-content .slide-content-1-->
                 </div><!--.slide-->
-                <div class="slide">
-                    <div class="slide-content slide-content-2">
-                        <div class="slide-text-bloc">
-                            <article>
-                                <h1>Faça seguimento da sua encomenda</h1>
-                                <p>
-                                    Para beneficiar dos nossos serviços crie uma conta de 
-                                    forma gratuita e segura, depois podes monitorizar as suas encomendas facilmente e tambem vai puder fazer seguimento de estado das encomendas,  
-                                    venha juntar.
-                                </p>
-                                <button class="btn-slide">
-                                     <a href="seguimento-encomendas.html" target="_blank">Saber mais</a>
-                                </button>
-                            </article>
-                            
-                        </div><!--.slide-text-bloc-->
-                    </div><!--.slide-content .slide-content-1-->
-                </div><!--.slide-->
-                <div class="slide">
-                    <div class="slide-content slide-content-3">
-                        <div class="slide-text-bloc">
-                            <article>
-                            <h1>Quer saber quanto custa um envio</h1>
-                            <p>
-                                Para beneficiar dos nossos serviços crie uma conta de 
-                                forma gratuita e segura, depois podes monitorizar as suas encomendas facilmente e tambem vai puder fazer seguimento de estado das encomendas,  
-                                venha juntar.
-                            </p>
-                            <button class="btn-slide">
-                                 <a href="simular-encomendas.html" target="_blank">Saber mais</a>
-                            </button>
-                            </article>
-                            
-                        </div><!--.slide-text-bloc-->
-                    </div><!--.slide-content .slide-content-1-->
-                </div><!--.slide-->
+                <?php } ?> 
                 
             </div><!--.container-slides-->
                 

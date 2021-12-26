@@ -1,15 +1,10 @@
 <?php 
    
-   if(!empty($action)){
-       //echo $action;
+   require("models/conteudos.php");
+   $modelConteudos = new Conteudos();
 
-       if(!is_numeric($action)){
-           header("HTTP/1.1 400 Bad Request");
-           die("Pedido Invalido");
-       }
-
-   }
-   else{
+   $slides = $modelConteudos->getAllSlides();
+   
        require("views/inicio.view.php");
-   }
+
 ?>
