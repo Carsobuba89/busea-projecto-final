@@ -1,8 +1,15 @@
 <?php
 
-if($controller === "seguimentos"){
+if($action === "estadoEncomenda"){
 
-    require("views/seguimento.view.php");
+    if(isset($_POST["seguirEncomenda"])){
+
+       echo "<pre>"; print_r($_POST);
+
+    }
+
 }
+
+require("views/seguimento.view.php");
 
 ?>

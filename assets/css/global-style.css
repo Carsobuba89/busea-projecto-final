@@ -266,10 +266,20 @@
   cursor: pointer;
 }
 
+/* .btn-follow-up a{
+  text-decoration: none;
+  color: white;
+
+} */
+
 .btn-follow-up:hover {
   background: yellowgreen;
   color: rgb(4, 37, 4);
 }
+
+/* .btn-follow-up a:hover {
+  color: rgb(4, 37, 4);
+} */
 
 
 /* Estilos de Informaçao Agencias na pagina principal
@@ -338,23 +348,32 @@
  /*  height: auto; */
 }
 
-.btn-info-agency {
+.btn-info-agency{
   font-size: 0.9rem;
   cursor: pointer;
   padding: 10px 15px;
   background: green;
-  color: white;
+  color: green;
   border: 2px solid;
   border-radius: 20px;
   text-align: center;
 }
+
+.btn-info-agency a{
+  text-decoration: none;
+  color: white;
+}
+
 .btn-info-agency:hover {
   border: 2px solid green;
-  background: rgb(240, 238, 238);
+  background: rgb(219, 217, 217);
   color: rgb(4, 37, 4);
   transition: 0.15s ease-in-out;
 }
 
+.btn-info-agency a:hover{
+  color: rgb(4, 37, 4);
+}
 
 /* Estilos de Noticias na pagina principal
      ========================================================================== */

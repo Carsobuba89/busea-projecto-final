@@ -3,6 +3,29 @@ require_once("base.php");
 
 class Agencias extends Base{
 
+    public function getTreeItems(){
+
+        $query = $this->db->prepare("
+            SELECT 
+                codigo_agencia, 
+                nome_agencia, 
+                descricao_agencia, 
+                imagem_agencia,
+                responsavel,
+                hora_abertura,
+                hora_fecho,
+                codigo_conta
+            FROM 
+                agencias
+            LIMIT 3
+        ");
+
+        $query->execute();
+
+        return $query->fetchAll( PDO::FETCH_ASSOC);
+
+    }
+
     public function getItemAgencia($codigo_conta){
 
         $query = $this->db->prepare("
@@ -24,6 +47,7 @@ class Agencias extends Base{
         $query->execute([$codigo_conta]);
 
         return $query->fetch();
+
     }
 
     public function create($registro){

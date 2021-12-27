@@ -72,10 +72,12 @@
                     <p>Segue o estado da sua encomenda introduza o numero da referencia: &nbsp;</p>
                 </div>
                 <div class="follow-up-div-input">
-                    <input type="text" id="seguimento" name="seguimento" class="follow-up-input">
-                    <button type="button" class="btn-follow-up">Seguir</button>
+                    <form method="post" action="<?php echo ROOT; ?>/seguimentos/estadoEncomenda">
+                        <input type="text" id="seguimento" name="seguimento" class="follow-up-input">
+                        <button type="submit" class="btn-follow-up" name="seguirEncomenda">Seguir encomenda </button>
+                    </form>
+                    
                 </div>
-
             </div>
         </section>
 
@@ -91,58 +93,22 @@
                 </div><!-- .info-agency-header-->
 
                 <div class="info-agency-body">
-
+                    <?php foreach($agencias as $key => $value){ ?>
                     <div id="bloc1" class="info-agency-bloc">
                         <div class="info-agency-text">
-                            <h3>Agencia Bacar Nhabali</h3>
+                            <h3><?= $agencias[$key]["nome_agencia"] ?></h3>
                             <p>
-                                Agencia de bacar Nhabali situa se na Baixa da Banheira ao lado das Fontainhas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi porro molestiae illum 
-                                vero reprehenderit suscipit.
+                                <?= $agencias[$key]["descricao_agencia"] ?>
                             </p>
-                            <button type="button" class="btn-info-agency">Contactar Bacar</button>
+                            <button type="button" class="btn-info-agency"><a href="/agencias/<?= $agencias[$key]["codigo_agencia"] ?>">Contactar agencia</a></button>
                         </div><!-- .info-agency-text-->
                         <div class="info-agency-img">
-                            <a href="">
-                                <img src="../assets/images/img-page/agency1.jpg" alt="" class="responsive-img">
-                            </a>
+                            <img src="../assets/images/img-agencias/<?= $agencias[$key]["imagem_agencia"] ?>" alt="imagem da agencia" class="responsive-img">
                         </div><!-- .info-agency-img-->
             
                     </div><!-- .info-agency-wrap-->
-            
-                    <div id="bloc2" class="info-agency-bloc">
-                        <div class="info-agency-text">
-                            <h3>Agencia Joao Sanca</h3>
-                            <p>
-                                Agencia de bacar Nhabali situa se na Baixa da Banheira ao lado das Fontainhas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi porro molestiae illum 
-                                vero reprehenderit suscipit.
-                            </p>
-                            <button type="button" class="btn-info-agency">Contactar Joao</button>
-                        </div><!-- .info-agency-text-->
-                        <div class="info-agency-img">
-                            <a href="">
-                                <img src="../assets/images/img-page/pexels-craig-adderley-1543924.jpg" alt="" class="responsive-img">
-                            </a>
-                        
-                        </div><!-- .info-agency-img-->
-            
-                    </div><!-- .info-agency-wrap-->
-            
-                    <div id="bloc3" class="info-agency-bloc">
-                        <div class="info-agency-text">
-                            <h3>Agencia Babundan Vaz</h3>
-                            <p>
-                                Babundan Monteiro agencia situa na Baixa da Banheira ao lado das Fontainhas Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi porro molestiae illum 
-                                vero reprehenderit suscipit.
-                            </p>
-                            <button class="btn-info-agency">Contactar Babundan</button>
-                        </div><!-- .info-agency-text-->
-                        <div class="info-agency-img">
-                            <a href="">
-                                <img src="../assets/images/img-page/agency5.jpg" alt="" class="responsive-img">
-                            </a>
-                        </div><!-- .info-agency-img-->
-            
-                    </div><!-- .info-agency-wrap-->
+                    <?php } ?>    
+                   
 
                 </div><!-- .info-agency-body-->
 
