@@ -1,4 +1,8 @@
 <?php
+    require("models/conteudos.php");
+    $modelConteudos = new Conteudos();
+
+    $servico = $modelConteudos->getServices();
 
 
 

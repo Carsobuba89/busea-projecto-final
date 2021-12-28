@@ -7,15 +7,14 @@
         <div class="container-top-image">
             <div class="content-top-image service-img">
                 <div class="bloc-text-top-image">
-                    <h1>os serviços que prestamos</h1>
-                    <p>Para beneficiar dos nossos serviços crie uma conta de 
-                        forma gratuita e segura, depois podes monitorizar as suas encomendas facilmente e tambem vai
+                    <h1><?= $servico[0]["titulo"] ?></h1>
+                    <p>
+                        <?= substr($servico[0]["conteudo"], 0, 189) ?>
                     </p>
-                    
                 </div>
             </div><!--.agencia-container-->
         </div><!--Final top image agencia-->
-
+    
         <div class="main-container">
             <div class="header-container">
                 <div class="header-content">
@@ -35,84 +34,95 @@
                 </div><!--.body-content-left-->
 
                 <div class="body-content-right">
-
                     <div class="content-services">
 
-                        <h3>Utilize os nossos serviços do envio especializado.</h3>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos veritatis corporis alias fugit esse dicta blanditiis soluta! Veniam nemo, distinctio itaque blanditiis et iusto! Aperiam ex, excepturi eveniet laborum, amet rem impedit beatae ipsum cupiditate doloremque consequuntur praesentium porro recusandae iste iure, distinctio expedita eos.
-                            <img src="https://via.placeholder.com/300x200" alt="">
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus tempora facilis repellendus iure doloremque inventore libero eveniet hic magnam obcaecati nostrum illum quos ipsam, nesciunt ducimus. Ducimus aut sunt expedita repellat? Maxime molestiae odit obcaecati!
-                        </p>
+                        <div id="encomenda-reverse" class="encomenda-bloco">
+                            <div class="encomenda-img">
+                                <img src="../assets/images/img-page/<?= $servico[1]["imagem"] ?>" alt="" class="responsive-img">
+                            </div><!--.encomenda-img-->
+                            <div class="encomenda-texto">
+                                <article>
+                                    <h3><?= $servico[1]["titulo"] ?></h3>
+                                    <p><?= substr($servico[1]["conteudo"], 0, 220) ?></p>
+                                    <button class="btn-encomenda"><a href="/conteudo_details/<?= $servico[1]["codigo"] ?>">mais detalhes</a></button>
+                                </article><br>
+                            </div><!--.encomenda-texto-->
+                        </div><!--.encomenda-bloco-->
 
-                    </div><!-- .content-services -->
-
-                    <div class="content-services">
 
                         <h3>Tipos de envios</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae corrupti blanditiis inventore, aliquam ullam hic labore accusantium accusamus odio vero quibusdam, porro aut! Natus, sunt aperiam sint animi fugit eligendi odio quod nihil praesentium molestiae!</p>
 
-                        <div class="slides-service-container">
+                        <div class="info-agency-body">
 
-                            <div class="slide-service-content">
-                                <div class="slide-service-img">
-                                     <img src="https://via.placeholder.com/200x120.png" alt="">
-                                </div><!-- .slide-service-img -->
-                               
-                                <div class="slide-service-description">
-                                     <h4>Titulo de slides</h4>
-                                     <p>
-                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, hic! Lorem ipsum dolor sit amet.
-                                     </p>
-                                </div><!-- .slide-service -->
-                            </div><!-- .slide-service-content -->
+                            <div id="bloc1" class="info-agency-bloc">
+                                
+                                <div class="info-agency-img">
+                                    <a href="/conteudo_details/<?= $servico[2]["codigo"] ?>">
+                                        <img src="../assets/images/img-page/<?= $servico[2]["imagem"] ?>" alt="" class="responsive-img">
+                                    </a>
+                                </div><!-- .info-agency-img-->
 
-                            <div class="slide-service-content">
-                                <div class="slide-service-img">
-                                     <img src="https://via.placeholder.com/200x120.png" alt="">
-                                </div><!-- .slide-service-img -->
-                               
-                                <div class="slide-service-description">
-                                     <h4>Titulo de slides</h4>
-                                     <p>
-                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, hic! Lorem ipsum dolor sit amet.
-                                     </p>
-                                </div><!-- .slide-service -->
-                            </div><!-- .slide-service-content -->
+                                <div class="info-agency-text">
+                                    <h3><?= $servico[2]["titulo"] ?></h3>
+                                    <p>
+                                        <?= substr($servico[2]["conteudo"], 0, 100) ?>
+                                    </p>
+                                   
+                                </div><!-- .info-agency-text-->
+                    
+                            </div><!-- .info-agency-wrap-->
+                    
+                            <div id="bloc2" class="info-agency-bloc">
+                                
+                                <div class="info-agency-img">
+                                    <a href="/conteudo_details/<?= $servico[3]["codigo"] ?>">
+                                        <img src="../assets/images/img-page/<?= $servico[3]["imagem"] ?>" alt="" class="responsive-img">
+                                    </a>
+                                </div><!-- .info-agency-img-->
+                                <div class="info-agency-text">
+                                    <h3><?= $servico[3]["titulo"] ?></h3>
+                                    <p>
+                                        <?= substr($servico[3]["conteudo"], 0, 100) ?>
+                                    </p>
+                                </div><!-- .info-agency-text-->
+                    
+                            </div><!-- .info-agency-wrap-->
+                    
+                            <div id="bloc3" class="info-agency-bloc">
+                                
+                                <div class="info-agency-img">
+                                    <a href="/conteudo_details/<?= $servico[4]["codigo"] ?>">
+                                        <img src="../assets/images/img-page/<?= $servico[4]["imagem"] ?>" alt="" class="responsive-img">
+                                    </a>
+                                </div><!-- .info-agency-img-->
 
-                            <div class="slide-service-content">
-                                <div class="slide-service-img">
-                                     <img src="https://via.placeholder.com/200x120.png" alt="">
-                                </div><!-- .slide-service-img -->
-                               
-                                <div class="slide-service-description">
-                                     <h4>Titulo de slides</h4>
-                                     <p>
-                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, hic! Lorem ipsum dolor sit amet.
-                                     </p>
-                                </div><!-- .slide-service -->
-                            </div><!-- .slide-service-content -->
+                                <div class="info-agency-text">
+                                    <h3><?= $servico[4]["titulo"] ?></h3>
+                                    <p>
+                                        <?= substr($servico[4]["conteudo"], 0, 100) ?>
+                                    </p>
+                    
+                                </div><!-- .info-agency-text-->
+                    
+                            </div><!-- .info-agency-wrap-->
 
-                        </div><!-- .slides-service-container -->
+                        </div><!-- .info-agency-body-->
 
-                        <div class="content-services">
-                            <article>
-                                <h3>O que fazer antes de contactar uma agencia</h3>
-                                <p>
-                                    <img src="https://via.placeholder.com/300x200" alt="">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos veritatis corporis alias fugit esse dicta blanditiis soluta! Veniam nemo, distinctio itaque blanditiis et iusto! Aperiam ex, excepturi eveniet laborum, amet rem impedit beatae ipsum cupiditate doloremque consequuntur praesentium porro recusandae iste iure, distinctio expedita eos.
-                                </p>
-                            </article>
+                        <div class="encomenda-bloco">
+                            <div class="encomenda-img">
+                                <img src="../assets/images/img-page/<?= $servico[5]["imagem"] ?>" alt="" class="responsive-img">
+                            </div><!--.encomenda-img-->
+                            <div class="encomenda-texto">
+                                <article>
+                                    <h3><?= $servico[5]["titulo"] ?></h3>
+                                    <p><?= substr($servico[5]["conteudo"], 0, 250) ?></p>
+                                    <button class="btn-encomenda"><a href="/conteudo_details/<?= $servico[5]["codigo"] ?>">mais detalhes</a></button>
+                                </article>
+                            </div><!--.encomenda-texto-->
+                        </div><!--.encomenda-bloco-->
 
-                            <article>
-                                <h3>Saiba como fazer envios frequentes</h3>
-                                <p>
-                                    <img src="https://via.placeholder.com/300x200" alt="">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos veritatis corporis alias fugit esse dicta blanditiis soluta! Veniam nemo, distinctio itaque blanditiis et iusto! Aperiam ex, excepturi eveniet laborum, amet rem impedit beatae ipsum cupiditate doloremque consequuntur praesentium porro recusandae iste iure, distinctio expedita eos.
-                                </p>
-                            </article>   
-                        </div><!-- .content-services -->
+
                     </div><!-- .content-services -->                
                 </div><!--.body-content-right-->
 

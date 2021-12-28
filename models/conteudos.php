@@ -65,6 +65,26 @@
 
         }
 
+        public function getServices(){
+
+            $query = $this->db->prepare("
+                SELECT 
+                    codigo,
+                    titulo,
+                    conteudo,
+                    imagem
+                FROM
+                    conteudo_paginas
+                WHERE 
+                    tipo_conteudo = 7
+            ");
+
+            $query->execute();
+
+            return $query->fetchAll( PDO::FETCH_ASSOC );
+
+        }
+
         public function getOneContent($codigo){
 
             $query = $this->db->prepare("
