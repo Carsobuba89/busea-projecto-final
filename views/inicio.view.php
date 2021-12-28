@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <!--meta http-equiv="X-UA-Compatible" content="IE=edge"-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/global-style.css">
-    <!--Google Fonts Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,100&family=Roboto:ital,wght@1,100;1,300;1,400&display=swap" rel="stylesheet">
-    <!--FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/2f1b3770e6.js" crossorigin="anonymous"></script>
-    
-    <title>Busea</title>
-</head>
-<body>
 
-    <div class="global-container">
-
-    <header class="nav-header">
         <?php
             require("./views/templates/menu.php");
         ?>
-    </header>
 
     <main>  
         <div id="slides">
@@ -128,69 +108,24 @@
                     </div>
                 </div><!-- .news-header -->
 
-                <div class="news-body">
+                <div class="news-body">      
                     <div class="news-body-carousel">
-                        
-                        <div id="news-bloco1" class="news-body-bloc">
-                            <article>
-                                <h3>Cuidado com Cuminicaçoes Fraudulentas</h3>
-                                <p>Esteja atento a SMS ou e-mails que se identificam como a pedir pagamentos adicionais ou a convidar o destinatário a clicar numa ligação para seguir um pacote. Se a mensagem, a marca, o logótipo, a ligação ou outro elemento lhe parecer fraudulento, não partilhe quaisquer informações sensíveis, como dados de cartões de crédito. Em caso de dúvida, contacte a UPS.</p>
-                                <time datetime="2021-07-22">13 de Octobro de 2020</time>
-                                <a href="#">Ler mais</a>
-                            </article>
-                        </div><!-- .news-body-bloc-->
-                        <div id="news-bloco2" class="news-body-bloc">
-                            <article>
-                                <h3>Atualização de Taxas de Época Especial</h3>
-                                <p>Já estão disponíveis informações, incluindo novas Taxas deque estarão em vigor entre 4 de Julho de 2021 e permanecerão em vigor até nova notificação. sendo da UPS a pedir pagamentos adicionais ou a convidar o destinatário a clicar numa ligação para seguir um pacote. Se a mensagem, a marca, o logótipo, a ligação ou outro elemento lhe parecer fraudulento, não partilhe.</p>
-                                <time datetime="2021-07-22">22 de Junho de 2021</time>
-                                <a href="#">Ler mais</a>
-                            </article>
-                        </div><!-- .news-body-bloc-->
-                        <div id="news-bloco3" class="news-body-bloc">
-                            <article>
-                                <h3>Novos Guias de Tarifas e Serviços</h3>
-                                <p>A partir do dia 1 de Novembro de 2020 e até 16 de Janeiro de, a Busea irá 
-                                    implementar uma taxa de Temporada Alta em vários países da Europa e Africa. As taxas 
-                                    aplicar-se-ão apenas encomendas que cumpram as especificações para Pacotes
-                                    de Grandes Dimensões, Acima dos Limites Máximos, bem como custos bem como custos bem como custos de Manuseamento
-                                </p>
-                                <time datetime="2021-07-22">09 de Março de 2021</time>
-                                <a href="#">Ler mais</a>
-                            </article>
-                        </div><!-- .news-body-bloc-->
-                        <div id="news-bloco4" class="news-body-bloc">
-                            <article>
-                                <h3>2021 Guias de Tarifas e Serviços</h3>
-                                <p>Esteja atento a SMS ou e-mails que se identificam como a pedir pagamentos adicionais ou a convidar o destinatário a clicar numa ligação para seguir um pacote. Se a mensagem, a marca, o logótipo, a ligação ou outro elemento lhe parecer fraudulento, não partilhe quaisquer informações sensíveis, como dados de cartões de crédito. Em caso de dúvida, contacte a UPS.</p>
-                                <time datetime="2021-07-22">13 de Octobro de 2020</time>
-                                <a href="#">Ler mais</a>
-                            </article>
-                        </div><!-- .news-body-bloc-->
-                        <div id="news-bloco5" class="news-body-bloc">
-                            <article>
-                                <h3>Prepare-se para as férias com a Busea</h3>
-                                <p>Já estão disponíveis informações, incluindo novas Taxas de Época Especial que estarão em vigor entre 4 de Julho de 2021 e permanecerão em vigor até nova notificação. sendo da UPS a pedir pagamentos adicionais ou a convidar o destinatário a clicar numa ligação para seguir um pacote. Se a mensagem, a marca, o logótipo, a ligação ou outro elemento lhe parecer fraudulento, não partilhe.</p>
-                                <time datetime="2021-07-22">22 de Junho de 2021</time>
-                                <a href="#">Ler mais</a>
-                            </article>
-                        </div><!-- .news-body-bloc-->
-                        <div id="news-bloco6" class="news-body-bloc">
-                            <article>
-                                <h3>Garantia de Reembolso Busea implementada</h3>
-                                <p>A partir do dia 1 de Novembro de 2020 e até 16 de Janeiro de, a Busea irá 
-                                    implementar uma taxa de Temporada Alta em vários países da Europa e Africa. As taxas 
-                                    aplicar-se-ão apenas encomendas que cumpram as especificações para Pacotes
-                                    de Grandes Dimensões, Acima dos Limites Máximos, bem como custos bem como custos bem como custos de Manuseamento
-                                </p>
-                                <time datetime="2021-07-22">09 de Março de 2021</time>
-                                <a href="#">Ler mais</a>
-                            </article>
-                        </div><!-- .news-body-bloc-->
+
+                        <?php foreach($noticias as $key => $value){ ?>
+
+                            <div id="news-bloco1" class="news-body-bloc">
+                                <article>
+                                    <h3><?= $noticias[$key]["titulo"] ?></h3>
+                                    <p><?= $noticias[$key]["conteudo"] ?></p>
+                                    <time datetime="2021-07-22"><?= $noticias[$key]["data_criacao"] ?></time>
+                                    <a href="/conteudo_details/<?= $noticias[$key]["codigo"] ?>">Ler mais</a>
+                                </article>
+                            </div><!-- .news-body-bloc-->
+
+                        <?php } ?>    
 
                     </div><!-- .news-body-carousel -->
                 </div><!-- .news-body-->
-
 
             </div><!-- .news-container-->
         </section><!-- #news-sections-->
@@ -204,49 +139,35 @@
                     </div><!-- .info-agency-header-bloc-->
                 </div><!--.encomenda-header-->
 
-                <div class="encomenda-bloco">
-                    <div class="encomenda-img">
-                        <img src="../assets/images/img-page/encomendas.jpg" alt="" class="responsive-img">
-                    </div><!--.encomenda-img-->
-                    <div class="encomenda-texto">
-                        <article>
-                            <h3>Como enviar uma encomenda</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique aliquam 
-                                impedit odio quae tempora quam soluta ea consequuntur possimus quis debitis, 
-                                repudiandae! Corrupti dignissimos molestias iure, minus impedit nam odio 
-                                architecto eius consectetur sequi pariatur voluptatibus rem optio?</p>
-                            <button class="btn-encomenda"><a href="servico-encomendas.html">mais detalhes</a></button>
-                        </article>
-                    </div><!--.encomenda-texto-->
-                </div><!--.encomenda-bloco-->
+                <?php foreach($infoEncomendas as $key => $value){ 
+                        if($infoEncomendas[$key]["codigo"] % 2 == 0){
+                            echo '<div class="encomenda-bloco">';
+                        }else{
+                            echo '<div id="encomenda-reverse" class="encomenda-bloco">';
+                        }
+                    ?>  
+                        <div class="encomenda-img">
+                            <img src="../assets/images/img-page/<?= $infoEncomendas[$key]["imagem"] ?>" alt="" class="responsive-img">
+                        </div><!--.encomenda-img-->
+                        <div class="encomenda-texto">
+                            <article>
+                                <h3><?= $infoEncomendas[$key]["titulo"] ?></h3>
+                                <p>
+                                 <?= $infoEncomendas[$key]["conteudo"] ?>
+                                </p>
+                                <button class="btn-encomenda"><a href="/conteudo_details/<?= $infoEncomendas[$key]["codigo"] ?>">mais detalhes</a></button>
+                            </article>
+                        </div><!--.encomenda-texto-->
+                    </div><!--.encomenda-bloco-->
 
-                <div id="encomenda-reverse" class="encomenda-bloco">
-                    <div class="encomenda-img">
-                        <img src="../assets/images/img-page/agencia2.jpg" alt="" class="responsive-img">
-                    </div><!--.encomenda-img-->
-                    <div class="encomenda-texto">
-                        <article>
-                            <h3>Como receber uma encomenda</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique aliquam 
-                                impedit odio quae tempora quam soluta ea consequuntur possimus quis debitis, 
-                                repudiandae! Corrupti dignissimos molestias iure, minus impedit nam odio 
-                                architecto eius consectetur sequi pariatur voluptatibus rem optio?</p>
-                            <button class="btn-encomenda"><a href="servico-encomendas.html">mais detalhes</a></button>
-                        </article>
-                    </div><!--.encomenda-texto-->
-                </div><!--.encomenda-bloco-->
+                <?php } ?>
+
+            
             </div><!--.encomenda-container-->
 
         </section><!--#encomenda-sections-->
     </main>
-    <footer>
+    
         <?php
             require("views/templates/footer.php");
         ?>
-            
-    </footer>
- </div><!-- .global-container -->
-
-        <script src="../assets/js/globalScript.js"></script> 
-</body>
-</html>

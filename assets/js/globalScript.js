@@ -40,11 +40,11 @@ const buttonSeguinte = document.querySelector("#btnSeguinte");
 //-----------Event listener of next button -------------------
 buttonSeguinte.addEventListener("click", () => {
     //newsBodyContainer.scrollLeft += newsBodyContainer.offsetWidth;
-    newsBodyContainer.scrollLeft += 309;
+    newsBodyContainer.scrollLeft += 310;
 });
 //-----------Event listener of precedent button -------------------
 buttonPrecedente.addEventListener("click", () => {
     //newsBodyContainer.scrollLeft -= newsBodyContainer.offsetWidth;
-    newsBodyContainer.scrollLeft -= 309;
+    newsBodyContainer.scrollLeft -= 310;
 });
 //console.log(buttonSeguinte);

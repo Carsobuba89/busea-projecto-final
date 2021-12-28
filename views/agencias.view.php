@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/global-style.css">
-    <!--Google Fonts Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,100&family=Roboto:ital,wght@1,100;1,300;1,400&display=swap" rel="stylesheet">
-    <!--FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/2f1b3770e6.js" crossorigin="anonymous"></script>
-    
-    <title>As agencias</title>
-</head>
-<body>
 
-	<header class="nav-header">
         <?php
             require("./views/templates/menu.php");
         ?>
-    </header>
   
     <main>
         <div class="container-top-image">
@@ -125,13 +107,6 @@
         </div><!--.main-container-->
     </main>
 
-    <footer>
         <?php
             require("views/templates/footer.php");
-        ?>    
-    </footer>
-
-    
-    <script src="js/globalScript.js"></script>
-</body>
-</html>
+        ?> 

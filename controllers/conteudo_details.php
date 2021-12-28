@@ -4,9 +4,9 @@
 
     if(isset($action)){
 
-        $slide = $modelConteudos->getOneSlide($action);
+        $content = $modelConteudos->getOneContent($action);
 
-        //var_dump($lide); exit;
+        /* echo "<pre>"; print_r($content); echo "</pre>"; exit; */
 
         
     }
