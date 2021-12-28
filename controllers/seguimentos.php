@@ -10,6 +10,11 @@ if($action === "estadoEncomenda"){
 
 }
 
+require("models/conteudos.php");
+$modelConteudos = new Conteudos();
+
+$seguimento = $modelConteudos->getSeguimento();
+
 require("views/seguimento.view.php");
 
 ?>

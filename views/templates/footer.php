@@ -54,5 +54,6 @@
     </div><!-- .global-container -->
 
     <script src="../assets/js/globalScript.js"></script> 
+    <script src="../assets/js/seguimento.js"></script>
 </body>
 </html>

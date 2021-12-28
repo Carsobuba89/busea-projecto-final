@@ -109,6 +109,10 @@
 
                         </div><!-- .info-agency-body-->
 
+                        <h3>Para os Empresarios</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae corrupti blanditiis inventore, aliquam ullam hic labore accusantium accusamus odio vero quibusdam, porro aut! Natus, sunt aperiam sint animi fugit eligendi odio quod nihil praesentium molestiae!</p>
+
+
                         <div class="encomenda-bloco">
                             <div class="encomenda-img">
                                 <img src="../assets/images/img-page/<?= $servico[5]["imagem"] ?>" alt="" class="responsive-img">

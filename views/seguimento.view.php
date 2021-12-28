@@ -7,11 +7,10 @@
         <div class="container-top-image">
             <div class="content-top-image seguimento-img">
                 <div class="bloc-text-top-image">
-                    <h1>Seguimento da sua encomenda</h1>
-                    <p>Para beneficiar dos nossos serviços crie uma conta de 
-                        forma gratuita e segura, depois podes monitorizar as suas encomendas facilmente e tambem vai
+                    <h1><?= $seguimento[0]["titulo"] ?></h1>
+                    <p>
+                        <?= substr($seguimento[0]["conteudo"], 0, 200) ?>     
                     </p>
-                    
                 </div>
             </div><!--.agencia-container-->
         </div><!--Final top image agencia-->
@@ -28,7 +27,7 @@
                 <div class="body-content-left">
 
                     <div class="wrap-aside">
-                        <img src="../assets/images/img-page/pexels-kindel-media-6868280.jpg" alt="" class="responsive-img">
+                        <img src="../assets/images/img-page/<?= $seguimento[1]["imagem"] ?>" alt="" class="responsive-img">
                     </div>
                    
                 </div><!--.body-content-left-->
@@ -37,7 +36,7 @@
 
                 <div class="card-container">
                     <div class="header-card">
-                        <h2>Seguir</h2>
+                        <h2>Veja onde esta a sua encomenda</h2>
                         <a href="#">Ajuda ?</a>
                     </div><!--.header-card-->
     
@@ -90,9 +89,8 @@
 
                 <div class="info-seguimento">
                     <article>
-                        <h2>Soluções de Seguimento Perfeitas</h2>
-                        <p>Quer se tratem de 10 violinos para uma loja de música local ou 10 000 vacinas para uma clínica estrangeira, esse pacote tem muitas implicações. Mas as informações que necessita sobre o estado para gerir esses dois envios são completamente diferentes.</p>
-                        <p>Foi por esse motivo que desenvolvemos uma gama de ferramentas de seguimento que lhe dão precisamente as informações que necessita, onde e quando as necessitar. Assim, pode reencaminhar esses violinos para chegarem à escola a tempo do primeiro dia de aulas. Ou estimar a entrega desse medicamento que salva vidas para que a clínica possa programar o pessoal.</p>
+                        <h2><?= $seguimento[1]["titulo"] ?></h2>
+                        <?= $seguimento[1]["conteudo"] ?>
                     </article>
                 </div>
                     
