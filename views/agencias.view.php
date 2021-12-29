@@ -25,81 +25,114 @@
             </div><!--.header-container-->
 
             <div class="agencia-container">
+            <h3>As Agencias parceiras em Portugal</h3>
                 <div class="agencia-content">
-                <h3>As Agencias parceiras em Portugal</h3>
-                    <div class="agencia-bloco">
-                        <div class="agencia-info">
-                            <label> Agencia Bacar Nhabali</label>
-                            <address>
-                               Avenida Alfredo Dinis Lote N 67 - 1 Direita <br>
-                               Vale da Amoreira - Moita 
-                               2835-202 - Setubal 
-                            </address>
-                            <label>bacarnhabali2@gmail.com</label><br>
-                            <label>+351 934 343 243</label>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/350x200.png" alt="">
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="agencia-content">
-                    <h3>As Agencias parceiras em Guiné Bissau</h3>
-                    <div class="agencia-bloco">
-                        <div class="agencia-info">
-                            <label>Agencia So Balde Multiservices</label>
-                            <address>
-                               Rua 75 ao atras do Mercado<br>
-                               Bairro Militar - SAB<br>
-                               Bissau - Guiné Bissau
-                            </address>
-                            <label>bacarnhabali2@gmail.com</label><br>
-                            <label>+351 934 343 243</label>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/350x200.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                        <?php foreach($agenciasPortugal as $key => $value){ ?>
+                        <div class="agencia-bloco">
+                            <a href="/agencias/<?= $agenciasPortugal[$key]["codigo_agencia"] ?>">
+                                <div class="agencia-info">
+                                    <h4><?= $agenciasPortugal[$key]["nome_agencia"] ?></h4>
+                                    <address>
+                                        <?= $agenciasPortugal[$key]["adresso"] ?> <br>
+                                        <?= $agenciasPortugal[$key]["cidade"] ?>
+                                        <?= $agenciasPortugal[$key]["codigo_postal"] ?>
+                                    </address>
+                                    <label>Abre as <strong><?= $agenciasPortugal[$key]["hora_abertura"] ?></strong></label>
+                                    <label>e fecha as <strong><?= $agenciasPortugal[$key]["hora_fecho"] ?></strong></label><br>
+                                    <label>Email : <?= $agenciasPortugal[$key]["email"] ?></label><br>
+                                    <label>Telefone : <?= $agenciasPortugal[$key]["telefone"] ?></label>
+                                </div><!-- .agencia-info-->
+                                <div class="wrap-img-agencia">
+                                    <img src="../assets/images/img-agencias/<?= $agenciasPortugal[$key]["imagem_agencia"] ?>" alt="imagem da agencia" class="responsive-img">
+                                </div><!-- .wrap-img-agencia -->
+                            </a>
+                        </div><!-- .agencia-bloco -->
+                        <?php } ?>    
+
+                </div><!-- .agencia-content -->
                 
+                <h3>As Agencias parceiras em Guiné Bissau</h3>
                 <div class="agencia-content">
-                     <h3>As Agencias parceiras em Angola </h3>
-                    <div class="agencia-bloco">
-                        <div class="agencia-info">
-                            <label> Agencia Bacar Nhabali</label>
-                            <address>
-                               Avenida Alfredo Dinis Lote N 67 - 1 Direita <br>
-                               Vale da Amoreira - Moita 
-                               2835-202 - Setubal 
-                            </address>
-                            <label>bacarnhabali2@gmail.com</label><br>
-                            <label>+351 934 343 243</label>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/350x200.png" alt="">
-                        </div>
-                    </div>
-                </div>
+    
+                <?php foreach($agenciasGBissau as $key => $value){ ?>
+                        <div class="agencia-bloco">
+                            <a href="/agencias/<?= $agenciasGBissau[$key]["codigo_agencia"] ?>">
+                                <div class="agencia-info">
+                                    <h4><?= $agenciasGBissau[$key]["nome_agencia"]  ?></h4>
+                                    <address>
+                                        <?= $agenciasGBissau[$key]["adresso"] ?> <br>
+                                        <?= $agenciasGBissau[$key]["cidade"] ?>
+                                        <?= $agenciasGBissau[$key]["codigo_postal"] ?>
+                                    </address>
+                                    <label>Abre as <strong><?= $agenciasGBissau[$key]["hora_abertura"] ?></strong></label>
+                                    <label>e fecha as <strong><?= $agenciasGBissau[$key]["hora_fecho"] ?></strong></label><br>
+                                    <label>Email : <?= $agenciasGBissau[$key]["email"] ?></label><br>
+                                    <label>Telefone : <?= $agenciasGBissau[$key]["telefone"] ?></label>
+                                </div><!-- .agencia-info-->
+                                <div class="wrap-img-agencia">
+                                    <img src="../assets/images/img-agencias/<?= $agenciasGBissau[$key]["imagem_agencia"] ?>" alt="imagem da agencia" class="responsive-img">
+                                </div><!-- .wrap-img-agencia -->
+                            </a>
+                        </div><!-- .agencia-bloco -->
+                        <?php } ?>    
+
+                </div><!-- .agencia-content -->
                 
+
+                <h3>As Agencias parceiras em Angola </h3>
                 <div class="agencia-content">
-                    <h3>As Agencias parceiras em Cabo Verde</h3>
-                    <div class="agencia-bloco">
-                        <div class="agencia-info">
-                            <label> Agencia Bacar Nhabali</label>
-                            <address>
-                               Avenida Alfredo Dinis Lote N 67 - 1 Direita <br>
-                               Vale da Amoreira - Moita 
-                               2835-202 - Setubal 
-                            </address>
-                            <label>bacarnhabali2@gmail.com</label><br>
-                            <label>+351 934 343 243</label>
-                        </div>
-                        <div class="">
-                            <img src="https://via.placeholder.com/350x200.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                     
+                    <?php foreach($agenciasAngola as $key => $value){ ?>
+                        <div class="agencia-bloco">
+                            <a href="/agencias/<?= $agenciasAngola[$key]["codigo_agencia"]  ?>">
+                                <div class="agencia-info">
+                                    <h4><?= $agenciasAngola[$key]["nome_agencia"] ?></h4>
+                                    <address>
+                                        <?= $agenciasAngola[$key]["adresso"] ?> <br>
+                                        <?= $agenciasAngola[$key]["cidade"] ?>
+                                        <?= $agenciasAngola[$key]["codigo_postal"] ?>
+                                    </address>
+                                    <label>Abre as <strong><?= $agenciasAngola[$key]["hora_abertura"] ?></strong></label>
+                                    <label>e fecha as <strong><?= $agenciasAngola[$key]["hora_fecho"] ?></strong></label><br>
+                                    <label>Email : <?= $agenciasAngola[$key]["email"] ?></label><br>
+                                    <label>Telefone : <?= $agenciasAngola[$key]["telefone"] ?></label>
+                                </div><!-- .agencia-info-->
+                                <div class="wrap-img-agencia">
+                                    <img src="../assets/images/img-agencias/<?= $agenciasAngola[$key]["imagem_agencia"] ?>" alt="imagem da agencia" class="responsive-img">
+                                </div><!-- .wrap-img-agencia -->
+                            </a>
+                        </div><!-- .agencia-bloco -->
+                    <?php } ?>    
+
+                </div><!-- .agencia-content -->
+                
+                <h3>As Agencias parceiras em Cabo Verde</h3>
+                <div class="agencia-content">
+                    
+                    <?php foreach($agenciasCaboverde as $key => $value){ ?>
+                        <div class="agencia-bloco">
+                            <a href="/agencias/<?= $agenciasCaboverde[$key]["codigo_agencia"]  ?>">
+                                <div class="agencia-info">
+                                    <h4><?= $agenciasCaboverde[$key]["nome_agencia"] ?></h4>
+                                    <address>
+                                        <?= $agenciasCaboverde[$key]["adresso"] ?> <br>
+                                        <?= $agenciasCaboverde[$key]["cidade"] ?>
+                                        <?= $agenciasCaboverde[$key]["codigo_postal"] ?>
+                                    </address>
+                                    <label>Abre as <strong><?= $agenciasCaboverde[$key]["hora_abertura"] ?></strong></label>
+                                    <label>e fecha as <strong><?= $agenciasCaboverde[$key]["hora_fecho"] ?></strong></label><br>
+                                    <label>Email : <?= $agenciasCaboverde[$key]["email"] ?></label><br>
+                                    <label>Telefone : <?= $agenciasCaboverde[$key]["telefone"] ?></label>
+                                </div><!-- .agencia-info-->
+                                <div class="wrap-img-agencia">
+                                    <img src="../assets/images/img-agencias/<?= $agenciasCaboverde[$key]["imagem_agencia"] ?>" alt="imagem da agencia" class="responsive-img">
+                                </div><!-- .wrap-img-agencia -->
+                            </a>
+                        </div><!-- .agencia-bloco -->
+                    <?php } ?>       
+
+                </div><!-- .agencia-content -->
                 
 
                 

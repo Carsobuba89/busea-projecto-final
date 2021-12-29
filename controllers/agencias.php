@@ -3,9 +3,17 @@ require("models/adressos.php");
 $modelEndereco = new Adressos();
 
 require("models/paises.php");
-    $modelPaises = new Paises();
+$modelPaises = new Paises();
 
     $paises = $modelPaises->getAll();
+
+//Mostrar Dados de agencias por pais
+require_once("models/agencias.php");
+$modelAgencias = new Agencias();
+    
+
+
+    
 
 //CODIGO DE ALTERAÇAO DE ENDERECO DA AGENCIA
 if($action === "alteracaoEndereco" && isset($_SESSION["codigo_conta"])){
@@ -76,8 +84,8 @@ if($action === "alteracaoDadosAgencia" && isset($_SESSION["codigo_conta"])){
             "codigo_agencia" => $_POST["codigo_agencia"]
         );
 
-        require("models/agencias.php");
-        $modelAgencias = new Agencias();
+        /* require("models/agencias.php");
+        $modelAgencias = new Agencias(); */
 
         $resultadoUpdate = $modelAgencias->alterarDadosAgencia($dados_agencia);
 
@@ -91,9 +99,19 @@ if($action === "alteracaoDadosAgencia" && isset($_SESSION["codigo_conta"])){
 
     }
 
-
-
 }
+
+    //Agencias em Portugal
+    $agenciasPortugal  = $modelAgencias->getAgenciasPT();
+
+    //Agencias em Guine Bissau
+    $agenciasGBissau  = $modelAgencias->getAgenciasGB();
+
+    //Agencias em Angola
+    $agenciasAngola  = $modelAgencias->getAgenciasAO();
+
+    //Agencias em Cabo verde
+    $agenciasCaboverde  = $modelAgencias->getAgenciasCV();
 
 
     require("views/agencias.view.php");

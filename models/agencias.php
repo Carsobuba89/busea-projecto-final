@@ -50,6 +50,114 @@ class Agencias extends Base{
 
     }
 
+    public function getAgenciasPT(){
+
+        $query = $this->db->prepare("
+            SELECT 
+                ag.codigo_agencia, 
+                ag.nome_agencia, 
+                ag.imagem_agencia,
+                ag.hora_abertura,
+                ag.hora_fecho,
+                ad.adresso,
+                ad.cidade,
+                ad.codigo_postal,
+                ad.email,
+                ad.telefone
+            FROM 
+                agencias AS ag
+            INNER JOIN adressos AS ad USING(codigo_agencia)
+            WHERE 
+                ad.pais = 'pt'
+        ");
+
+        $query->execute();
+
+        return $query->fetchAll( PDO:: FETCH_ASSOC );
+
+    }
+
+    public function getAgenciasGB(){
+
+        $query = $this->db->prepare("
+            SELECT 
+                ag.codigo_agencia, 
+                ag.nome_agencia, 
+                ag.imagem_agencia,
+                ag.hora_abertura,
+                ag.hora_fecho,
+                ad.adresso,
+                ad.cidade,
+                ad.codigo_postal,
+                ad.email,
+                ad.telefone
+            FROM 
+                agencias AS ag
+            INNER JOIN adressos AS ad USING(codigo_agencia)
+            WHERE 
+                ad.pais = 'gw'
+        ");
+
+        $query->execute();
+
+        return $query->fetchAll( PDO:: FETCH_ASSOC );
+
+    }
+
+    public function getAgenciasAO(){
+
+        $query = $this->db->prepare("
+            SELECT 
+                ag.codigo_agencia, 
+                ag.nome_agencia, 
+                ag.imagem_agencia,
+                ag.hora_abertura,
+                ag.hora_fecho,
+                ad.adresso,
+                ad.cidade,
+                ad.codigo_postal,
+                ad.email,
+                ad.telefone
+            FROM 
+                agencias AS ag
+            INNER JOIN adressos AS ad USING(codigo_agencia)
+            WHERE 
+                ad.pais = 'ao'
+        ");
+
+        $query->execute();
+
+        return $query->fetchAll( PDO:: FETCH_ASSOC );
+
+    }
+
+    public function getAgenciasCV(){
+
+        $query = $this->db->prepare("
+            SELECT 
+                ag.codigo_agencia, 
+                ag.nome_agencia, 
+                ag.imagem_agencia,
+                ag.hora_abertura,
+                ag.hora_fecho,
+                ad.adresso,
+                ad.cidade,
+                ad.codigo_postal,
+                ad.email,
+                ad.telefone
+            FROM 
+                agencias AS ag
+            INNER JOIN adressos AS ad USING(codigo_agencia)
+            WHERE 
+                ad.pais = 'cv'
+        ");
+
+        $query->execute();
+
+        return $query->fetchAll( PDO:: FETCH_ASSOC );
+
+    }
+
     public function create($registro){
 
         if(
