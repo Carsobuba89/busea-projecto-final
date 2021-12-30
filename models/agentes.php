@@ -33,6 +33,20 @@ class Agentes extends Base{
         return $query->fetchAll( PDO::FETCH_ASSOC );
     }
 
+    public function infoAgentesAgencia($codigo_agencia){
+
+        $query = $this->db->prepare("
+            SELECT nome, avatar, numero_telefone, email
+            FROM agentes 
+            INNER JOIN agencias USING(codigo_agencia)
+            WHERE codigo_agencia = ?
+        ");
+
+        $query->execute([$codigo_agencia]);
+
+        return $query->fetchAll( PDO::FETCH_ASSOC );
+    }
+
     public function obterAgentes($codigo_conta){
 
         $query = $this->db->prepare("

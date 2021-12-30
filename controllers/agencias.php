@@ -1,19 +1,26 @@
 <?php
+    //Mostrar Dados de agencias por pais
+    require("models/agencias.php");
+    $modelAgencias = new Agencias();
+
+    require("models/agentes.php");
+    $modelAgentes = new Agentes();
 
     if(!empty($action) && is_numeric($action)){
-        
-        //Mostrar Dados de agencias por pais
-        require("models/agencias.php");
-        $modelAgencias = new Agencias();
+
+        require("models/adressos.php");
+        $modelAdressos = new Adressos();
 
         $info_agencia = $modelAgencias->getInfoAgencia($action);
+
+        $info_adressos = $modelAdressos->getAllAdressosAgencia($action);
+
+        $info_agentes = $modelAgentes->infoAgentesAgencia($action);
+        
         require("views/completeInfoAgencia.php");
         
     }
     else{
-        //Mostrar Dados de agencias por pais
-        require("models/agencias.php");
-        $modelAgencias = new Agencias();
 
         //Agencias em Portugal
         $agenciasPortugal  = $modelAgencias->getAgenciasPT();

@@ -28,6 +28,33 @@ class Adressos extends Base{
 
     }
 
+    public function getAllAdressosAgencia($codigo_agencia){
+
+        $query = $this->db->prepare("
+            SELECT 
+                adresso, 
+                cidade,
+                codigo_postal,
+                p.nome AS pais,
+                email,
+                telefone
+            FROM 
+                adressos 
+            INNER JOIN 
+                agencias USING(codigo_agencia)
+            INNER JOIN 
+                paises AS p ON(p.codigo = adressos.pais)
+            WHERE 
+                codigo_agencia = ?
+
+        ");
+
+        $query->execute([$codigo_agencia]);
+
+        return $query->fetchAll( PDO::FETCH_ASSOC );
+
+    }
+
     public function create($registro){
 
         if(
