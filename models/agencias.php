@@ -50,6 +50,28 @@ class Agencias extends Base{
 
     }
 
+    public function getInfoAgencia($codigo_agencia){
+
+        $query = $this->db->prepare("
+            SELECT 
+                nome_agencia, 
+                descricao_agencia, 
+                imagem_agencia, 
+                data_criacao, 
+                hora_abertura, 
+                hora_fecho
+            FROM 
+                agencias
+            WHERE 
+                codigo_agencia = ?
+        ");
+
+        $query->execute([$codigo_agencia]);
+
+        return $query->fetch();
+
+    }
+
     public function getAgenciasPT(){
 
         $query = $this->db->prepare("
@@ -69,6 +91,7 @@ class Agencias extends Base{
             INNER JOIN adressos AS ad USING(codigo_agencia)
             WHERE 
                 ad.pais = 'pt'
+            LIMIT 6
         ");
 
         $query->execute();
@@ -96,6 +119,7 @@ class Agencias extends Base{
             INNER JOIN adressos AS ad USING(codigo_agencia)
             WHERE 
                 ad.pais = 'gw'
+            LIMIT 6
         ");
 
         $query->execute();
@@ -123,6 +147,7 @@ class Agencias extends Base{
             INNER JOIN adressos AS ad USING(codigo_agencia)
             WHERE 
                 ad.pais = 'ao'
+            LIMIT 6
         ");
 
         $query->execute();
@@ -150,6 +175,7 @@ class Agencias extends Base{
             INNER JOIN adressos AS ad USING(codigo_agencia)
             WHERE 
                 ad.pais = 'cv'
+            LIMIT 6
         ");
 
         $query->execute();
