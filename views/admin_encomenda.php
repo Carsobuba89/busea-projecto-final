@@ -1,23 +1,8 @@
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/global-style.css">
-    <!--Google Fonts Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,100&family=Roboto:ital,wght@1,100;1,300;1,400&display=swap" rel="stylesheet">
-    <!--FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/2f1b3770e6.js" crossorigin="anonymous"></script>
-    <title>Gestao de Encomendas</title>
-</head>
-<body>
 
-    <header class="nav-header">  
         <?php
             require("views/templates/menu.admin.php");
         ?>
-    </header>
+   
     <div >
         <?php
             if(isset($message)){
@@ -27,24 +12,62 @@
     </div>
     <div class="main-container">
        <div class="header-container">
-            <div class="header-content">
-                <h2>Painel de administraçao das encomendas</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi iste unde, minus vel veritatis!
-                </p> 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, earum.
-                </p>
+            <div class="header-content-admin">
+                <div class="btn-criacao-encomenda">
+                    <button class="btn btn-create">
+                        <a href="/admin_encomendas/novo_encomenda">Criar Nova Encomenda</a>
+                    </button>
+                </div>
+                <div class="header-top-encomenda">
+                    <h2>Painel de administraçao das encomendas</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi iste unde, minus vel veritatis!
+                    </p> 
+                </div>
             </div><!--.header-content-->
        </div><!--.header-container-->
 
-        <div class="body-container-admin_encomendas">
+        <div class="body-container">
+            <div class="body-content-left">
+                <?php require("views/templates/sidebar_admin.php"); ?>
+            </div>
+            <div class="body-content-right">
+                <div class="bloco-busca">
+                    <form action="">
+                         <input type="text" name="buscar">
+                         <button type="submit" name="search">Encontrar</button>
+                    </form>
+                </div>
 
-            <h1>Painel de Monotorizaçao das Encomendas</h1>
+                <div class="tabela-encomendas-prontas">
+                    <table>
+                        <tr>
+                            <th>Referencia</th>
+                            <th>Data Criaçao</th>
+                            <th>Descriçao</th>
+                            <th>Detalhes</th>
+                            <th>Enviar</th>
+                            <th>Pagamento</th>
+                        </tr>
+                        <tr>
+                            <td>3112GW1</td>
+                            <td>31/12/2021</td>
+                            <td>Telemovel Samsung A12</td>
+                            <td>+</td>
+                            <td>Enviado</td>
+                            <td>Pago</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
 
         </div><!--.body-container-admin -->
 
     </div><!--.main-container-->
 
-</body>
-</html>
+    <?php
+        require("views/templates/footer.admin.php");
+    ?>
+
+    

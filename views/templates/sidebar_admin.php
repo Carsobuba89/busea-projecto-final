@@ -1,0 +1,19 @@
+<div class="aside-nav-services">
+        <ul class="aside-menu" >
+            <li class="aside-item">
+                <a href="" class="aside-link">Encomendas Prontas</a>
+            </li>
+            <li class="aside-item">
+                <a href="" class="aside-link">Receber Encomenda</a>
+            </li>
+            <li class="aside-item">
+                <a href="" class="aside-link">Entregar</a>
+            </li>
+            <li class="aside-item">
+                <a href="" class="aside-link">Seguimento</a>
+            </li>
+            <li class="aside-item">
+                <a href="" class="aside-link">Pagamento</a>
+            </li>
+        </ul>
+    </div>
