@@ -4,5 +4,6 @@
         </div>
     </footer>
 
+    <script src="../assets/js/globalScriptAdmin.js"></script>
 </body>
 </html>

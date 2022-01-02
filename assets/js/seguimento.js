@@ -16,3 +16,5 @@ btnSeguir.addEventListener("click", () => {
         document.querySelector(".form-reponse").classList.remove("resultadoPesquisa");
     }
 });
+
+

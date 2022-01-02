@@ -48,3 +48,5 @@ buttonPrecedente.addEventListener("click", () => {
     newsBodyContainer.scrollLeft -= 310;
 });
 //console.log(buttonSeguinte);
+
+

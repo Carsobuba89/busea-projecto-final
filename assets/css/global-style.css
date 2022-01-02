@@ -1427,6 +1427,24 @@ align-items: center;
   
 }
 
+#detailsEndereco{
+  width: 40%;
+  background: rgb(224, 222, 222);
+  cursor: pointer;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.detalheRemetente{
+  width: 100%;
+  display: none;
+}
+
+.detalheRemetenteActive{
+  width: 100%;
+  display: block;
+}
+
 
 
 

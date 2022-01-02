@@ -24,7 +24,7 @@
             <div class="body-content-left">
                 <?php require("views/templates/sidebar_admin.php"); ?>
             </div>
-            <div class="body-content-right">
+            <div class="body-content-right div-form1">
 
                 <form action="<?= ROOT ?>/admin_encomendas/create" method="post">
 
@@ -35,30 +35,30 @@
 
                         <div class="form-group">
                             <div class="col-label">
-                                <label for="nomeRemetente">Nome  de Remetente</label>
+                                <label for="nomeRemetente">Nome</label>
                             </div><!--.col-label-->
                             <div class="col-input">
-                                <input type="text" id="nomeRemetente" name="nomeRemetente" placeholder="Carlos Antonio Silva" required minlength="3" maxlength="120">
+                                <input type="text" id="nomeRemetente" name="nomeRemetente" placeholder="Carlos Antonio Silva" required minlength="3" maxlength="60">
                             </div><!--.col-input-->
                             <!--  <span>Este Campo e obrigatorio</span>   -->
                         </div><!--.form-group-->
 
                         <div class="form-group">
                             <div class="col-label">
-                                <label for="num_telefone">Telefone</label>
+                                <label for="telefoneRemetente">Telefone</label>
                             </div><!--.col-label-->
                             <div class="col-input">
-                                <input type="text" id="num_telefone" name="num_telefone"  minlength="7" maxlength="20" required >
+                                <input type="text" id="telefoneRemetente" name="telefoneRemetente"  minlength="7" maxlength="21" required >
                             </div><!--.col-input-->
                             <span></span>
                         </div><!--.form-group-->
 
                         <div class="form-group">
                             <div class="col-label">
-                                <label for="pais">Pais do Remetente</label>
+                                <label for="pais_remetente">Pais do Remetente</label>
                             </div><!--.col-label-->
                             <div class="col-select">
-                                <select name="pais" id="pais">
+                                <select name="pais_remetente" id="pais_remetente">
                                     <option value="escolha"> Escolha o pais</option>
                                     <?php
                                         foreach($paises as $pais){
@@ -70,8 +70,9 @@
                                 </select>
                             </div><!--.col-select-->
                         </div><!--.form-group-->
+                        
+                        <div id="detailsEndereco" name="detailsEndereco">Dados Complementares</div>
 
-                        <button type="buttom" name="detailsEndereco">Dados Complementares</button>
                         <div class="detalheRemetente">
 
                             <div class="form-group">
@@ -79,7 +80,7 @@
                                     <label for="numero_bi">Numero Documento</label>
                                 </div><!--.col-label-->
                                 <div class="col-input">
-                                    <input type="text" id="cidnumero_biade" name="numero_bi"  minlength="4" maxlength="14">
+                                    <input type="text" id="numero_bi" name="numero_bi"  minlength="4" maxlength="14">
                                 </div><!--.col-input-->
                             </div><!--.form-group-->
 
@@ -131,32 +132,58 @@
 
                             <div class="form-group">
                                 <div class="col-label">
-                                    <label for="quantidade">Quantidade</label>
+                                    <label for="valorEstimado">Valor da encomenda</label>
                                 </div><!--.col-label-->
-                                <div class="col-input-25">
-                                    <input type="number" id="quantidade" name="quantidade" placeholder="1" required minlength="1" maxlength="99">
+                                <div class="col-input-75">
+                                    <input type="number" id="valorEstimado" name="valorEstimado" placeholder="100"  min="0" max="100000" step="any">
                                 </div><!--.col-input-->
-                            </div><!--.form-group--> 
+                                <!--    <span>Este Campo e obrigatorio</span> -->
+                            </div><!--.form-group-->
 
                             <div class="form-group">
                                 <div class="col-label">
                                     <label for="tipo">Tipo</label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <select  id="tipo" name="tipo">
-                                        <option value="caixa">Caixa</option>
-                                        <option value="palete">Palete</option>
-                                        <option value="envelope">Envelope</option>
+                                    <select  id="tipo_encomenda" name="tipo_encomenda">
+                                        <option value="escolher">Escolher tipo encomenda</option>
+                                        <?php
+                                            foreach($tipo_encomendas as $tipo){
+                                                echo '
+                                                    <option value="'.$tipo["id_tipo_encomenda"].'">'.$tipo["descricao"].'</option>
+                                                ';
+
+                                            }
+                                        ?>
                                     </select>      
                                 </div><!--.col-select-->
                             </div><!--.form-group--> 
 
                             <div class="form-group">
                                 <div class="col-label">
+                                    <label for="quantidade">Quantidade</label>
+                                </div><!--.col-label-->
+                                <div class="col-input-25">
+                                    <input type="number" id="quantidade" name="quantidade" required min="1" max="1000" value="1">
+                                </div><!--.col-input-->
+                            </div><!--.form-group--> 
+
+                            <div class="form-group">
+                                <div class="col-label">
+                                    <label for="peso">Peso</label>
+                                </div><!--.col-label-->
+                                <div class="col-input-25">
+                                    <input type="number" id="peso" name="peso" placeholder="2" minlength="0"  maxlength="1000" step="any" >
+                                    <span class="medida">kg</span>
+                                </div><!--.col-input-->
+                            </div><!--.form-group-->
+
+                            <div class="form-group">
+                                <div class="col-label">
                                     <label for="cumprimento">Cumprimento </label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <input type="number" id="cumprimento" name="cumprimento" placeholder="30" required minlength="1"  maxlength="9" step="any">
+                                    <input type="number" id="cumprimento" name="cumprimento" placeholder="300" min="1"  max="250">
                                     <span class="medida">cm</span>
                                 </div><!--.col-input-->
                             </div><!--.form-group-->
@@ -166,7 +193,7 @@
                                     <label for="largura">Largura</label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <input type="number" id="largura" name="largura" placeholder="10" required minlength="1"  maxlength="9" step="any" > 
+                                    <input type="number" id="largura" name="largura" placeholder="80" min="1"  max="250" step="any" > 
                                     <span class="medida">cm</span>
                                 </div><!--.col-input-->
                             </div><!--.form-group-->
@@ -176,20 +203,12 @@
                                     <label for="altura">Altura*</label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <input type="number" id="altura" name="altura" placeholder="10" required minlength="1"  maxlength="9" step="any" >               
+                                    <input type="number" id="altura" name="altura" placeholder="100" min="1"  max="2500" step="any" >               
                                     <span class="medida">cm</span>
                                 </div><!--.col-input-->
                             </div><!--.form-group-->
 
-                            <div class="form-group">
-                                <div class="col-label">
-                                    <label for="peso">Peso*</label>
-                                </div><!--.col-label-->
-                                <div class="col-input-25">
-                                    <input type="number" id="peso" name="peso" placeholder="2" required minlength="1"  maxlength="9" step="any" >
-                                    <span class="medida">kg</span>
-                                </div><!--.col-input-->
-                            </div><!--.form-group-->
+                            
 
                     </fieldset><!-- .Dados de remesa -->
 
@@ -202,7 +221,7 @@
                                 <label for="nomeDestinatario">Nome </label>
                             </div><!--.col-label-->
                             <div class="col-input">
-                                <input type="text" id="nomeDestinatario" name="nomeDestinatario" placeholder="Carlos Antonio Silva" required minlength="3" maxlength="120">
+                                <input type="text" id="nomeDestinatario" name="nomeDestinatario" placeholder="Carlos Antonio Silva" required minlength="3" maxlength="60">
                             </div><!--.col-input-->
                             <!--  <span>Este Campo e obrigatorio</span>   -->
                         </div><!--.form-group-->
@@ -212,17 +231,17 @@
                                 <label for="telefoneDestinatario">Telefone</label>
                             </div><!--.col-label-->
                             <div class="col-input">
-                                <input type="text" id="telefoneDestinatario" name="telefoneDestinatario"  minlength="7" maxlength="20" required >
+                                <input type="text" id="telefoneDestinatario" name="telefoneDestinatario"  minlength="7" maxlength="21" required >
                             </div><!--.col-input-->
                             <span></span>
                         </div><!--.form-group-->
 
                         <div class="form-group">
                             <div class="col-label">
-                                <label for="pais">Pais </label>
+                                <label for="pais_destino">Pais </label>
                             </div><!--.col-label-->
                             <div class="col-select">
-                                <select name="pais" id="pais">
+                                <select name="pais_destino" id="pais_destino">
                                     <option value="escolha"> Escolha o pais</option>
                                     <?php
                                         foreach($paises as $pais){
@@ -247,8 +266,12 @@
 
     </div><!--.main-container-->
 
+    
+    
+
     <?php
         require("views/templates/footer.admin.php");
     ?>
+
 
     
