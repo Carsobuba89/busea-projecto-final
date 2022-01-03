@@ -10,22 +10,12 @@
 
     $tipo_encomendas = $modelTipo_encomendas->getAll();
 
-    if($action === "novo_encomenda" && isset($_SESSION["codigo_conta"])){
-
-        require("views/createEncomendas.php");
-    }
-    else if(isset($_SESSION["codigo_conta"])){
-
-
-        require("views/admin_encomenda.php");
-    }
-
     require("models/encomendas.php");
     $modelEncomendas = new Encomendas();
 
-    if($action === "create" && isset($_SESSION["codigo_conta"])){
+    if($action === "criacaoEncomenda" && isset($_SESSION["codigo_conta"])){
 
-        echo "<pre>"; print_r($_POST); echo "</pre>";
+        /* echo "<pre>"; print_r($_POST); echo "</pre>"; */
 
         $codigo_paises = [];
         foreach($paises as $pais){
@@ -38,7 +28,7 @@
         }
 
         if(
-            isset($_POST["create"]) && 
+            isset($_POST["criarEncomenda"]) && 
             in_array($_POST["pais_remetente"], $codigo_paises) &&
             in_array($_POST["pais_destino"], $codigo_paises) &&
             in_array($_POST["tipo_encomenda"], $codigo_tipoEncomendas)
@@ -55,7 +45,7 @@
                      mb_strlen($_POST["numero_bi"]) > 14 
                 ){
                     $message = "Numero de Documento Identificaçao deve ser superior a 4 e inferior a 14 digitos";
-                    return;
+                    exit;
                 }
             } 
 
@@ -68,7 +58,7 @@
                 ){
                     
                     $message = "Dados de  endereço errado, entra os dados correctamente";
-                    return;
+                    exit;
                 }
             } 
 
@@ -77,7 +67,7 @@
                 if( !is_numeric($_POST["valorEstimado"]) || !is_numeric($_POST["peso"]) )
                 {
                     $message = "Valor ou peso devem ser valores numericos, entra os dados correctamente";
-                    return;
+                    exit;
                 }
             }
 
@@ -89,30 +79,91 @@
                     is_numeric($_POST["largura"]) && 
                     is_numeric($_POST["altura"]) 
                 ){
-                   $volume =  $_POST["cumprimento"] * $_POST["largura"] * $_POST["altura"];
+                   $volume =  ($_POST["cumprimento"]/100) * ($_POST["largura"]/100) * ($_POST["altura"]/100);
                 }
                 else
                 {
                     $message = "o volume deve ser valores numericos, entra os dados correctamente";
-                    return;
+                    exit;
                 }
             }
+
+            if( !empty($_POST["cidade_destino"]) || !empty($_POST["adresso_destino"]) || !empty($_POST["codigo_postal_destino"]) ){
+
+                if(
+                    (mb_strlen($_POST["cidade_destino"]) < 4 && mb_strlen($_POST["cidade_destino"]) > 60) ||
+                    (mb_strlen($_POST["adresso_destino"]) < 8 && mb_strlen($_POST["adresso_destino"]) > 120) ||
+                    (mb_strlen($_POST["codigo_postal_destino"]) < 4 && mb_strlen($_POST["codigo_postal_destino"]) > 20) 
+                ){
+                    
+                    $message = "Dados de  endereço de destino esta errado, entra os dados correctamente";
+                    exit;
+                }
+            } 
 
             require("models/agentes.php");
             $modelAgentes = new Agentes();
 
             $agente = $modelAgentes->obterCodigoAgente($_SESSION["codigo_conta"], $_POST["pais_remetente"]);
 
+            $dadosEncomenda = array(
 
-            $codigo_encomenda = $modelEncomendas->create($_POST, $volume, $agente["codigo_agente"]);
+                "nomeRemetente" => $_POST["nomeRemetente"],
+                "telefoneRemetente" => $_POST["telefoneRemetente"],
+                "pais_remetente" => $_POST["pais_remetente"],
+                "numero_bi" => $_POST["numero_bi"],
+                "cidade" => $_POST["cidade"],
+                "adresso" => $_POST["adresso"],
+                "codigo_postal" => $_POST["codigo_postal"],
+                "descricao" => $_POST["descricao"],
+                "valorEstimado" => $_POST["valorEstimado"],
+                "tipo_encomenda" => $_POST["tipo_encomenda"],
+                "quantidade" => $_POST["quantidade"],
+                "peso" => $_POST["peso"],
+                "volume" => $volume,
+                "nomeDestinatario" => $_POST["nomeDestinatario"],
+                "telefoneDestinatario" => $_POST["telefoneDestinatario"],
+                "pais_destino" => $_POST["pais_destino"],
+                "cidade_destino" => $_POST["cidade_destino"],
+                "adresso_destino" => $_POST["adresso_destino"],
+                "codigo_postal_destino" => $_POST["codigo_postal_destino"],
+                "codigo_agente" => $agente["codigo_agente"]
+
+            );
+
+            $codigo_encomenda = $modelEncomendas->create($dadosEncomenda);
 
             if(!empty($codigo_encomenda)){
-                header("Location:".ROOT."/admin_pagamentos");
+
+                if($volume === 0){
+
+                    $_SESSION["valor_estimado"] = $_POST["peso"] * 10;
+                }
+                else{
+    
+                    $_SESSION["valor_estimado"] = ($volume * 166) * 10;
+                }
+
+                $_SESSION["codigo_encomenda"] = $codigo_encomenda;
+                $_SESSION["descricao"] = $_POST["descricao"];
+                $_SESSION["pais_destino"] = $_POST["pais_destino"];
+
+                header("Location : ".ROOT."/admin_pagamentos");
             }
 
-
-
          }
+    }
+
+    if($action === "novo_encomenda" && isset($_SESSION["codigo_conta"])){
+
+        require("views/createEncomendas.php");
+
+    }
+    else if(isset($_SESSION["codigo_conta"])){
+
+        $encomendas = $modelEncomendas->getNovosEncomendas($_SESSION["codigo_conta"]);
+
+        require("views/admin_encomenda.php");
     }
     
     

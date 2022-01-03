@@ -4,7 +4,7 @@
         ?>
    
     <div >
-        <?php
+        <?php 
             if(isset($message)){
                 echo '<p role="alert">'.$message.'</p>';
             }
@@ -26,7 +26,7 @@
             </div>
             <div class="body-content-right div-form1">
 
-                <form action="<?= ROOT ?>/admin_encomendas/create" method="post">
+                <form action="<?= ROOT ?>/admin_encomendas/criacaoEncomenda" method="post">
 
                     <fieldset>
                         <legend>Quem está a enviar ?</legend>
@@ -71,7 +71,7 @@
                             </div><!--.col-select-->
                         </div><!--.form-group-->
                         
-                        <div id="detailsEndereco" name="detailsEndereco">Dados Complementares</div>
+                        <div id="detailsEndereco" name="detailsEndereco">Mais Detalhes</div>
 
                         <div class="detalheRemetente">
 
@@ -112,7 +112,7 @@
                             </div><!--.form-group-->
 
 
-                        </div>
+                        </div><!-- .detalhesRemetente -->
 
                     </fieldset><!-- .Dados do remetente -->
 
@@ -253,9 +253,48 @@
                                 </select>
                             </div><!--.col-select-->
                         </div><!--.form-group-->
+
+                        <div id="detailsEnderecoDestino" name="detailsEnderecoDestino">Mais Detalhes</div>
+
+                        <div class="detalheDestino">
+
+
+                            <div class="form-group">
+                                <div class="col-label">
+                                    <label for="cidade_destino">Cidade</label>
+                                </div><!--.col-label-->
+                                <div class="col-input">
+                                    <input type="text" id="cidade_destino" name="cidade_destino"  minlength="4" maxlength="60">
+                                </div><!--.col-input-->
+                            </div><!--.form-group-->
+
+                            <div class="form-group">
+                                <div class="col-label">
+                                    <label for="adresso_destino">Adresso</label>
+                                </div><!--.col-label-->
+                                <div class="col-input">
+                                    <input type="text" id="adresso_destino" name="adresso_destino"   minlength="8" maxlength="120">
+                                </div><!--.col-input-->
+                            </div><!--.form-group-->
+
+                            <div class="form-group">
+                                <div class="col-label">
+                                    <label for="codigo_postal_destino">Codigo postal</label>
+                                </div><!--.col-label-->
+                                <div class="col-input">
+                                    <input type="text" id="codigo_postal_destino" name="codigo_postal_destino"   minlength="4" maxlength="20">
+                                </div><!--.col-input-->
+                            </div><!--.form-group-->
+
+
+                        </div><!-- .detalhesDestino -->
+
                     </fieldset><!-- .Dados do destinatario -->
 
-                    <button type="submit" name="create">Guardar encomenda</button>
+                     <div class="form-group">
+                        <button type="submit" name="criarEncomenda">Guardar encomenda</button>
+                     </div>                   
+                    
 
                 </form>
                 

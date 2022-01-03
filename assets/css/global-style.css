@@ -1427,6 +1427,7 @@ align-items: center;
   
 }
 
+#detailsEnderecoDestino,
 #detailsEndereco{
   width: 40%;
   background: rgb(224, 222, 222);
@@ -1435,14 +1436,21 @@ align-items: center;
   margin-bottom: 15px;
 }
 
+.detalheDestino,
 .detalheRemetente{
   width: 100%;
   display: none;
 }
 
-.detalheRemetenteActive{
+.detalheActive{
   width: 100%;
   display: block;
+}
+
+
+table{
+  width: 100%;
+  border-collapse: collapse;
 }
 
 

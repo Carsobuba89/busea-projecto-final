@@ -1,7 +1,7 @@
 <div class="aside-nav-services">
         <ul class="aside-menu" >
             <li class="aside-item">
-                <a href="" class="aside-link">Encomendas Prontas</a>
+                <a href="/admin_encomendas" class="aside-link">Encomendas Prontas</a>
             </li>
             <li class="aside-item">
                 <a href="" class="aside-link">Receber Encomenda</a>

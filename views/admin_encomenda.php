@@ -48,15 +48,19 @@
                             <th>Detalhes</th>
                             <th>Enviar</th>
                             <th>Pagamento</th>
+                            <th>Editar</th>
                         </tr>
-                        <tr>
-                            <td>3112GW1</td>
-                            <td>31/12/2021</td>
-                            <td>Telemovel Samsung A12</td>
-                            <td>+</td>
-                            <td>Enviado</td>
-                            <td>Pago</td>
-                        </tr>
+                        <?php foreach($encomendas as $encomenda) { ?>
+                            <tr>
+                                <td><?= $encomenda["referencia"] ?></td>
+                                <td><?= date("d-m-y", strtotime($encomenda["data_criada"]) ) ?></td>
+                                <td><?= $encomenda["descricao"] ?></td>
+                                <td><a href="/admin_encomendas/<?= $encomenda["codigo_encomenda"] ?>">Ver +</a></td>
+                                <td><button type="submit">Enviar</button></td>
+                                <td><button type="submit">Pagar</button></td>
+                                <td><button type="submit">editar</button></td>
+                            </tr>
+                        <?php } ?>
                     </table>
                 </div>
             </div>
