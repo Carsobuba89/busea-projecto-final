@@ -40,12 +40,9 @@
 
             if(!empty($pagamento)){
 
-                header("Location :".ROOT."/admin_encomendas");
+                header("Location:".ROOT."/admin_encomendas");
             
             }
-
-
-
         }
 
     }

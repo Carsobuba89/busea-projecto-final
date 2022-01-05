@@ -13,7 +13,12 @@
     require("models/encomendas.php");
     $modelEncomendas = new Encomendas();
 
-    if($action === "criacaoEncomenda" && isset($_SESSION["codigo_conta"])){
+    if($action === "novo_encomenda" && isset($_SESSION["codigo_conta"])){
+
+        require("views/createEncomendas.php");
+        
+    }
+    else if($action === "criacaoEncomenda" && isset($_SESSION["codigo_conta"])){
 
         /* echo "<pre>"; print_r($_POST); echo "</pre>"; */
 
@@ -45,7 +50,7 @@
                      mb_strlen($_POST["numero_bi"]) > 14 
                 ){
                     $message = "Numero de Documento Identificaçao deve ser superior a 4 e inferior a 14 digitos";
-                    exit;
+                    
                 }
             } 
 
@@ -58,7 +63,7 @@
                 ){
                     
                     $message = "Dados de  endereço errado, entra os dados correctamente";
-                    exit;
+                    
                 }
             } 
 
@@ -67,7 +72,7 @@
                 if( !is_numeric($_POST["valorEstimado"]) || !is_numeric($_POST["peso"]) )
                 {
                     $message = "Valor ou peso devem ser valores numericos, entra os dados correctamente";
-                    exit;
+                    
                 }
             }
 
@@ -79,12 +84,14 @@
                     is_numeric($_POST["largura"]) && 
                     is_numeric($_POST["altura"]) 
                 ){
+
                    $volume =  ($_POST["cumprimento"]/100) * ($_POST["largura"]/100) * ($_POST["altura"]/100);
                 }
                 else
                 {
+
                     $message = "o volume deve ser valores numericos, entra os dados correctamente";
-                    exit;
+                    
                 }
             }
 
@@ -97,7 +104,7 @@
                 ){
                     
                     $message = "Dados de  endereço de destino esta errado, entra os dados correctamente";
-                    exit;
+                    
                 }
             } 
 
@@ -135,36 +142,36 @@
 
             if(!empty($codigo_encomenda)){
 
-                if($volume === 0){
+                if($volume === 0 && $_POST["peso"] > 0){
 
                     $_SESSION["valor_estimado"] = $_POST["peso"] * 10;
                 }
-                else{
+                else if($volume > 0){
     
                     $_SESSION["valor_estimado"] = ($volume * 166) * 10;
+                }
+                else if( empty($volume) && empty($_POST["peso"]) ){
+
+                    $_SESSION["valor_estimado"] = 10;
                 }
 
                 $_SESSION["codigo_encomenda"] = $codigo_encomenda;
                 $_SESSION["descricao"] = $_POST["descricao"];
                 $_SESSION["pais_destino"] = $_POST["pais_destino"];
 
-                header("Location : ".ROOT."/admin_pagamentos");
+                header("Location:".ROOT."/admin_pagamentos");
+               
             }
-
-         }
-    }
-
-    if($action === "novo_encomenda" && isset($_SESSION["codigo_conta"])){
-
-        require("views/createEncomendas.php");
-
-    }
+        }
+    } 
     else if(isset($_SESSION["codigo_conta"])){
 
         $encomendas = $modelEncomendas->getNovosEncomendas($_SESSION["codigo_conta"]);
-
+        
         require("views/admin_encomenda.php");
     }
+    
+    
     
     
     

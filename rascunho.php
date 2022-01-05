@@ -46,3 +46,16 @@
         });
         
     </script>
+
+
+else if($action === "novo_encomenda" && isset($_SESSION["codigo_conta"])){
+
+require("views/createEncomendas.php");
+
+}
+else if(isset($_SESSION["codigo_conta"])){
+
+$encomendas = $modelEncomendas->getNovosEncomendas($_SESSION["codigo_conta"]);
+
+require("views/admin_encomenda.php");
+}
