@@ -41,14 +41,38 @@
             if(!empty($pagamento)){
 
                 header("Location:".ROOT."/admin_encomendas");
-            
             }
         }
 
     }
-    else if(isset($_SESSION["codigo_conta"])){
+    else if($action === "listaEncomendasPagos" && isset($_SESSION["codigo_conta"])){
+
+        $encomendaPagos = $modelPagamentos->getAll($_SESSION["codigo_conta"]);
+
+        require("views/admin_pagamento.php");
+    }
+    else if( (isset($action) && isset($_SESSION["codigo_conta"])) ||
+             (isset($_SESSION["codigo_conta"]) && isset($_SESSION["codigo_encomenda"]))
+    ){
+
+        if($action !== $_SESSION["codigo_encomenda"]){
+
+            require("models/encomendas.php");
+            $modelEncomendas = new Encomendas();
+
+            $dadosPagamento = $modelEncomendas->getPrice($action);
+
+            if($dadosPagamento[0]["volume"] > 0){
+                $valorAPagar = $dadosPagamento[0]["ValorPorVolume"];
+            }else if($dadosPagamento[0]["peso"] > 0){
+                $valorAPagar = $dadosPagamento[0]["valorPorPeso"];
+            }else{
+                $valorAPagar = $dadosPagamento[0]["valorPadrao"];
+            }
+        }
 
         require("views/pagamentos.view.php");
     }
+    
 
 ?>

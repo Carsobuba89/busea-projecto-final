@@ -183,7 +183,7 @@
                                     <label for="cumprimento">Cumprimento </label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <input type="number" id="cumprimento" name="cumprimento" placeholder="300" min="1"  max="250">
+                                    <input type="number" id="cumprimento" name="cumprimento" placeholder="300" min="1"  max="500">
                                     <span class="medida">cm</span>
                                 </div><!--.col-input-->
                             </div><!--.form-group-->
@@ -193,7 +193,7 @@
                                     <label for="largura">Largura</label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <input type="number" id="largura" name="largura" placeholder="80" min="1"  max="250" step="any" > 
+                                    <input type="number" id="largura" name="largura" placeholder="80" min="1"  max="400" step="any" > 
                                     <span class="medida">cm</span>
                                 </div><!--.col-input-->
                             </div><!--.form-group-->
@@ -203,7 +203,7 @@
                                     <label for="altura">Altura*</label>
                                 </div><!--.col-label-->
                                 <div class="col-input-25">
-                                    <input type="number" id="altura" name="altura" placeholder="100" min="1"  max="2500" step="any" >               
+                                    <input type="number" id="altura" name="altura" placeholder="100" min="1"  max="300" step="any" >               
                                     <span class="medida">cm</span>
                                 </div><!--.col-input-->
                             </div><!--.form-group-->

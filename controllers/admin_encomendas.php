@@ -144,15 +144,15 @@
 
                 if($volume === 0 && $_POST["peso"] > 0){
 
-                    $_SESSION["valor_estimado"] = $_POST["peso"] * 10;
+                    $_SESSION["valor_estimado"] = ($_POST["peso"] * $_POST["quantidade"]) * 10;
                 }
                 else if($volume > 0){
     
-                    $_SESSION["valor_estimado"] = ($volume * 166) * 10;
+                    $_SESSION["valor_estimado"] = ($volume * 90) * 10;
                 }
                 else if( empty($volume) && empty($_POST["peso"]) ){
 
-                    $_SESSION["valor_estimado"] = 10;
+                    $_SESSION["valor_estimado"] = $_POST["quantidade"] * 10;
                 }
 
                 $_SESSION["codigo_encomenda"] = $codigo_encomenda;

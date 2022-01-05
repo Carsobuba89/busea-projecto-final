@@ -4,6 +4,27 @@ require_once("base.php");
 
 class Encomendas extends Base{
 
+    public function getPrice($codigo_encomenda){
+        $query = $this->db->prepare("
+            SELECT 
+                paises.nome,
+                descricao,
+                quantidade, 
+                peso, 
+                volume, 
+                (quantidade*peso) * 10 AS valorPorPeso, 
+                (volume*90) * 10 AS ValorPorVolume, 
+                quantidade*10 AS valorPadrao
+            FROM encomendas 
+            INNER JOIN paises ON(codigo = pais_destinatario)
+            WHERE codigo_encomenda = ?
+        ");
+
+        $query->execute([$codigo_encomenda]);
+
+        return $query->fetchAll( PDO::FETCH_ASSOC );
+    }
+
 
     public function getNovosEncomendas($codio_conta){
 
@@ -37,7 +58,7 @@ class Encomendas extends Base{
             $query = $this->db->prepare("
             INSERT INTO encomendas
             (
-                descricao, Quantidade, peso, volume, 
+                descricao, quantidade, peso, volume, 
                 nome_remetente, numero_doc_remetente, adresso_remetente, 
                 cidade, codigo_postal, pais_remetente, 
                 num_telefone_remetente, nome_destinatario, pais_destinatario, 

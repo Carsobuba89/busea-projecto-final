@@ -14,7 +14,7 @@
             <div class="header-content">
                 <h2>Pagamento da encomenda</h2>
                 <p>
-                    Efectue pagamento de envio da encomenda de <?= $_SESSION["descricao"] ?? "" ?>. para <?= $_SESSION["pais_destino"] ?? "" ?>  com toda segurança!
+                    Efectue pagamento de envio da encomenda de <strong> <?= $dadosPagamento[0]["descricao"] ?></strong>. para<strong> <?= $dadosPagamento[0]["nome"] ?></strong>  com toda segurança!
                 </p> 
             </div><!--.header-content-->
        </div><!--.header-container-->
@@ -32,10 +32,10 @@
 
                             <div class="form-group">
                                 <div class="col-label">
-                                    <label for="valorPago">Valor à pagar</label>
+                                    <label for="valorPago">Valor para pagar</label>
                                 </div><!--.col-label-->
                                 <div class="col-input-75">
-                                    <input value="<?= $_SESSION["valor_estimado"] ?? '' ?>" type="number" id="valorPago" name="valorPago" placeholder="100"  min="0" max="100000" step="any">
+                                    <input value="<?= $valorAPagar ?? $_SESSION["valor_estimado"] ?>" type="number" id="valorPago" name="valorPago" placeholder="100"  min="0" max="100000" step="any">
                                 </div><!--.col-input-->
                                 <!--    <span>Este Campo e obrigatorio</span> -->
                             </div><!--.form-group-->

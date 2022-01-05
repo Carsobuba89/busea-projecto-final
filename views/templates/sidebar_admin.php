@@ -13,7 +13,7 @@
                 <a href="" class="aside-link">Seguimento</a>
             </li>
             <li class="aside-item">
-                <a href="" class="aside-link">Pagamento</a>
+                <a href="/admin_pagamentos/listaEncomendasPagos" class="aside-link">Pagamento</a>
             </li>
         </ul>
     </div>
