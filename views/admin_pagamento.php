@@ -39,12 +39,12 @@
                 <div class="tabela-encomendas-prontas">
                     <table>
                         <tr>
+                            <th>Data Pago</th>
                             <th>Referencia</th>
-                            <th>Data Pagamento</th>
                             <th>Descriçao</th>
                             <th>Valor Pago</th>
+                            <th>Forma pago</th>
                             <th>Destino</th>
-                            <th>Forma de pagamento</th>
                         </tr>
                         <?php foreach($encomendaPagos as $encomendaPago) { ?>
                             <tr>

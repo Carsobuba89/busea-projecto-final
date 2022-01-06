@@ -14,7 +14,9 @@
             <div class="header-content">
                 <h2>Pagamento da encomenda</h2>
                 <p>
-                    Efectue pagamento de envio da encomenda de <strong> <?= $dadosPagamento[0]["descricao"] ?></strong>. para<strong> <?= $dadosPagamento[0]["nome"] ?></strong>  com toda segurança!
+                    Efectue pagamento de envio da encomenda de 
+                    <strong> <?= $dadosPagamento[0]["descricao"] ?? $_SESSION["descricao"] ?></strong>.
+                    para<strong> <?= $dadosPagamento[0]["nome"] ?? $_SESSION["pais_destino"] ?></strong>  com toda segurança!
                 </p> 
             </div><!--.header-content-->
        </div><!--.header-container-->
@@ -86,7 +88,7 @@
                                 <!--    <span>Este Campo e obrigatorio</span> -->
                             </div><!--.form-group-->
 
-                            <input type="hidden" name="codigo_encomenda" value="<?= $_SESSION["codigo_encomenda"] ?? '' ?>">
+                            <input type="hidden" name="codigo_encomenda" value="<?= $dadosPagamento[0]["codigo_encomenda"] ?? $_SESSION["codigo_encomenda"] ?>">
 
                             <div class="form-group">
                                 <button type="submit" name="criarPagamento">Efectuar Pagamento</button>

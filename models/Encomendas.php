@@ -7,6 +7,7 @@ class Encomendas extends Base{
     public function getPrice($codigo_encomenda){
         $query = $this->db->prepare("
             SELECT 
+                codigo_encomenda,
                 paises.nome,
                 descricao,
                 quantidade, 
@@ -25,7 +26,6 @@ class Encomendas extends Base{
         return $query->fetchAll( PDO::FETCH_ASSOC );
     }
 
-
     public function getNovosEncomendas($codio_conta){
 
         $query = $this->db->prepare("
@@ -38,6 +38,32 @@ class Encomendas extends Base{
         $query->execute([$codio_conta]);
 
         return $query->fetchAll( PDO::FETCH_ASSOC );
+    }
+
+    public function getDetalhesEncomenda($codigo_conta, $codigo_encomenda){
+
+        $query = $this->db->prepare("
+            SELECT 
+                e.codigo_encomenda, e.referencia, e.data_criada, 
+                e.descricao, e.quantidade, e.peso, e.volume, 
+                e.nome_remetente,  e.numero_doc_remetente, e.adresso_remetente, 
+                e.cidade, e.codigo_postal, e.pais_remetente, 
+                e.num_telefone_remetente, e.nome_destinatario, e.pais_destinatario, 
+                e.telefone_destinatario, e.cidade_destino, e.adresso_destino, 
+                e.codigo_postal_destino, e.valor_encomenda, e.tipo_encomenda
+            FROM encomendas AS e
+            INNER JOIN agentes AS a USING(codigo_agente)
+            WHERE 
+                a.activo = ? AND e.codigo_encomenda = ?
+        ");
+
+        $query->execute([
+            $codigo_conta,
+            $codigo_encomenda
+        ]);
+
+        return $query->fetch();
+
     }
 
     public function create($encomenda){

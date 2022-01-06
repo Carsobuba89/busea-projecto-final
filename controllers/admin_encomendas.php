@@ -2,8 +2,12 @@
 
     require("models/paises.php");
     $modelPaises = new Paises();
-
     $paises = $modelPaises->getAll();
+
+    $codigo_paises = [];
+        foreach($paises as $pais){
+            $codigo_paises[] = $pais["codigo"];
+        }
 
     require("models/tipo_encomendas.php");
     $modelTipo_encomendas = new Tipo_encomendas();
@@ -22,11 +26,11 @@
 
         /* echo "<pre>"; print_r($_POST); echo "</pre>"; */
 
-        $codigo_paises = [];
+        /* $codigo_paises = [];
         foreach($paises as $pais){
             $codigo_paises[] = $pais["codigo"];
         }
-
+ */
         $codigo_tipoEncomendas = [];
         foreach($tipo_encomendas as $tipo){
             $codigo_tipoEncomendas[] = $tipo["id_tipo_encomenda"];
@@ -157,13 +161,26 @@
 
                 $_SESSION["codigo_encomenda"] = $codigo_encomenda;
                 $_SESSION["descricao"] = $_POST["descricao"];
-                $_SESSION["pais_destino"] = $_POST["pais_destino"];
+
+                foreach($paises as $pais){
+                    if($pais["codigo"] == $_POST["pais_destino"]){
+                        $_SESSION["pais_destino"] = $pais["nome"];
+                    }
+                }
+                
 
                 header("Location:".ROOT."/admin_pagamentos");
                
             }
         }
-    } 
+    }
+    else if(!empty($action) && isset($_SESSION["codigo_conta"])){
+
+        $detalhesEncomenda = $modelEncomendas->getDetalhesEncomenda($_SESSION["codigo_conta"], $action);
+
+        require("views/encomenda_detalhes.php");
+    }
+
     else if(isset($_SESSION["codigo_conta"])){
 
         $encomendas = $modelEncomendas->getNovosEncomendas($_SESSION["codigo_conta"]);

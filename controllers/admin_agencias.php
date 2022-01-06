@@ -193,7 +193,7 @@
         $conta = $modelContas->getItemConta($_SESSION["codigo_conta"]);
 
         //Invocaçao de tabela adresso no banco de dados
-        require("models/adressos.php");
+        require_once("models/adressos.php");
         $modelAdressos = new Adressos();
 
         //recuperar os dados de adresso correspondente
