@@ -68,14 +68,14 @@
                             </div><!--.col-label-->
                             <div class="col-select">
                                 <select name="pais_remetente" id="pais_remetente">
-                                    <option value="escolha"> Escolha o pais</option>
                                     <?php
                                         foreach($paises as $pais){
+                                            $selected = "";
                                             if($pais["codigo"] === $detalhesEncomenda["pais_remetente"]){
                                                 $selected = "selected";
                                             }
                                             echo '
-                                                <option value="'. $pais["codigo"] .'"'.$selected.'>'. $pais["nome"] .'</option>
+                                                <option value="'. $pais["codigo"] .'" '.$selected.'>'. $pais["nome"] .'</option>
                                             ';
                                         }
                                     ?>
@@ -151,17 +151,17 @@
                             </div><!--.col-label-->
                             <div class="col-input-25">
                                 <select  id="tipo_encomenda" name="tipo_encomenda">
-                                    <option value="escolher">Escolher tipo encomenda</option>
                                     <?php
-                                        $selected = "";
                                         foreach($tipo_encomendas as $tipo){
-                                            /* if($tipo["id_tipo_encomenda"] === $detalhesEncomenda["tipo_encomenda"]){
+                                            $selected = "";
+                                            if($tipo["id_tipo_encomenda"] === $detalhesEncomenda["tipo_encomenda"]){
                                                 $selected = "selected";
-                                            } */
+                                            }
                                             echo '
-                                                <option value="'.$tipo["id_tipo_encomenda"].'">'.$tipo["descricao"].'</option>
+                                                <option value="'.$tipo["id_tipo_encomenda"].'"'.$selected.'>'.$tipo["descricao"].'</option>
                                             ';
                                         }
+                                        var_dump($selected);
                                     ?>
                                 </select>      
                             </div><!--.col-select-->
@@ -229,14 +229,14 @@
                             <div class="col-select">
                                 <select name="pais_destino" id="pais_destino">
                                     <option value="escolha"> Escolha o pais</option>
-                                    <?php
-                                        $selectedDestino = "";
+                                    <?php 
                                         foreach($paises as $paisDestino){
-                                            /* if($paisDestino["codigo"] === $detalhesEncomenda["pais_destinatario"]){
+                                            $selectedDestino = "";
+                                            if($paisDestino["codigo"] === $detalhesEncomenda["pais_destinatario"]){
                                                 $selectedDestino = "selected";
-                                            } */
+                                            }
                                             echo '
-                                                <option value="'. $paisDestino["codigo"] .'">'. $paisDestino["nome"] .'</option>
+                                                <option value="'. $paisDestino["codigo"] .'" '.$selectedDestino.'>'. $paisDestino["nome"] .'</option>
                                             ';
                                         }
                                     ?>
