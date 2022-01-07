@@ -35,7 +35,7 @@
 
                 <div class="tabela-encomendas-prontas">
 
-                    <form action="<?= ROOT ?>/admin_encomendas/criacaoEncomenda" method="post">
+                    <form action="<?= ROOT ?>/admin_encomendas/alteracaoEncomenda" method="post">
 
                     <fieldset>
                         <legend>Dados de quem está a enviar</legend>
@@ -130,7 +130,7 @@
                                 <label for="descricao">Descrever a encomenda</label>
                             </div><!--.col-label-->
                             <div class="col-input-75">
-                                <input value="<?= $detalhesEncomenda["descricao"] ?>" type="text" id="descricao" name="descricao" placeholder="Telemovel Samsung A20" required minlength="3" maxlength="120">
+                                <input value="<?= $detalhesEncomenda["descricao"] ?>" type="text" id="descricao" name="descricao" required minlength="3" maxlength="120">
                             </div><!--.col-input-->
                             <!--    <span>Este Campo e obrigatorio</span> -->
                         </div><!--.form-group-->
@@ -140,7 +140,7 @@
                                 <label for="valorEstimado">Valor da encomenda</label>
                             </div><!--.col-label-->
                             <div class="col-input-75">
-                                <input value="<?= $detalhesEncomenda["valor_encomenda"] ?>" type="number" id="valorEstimado" name="valorEstimado" placeholder="100"  min="0" max="100000" step="any">
+                                <input value="<?= $detalhesEncomenda["valor_encomenda"] ?>" type="number" id="valorEstimado" name="valorEstimado" min="0" max="100000" step="any">
                             </div><!--.col-input-->
                             <!--    <span>Este Campo e obrigatorio</span> -->
                         </div><!--.form-group-->
@@ -181,7 +181,7 @@
                                 <label for="peso">Peso</label>
                             </div><!--.col-label-->
                             <div class="col-input-25">
-                                <input value="<?= $detalhesEncomenda["peso"] ?>" type="number" id="peso" name="peso" placeholder="2" minlength="0"  maxlength="1000" step="any" >
+                                <input value="<?= $detalhesEncomenda["peso"] ?>" type="number" id="peso" name="peso" minlength="0"  maxlength="1000" step="any" >
                                 <span class="medida">kg</span>
                             </div><!--.col-input-->
                         </div><!--.form-group-->
@@ -192,7 +192,7 @@
                             </div><!--.col-label-->
                             <div class="col-input-25">
                                 <input value="<?= $detalhesEncomenda["volume"] ?>" type="number" id="volume" name="volume" min="1"  max="5">
-                                <span class="medida">cm</span>
+                                <span class="medida">m<sup>3</sup></span>
                             </div><!--.col-input-->
                         </div><!--.form-group-->
 
@@ -207,7 +207,7 @@
                                 <label for="nomeDestinatario">Nome </label>
                             </div><!--.col-label-->
                             <div class="col-input">
-                                <input value="<?= $detalhesEncomenda["nome_destinatario"] ?>" type="text" id="nomeDestinatario" name="nomeDestinatario" placeholder="Carlos Antonio Silva" required minlength="3" maxlength="60">
+                                <input value="<?= $detalhesEncomenda["nome_destinatario"] ?>" type="text" id="nomeDestinatario" name="nomeDestinatario" required minlength="3" maxlength="60">
                             </div><!--.col-input-->
                             <!--  <span>Este Campo e obrigatorio</span>   -->
                         </div><!--.form-group-->
@@ -272,7 +272,8 @@
                         </div><!--.form-group-->
 
                     </fieldset><!-- .Dados do destinatario -->
-
+                    
+                    <input type="hidden" name="codigo_encomenda" value="<?= $detalhesEncomenda["codigo_encomenda"] ?>">
                     <div class="form-group">
                         <button type="submit" name="alterarEncomenda">Guardar alteraçao realizada</button>
                         <button type="submit" name="cancelarEncomenda">Cancelar encomenda</button>
@@ -282,8 +283,8 @@
                     </form>
                     
                    
-                </div><!-- . -->
-            </div><!-- . -->
+                </div><!-- .tabela-encomendas-prontas -->
+            </div><!-- .body-content-right div-form1 -->
             
 
         </div><!--.body-container-admin -->

@@ -112,6 +112,57 @@ class Encomendas extends Base{
         }
     }
 
+    public function alterarDadosEncomendas($encomenda){
+
+        if(
+            mb_strlen($encomenda["nomeRemetente"]) >= 3 &&
+            mb_strlen($encomenda["nomeRemetente"]) <= 60 &&
+            mb_strlen($encomenda["telefoneRemetente"]) >= 7 &&
+            mb_strlen($encomenda["telefoneRemetente"]) <= 21 &&
+            mb_strlen($encomenda["descricao"]) >= 3 &&
+            mb_strlen($encomenda["descricao"]) <= 120 &&
+            is_numeric($encomenda["quantidade"]) &&
+            mb_strlen($encomenda["nomeDestinatario"]) >= 3 &&
+            mb_strlen($encomenda["nomeDestinatario"]) <= 60 &&
+            mb_strlen($encomenda["telefoneDestinatario"]) >= 7 &&
+            mb_strlen($encomenda["telefoneDestinatario"]) <= 21 
+        ){
+
+            $query = $this->db->prepare("
+                UPDATE encomendas
+                SET
+                    descricao = ?, quantidade = ?, peso = ?, volume = ?,
+                    nome_remetente = ?, numero_doc_remetente = ?, adresso_remetente = ?,
+                    cidade = ?, codigo_postal = ?, pais_remetente = ?,
+                    num_telefone_remetente = ?, nome_destinatario = ?, pais_destinatario = ?,
+                    telefone_destinatario = ?, cidade_destino = ?, adresso_destino = ?, 
+                    codigo_postal_destino = ?, valor_encomenda = ?, tipo_encomenda = ?
+                WHERE
+                    codigo_encomenda = ?
+            ");
+
+            $query->execute(
+                [
+                    $encomenda["descricao"], $encomenda["quantidade"], $encomenda["peso"], $encomenda["volume"], 
+                    $encomenda["nomeRemetente"], $encomenda["numero_bi"], $encomenda["adresso"], 
+                    $encomenda["cidade"], $encomenda["codigo_postal"], $encomenda["pais_remetente"], 
+                    $encomenda["telefoneRemetente"], $encomenda["nomeDestinatario"], $encomenda["pais_destino"], 
+                    $encomenda["telefoneDestinatario"], $encomenda["cidade_destino"], $encomenda["adresso_destino"],
+                    $encomenda["codigo_postal_destino"], $encomenda["valorEstimado"], $encomenda["tipo_encomenda"],
+                    $encomenda["codigo_encomenda"]
+                ]
+            );
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+
+    }
+
 }
 
 ?>
