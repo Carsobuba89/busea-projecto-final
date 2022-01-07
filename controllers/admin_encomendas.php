@@ -241,30 +241,6 @@
                 }
             } 
 
-            /* $dadosEncomenda = array(
-
-                "nomeRemetente" => $_POST["nomeRemetente"],
-                "telefoneRemetente" => $_POST["telefoneRemetente"],
-                "pais_remetente" => $_POST["pais_remetente"],
-                "numero_bi" => $_POST["numero_bi"],
-                "cidade" => $_POST["cidade"],
-                "adresso" => $_POST["adresso"],
-                "codigo_postal" => $_POST["codigo_postal"],
-                "descricao" => $_POST["descricao"],
-                "valorEstimado" => $_POST["valorEstimado"],
-                "tipo_encomenda" => $_POST["tipo_encomenda"],
-                "quantidade" => $_POST["quantidade"],
-                "peso" => $_POST["peso"],
-                "volume" => $_POST["volume"],
-                "nomeDestinatario" => $_POST["nomeDestinatario"],
-                "telefoneDestinatario" => $_POST["telefoneDestinatario"],
-                "pais_destino" => $_POST["pais_destino"],
-                "cidade_destino" => $_POST["cidade_destino"],
-                "adresso_destino" => $_POST["adresso_destino"],
-                "codigo_postal_destino" => $_POST["codigo_postal_destino"]
-
-            ); */
-
             $resultadoUpdate = $modelEncomendas->alterarDadosEncomendas($_POST);
 
             if(isset($resultadoUpdate) && $resultadoUpdate === TRUE){
@@ -277,6 +253,22 @@
 
 
         }
+
+        if(isset($_POST["cancelarEncomenda"]) && isset($_SESSION["codigo_conta"])){
+
+            $resultadoUpdate = $modelEncomendas->alterarEstadoEncomenda($_POST["codigo_encomenda"]);
+
+            if(isset($resultadoUpdate) && $resultadoUpdate === TRUE){
+
+                $message = "Dados da Encomenda alterados com sucesso";
+
+                header("Location:".ROOT."/admin_encomendas");
+               
+            }
+
+        }
+
+
 
     }
     else if(!empty($action) && isset($_SESSION["codigo_conta"])){

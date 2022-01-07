@@ -163,6 +163,24 @@ class Encomendas extends Base{
 
     }
 
+    public function alterarEstadoEncomenda($codigo_encomenda){
+
+        $query = $this->db->prepare("
+            UPDATE encomendas
+            SET estado_encomenda = 4
+            WHERE codigo_encomenda = ?
+        ");
+
+        $query->execute([$codigo_encomenda]);
+
+        if($query->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 }
 
 ?>

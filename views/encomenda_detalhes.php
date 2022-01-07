@@ -191,7 +191,7 @@
                                 <label for="cumprimento">Volume por Metro cubico </label>
                             </div><!--.col-label-->
                             <div class="col-input-25">
-                                <input value="<?= $detalhesEncomenda["volume"] ?>" type="number" id="volume" name="volume" min="1"  max="5">
+                                <input value="<?= $detalhesEncomenda["volume"] ?>" type="number" id="volume" name="volume" min="0"  max="5">
                                 <span class="medida">m<sup>3</sup></span>
                             </div><!--.col-input-->
                         </div><!--.form-group-->
@@ -277,6 +277,7 @@
                     <div class="form-group">
                         <button type="submit" name="alterarEncomenda">Guardar alteraçao realizada</button>
                         <button type="submit" name="cancelarEncomenda">Cancelar encomenda</button>
+                        <button><a href="/admin_encomendas" class="aside-link">Voltar atras</a></button>
                     </div>                   
 
 
