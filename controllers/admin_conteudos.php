@@ -58,7 +58,10 @@
         }
     }
     else if(!empty($action) && isset($_SESSION["codigo_conta"])){
-        
+
+        $conteudodetalhe = $modelConteudos->getOneContent($action);
+
+        require("views/conteudoDetalheAdmin.php");
 
     }
     else if(isset($_SESSION["codigo_conta"])){

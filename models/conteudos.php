@@ -166,7 +166,7 @@
                 $codigo_conteudo = $query->execute(
                     [
                         $dadosConteudo["titulo"],
-                        $dadosConteudo["descricao"],
+                        nl2br($dadosConteudo["descricao"]),
                         $nomeImagem,
                         $dadosConteudo["tipo_conteudo"]
                     ]
