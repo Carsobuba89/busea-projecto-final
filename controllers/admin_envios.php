@@ -41,6 +41,8 @@
 
     }
     else if($action === "listaEncomendasEnviados" && isset($_SESSION["codigo_conta"])){
+
+        $envios = $modelEnvios->getAllEnvios();
         require("views/admin_envio.php");
 
     }

@@ -3,6 +3,22 @@
 
     class Envios extends Base{
 
+        public function getAllEnvios(){
+
+            $query = $this->db->prepare("
+                SELECT ev.codigo, ev.data_envio, ec.referencia, ec.descricao, p.nome AS nomePaisDestino, ev.data_previsto_chegada 
+                FROM envios AS ev
+                INNER JOIN encomendas AS ec USING(codigo_encomenda)
+                INNER  JOIN paises AS p ON(p.codigo = ec.pais_destinatario)
+            ");
+
+            $query->execute();
+
+            return $query->fetchAll( PDO:: FETCH_ASSOC );
+
+        }
+
+
         public function registarEnvio($dadosEnvio){
 
             $query = $this->db->prepare("

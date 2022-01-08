@@ -42,23 +42,21 @@
                 <div class="tabela-encomendas-prontas">
                     <table>
                         <tr>
+                            <th>Data envio</th>
                             <th>Referencia</th>
-                            <th>Data Criaçao</th>
                             <th>Descriçao</th>
-                            <th>Detalhes</th>
-                            <th>Enviar</th>
-                            <th>Pagamento</th>
+                            <th>Pais Destino</th>
+                            <th>Dt. prev. chegada</th>
+                            <!-- <th>estado da encomenda</th> -->
                             <!-- <th>Estado</th> -->
                         </tr>
-                        <?php foreach($encomendas as $encomenda) { ?>
+                        <?php foreach($envios as $envio) { ?>
                             <tr>
-                                <td><?= $encomenda["referencia"] ?></td>
-                                <td><?= date("d-m-y", strtotime($encomenda["data_criada"]) ) ?></td>
-                                <td><?= $encomenda["descricao"] ?></td>
-                                <td><a href="/admin_encomendas/<?= $encomenda["codigo_encomenda"] ?>">Ver +</a></td>
-                                <td><button><a href="/admin_envios/<?= $encomenda["codigo_encomenda"] ?>">Enviar </a></button></td>
-                                <td><button><a href="/admin_pagamentos/<?= $encomenda["codigo_encomenda"] ?>">Pagar </a></button></td>
-                                <!-- <td><button type="submit">Nao enviado</button></td> -->
+                                <td><?= date("d-m-y", strtotime($envio["data_envio"]) ) ?></td>
+                                <td><?= $envio["referencia"] ?></td>
+                                <td><?= $envio["descricao"] ?></td>
+                                <td><?= $envio["nomePaisDestino"] ?></td>
+                                <td><?= date("d-m-y", strtotime($envio["data_previsto_chegada"]) ) ?></td>   
                             </tr>
                         <?php } ?>
                     </table>
