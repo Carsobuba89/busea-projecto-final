@@ -36,11 +36,11 @@
             </div><!--.header-content-->
        </div><!--.header-container-->
 
-        <div class="body-container-admin_encomendas">
+        <div class="body-container-admin_conteudo">
 
             <div class="blocoTopo">
                 <div class="newContentDiv">
-                    <button type="submit" name="criarNovoConteudo">Criar Novo Conteudo</button>
+                    <button> <a href="/admin_conteudos/criarNovoConteudo">Criar Novo Conteudo</a> </button>
                 </div><!-- .newContentDiv -->
 
                 <div class="bloco-busca">

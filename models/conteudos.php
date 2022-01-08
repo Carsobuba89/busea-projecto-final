@@ -148,6 +148,38 @@
 
         }
 
+        public function criarNovoConteudo($dadosConteudo, $nomeImagem){
+
+            if( 
+                mb_strlen($_POST["titulo"]) >= 6 &&
+                mb_strlen($_POST["titulo"]) <= 120 &&
+                mb_strlen($_POST["descricao"]) >= 60 &&
+                mb_strlen($_POST["descricao"]) <= 65535
+            ){
+
+                $query = $this->db->prepare("
+                    INSERT INTO conteudo_paginas
+                        (titulo, conteudo, imagem, tipo_conteudo) 
+                    VALUES(?, ?, ?, ?)
+                ");
+
+                $codigo_conteudo = $query->execute(
+                    [
+                        $dadosConteudo["titulo"],
+                        $dadosConteudo["descricao"],
+                        $nomeImagem,
+                        $dadosConteudo["tipo_conteudo"]
+                    ]
+                );
+
+                return $codigo_conteudo ? $this->db->lastInsertId() : 0;
+            
+            }else{
+                $message = "Os campos nao estao correctamente preenchidas, tenta novamente";
+
+            }
+        }
+
     }
 
 

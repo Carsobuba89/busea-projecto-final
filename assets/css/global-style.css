@@ -1468,6 +1468,11 @@ table{
   margin-bottom: 20px;
 }
 
+.content-admin-conteudo{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
 
 
 

@@ -2,7 +2,7 @@
     require("models/conteudos.php");
     $modelConteudos = new Conteudos();
 
-    if(isset($action)){
+    if(!empty($action)){
 
         $content = $modelConteudos->getOneContent($action);
 

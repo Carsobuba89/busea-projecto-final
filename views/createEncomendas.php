@@ -305,9 +305,6 @@
 
     </div><!--.main-container-->
 
-    
-    
-
     <?php
         require("views/templates/footer.admin.php");
     ?>
