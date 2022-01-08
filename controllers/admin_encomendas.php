@@ -287,6 +287,9 @@
         $pagamentos = $modelPagamentos->getAllCodigos();
 
         $codigo_pagamentos = [];
+        foreach($pagamentos as $pagamento){
+            $codigo_pagamentos[] = $pagamento["codigo_encomenda"];
+        }
 
         //var_dump($pagamentos);
         require("views/admin_encomenda.php");

@@ -57,7 +57,16 @@
                                 <td><?= $encomenda["descricao"] ?></td>
                                 <td><a href="/admin_encomendas/<?= $encomenda["codigo_encomenda"] ?>">Ver +</a></td>
                                 <td><button><a href="/admin_envios/<?= $encomenda["codigo_encomenda"] ?>">Enviar </a></button></td>
-                                <td><button><a href="/admin_pagamentos/<?= $encomenda["codigo_encomenda"] ?>">Efectuar Pag. </a></button></td>
+                                <td>
+                                    <?php 
+                                        if( in_array($encomenda["codigo_encomenda"], $codigo_pagamentos)){ 
+                                            echo '<button disabled="disabled">Pago</button>';
+                                        }else{
+                                            echo '<button><a href="/admin_pagamentos/'. $encomenda["codigo_encomenda"] .'">Pagar </a></button>';
+                                        }
+                                        
+                                    ?>
+                                </td>
                                 <!-- <td><button type="submit">Nao enviado</button></td> -->
                             </tr>
                         <?php } ?>
