@@ -32,16 +32,50 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi iste unde, minus vel veritatis!
                 </p> 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, earum.
-                </p>
+            
             </div><!--.header-content-->
        </div><!--.header-container-->
 
         <div class="body-container-admin_encomendas">
 
-            <h1>Painel de Monotorizaçao de conteudo publico do site</h1>
+            <div class="blocoTopo">
+                <div class="newContentDiv">
+                    <button type="submit" name="criarNovoConteudo">Criar Novo Conteudo</button>
+                </div><!-- .newContentDiv -->
 
+                <div class="bloco-busca">
+                    <form action="">
+                            <input type="text" name="buscar">
+                            <button type="submit" name="search">Encontrar</button>
+                    </form>
+                </div><!-- .bloco-busca -->
+            </div><!-- .blocoTopo -->
+            
+
+            <div class="tabela-index">
+
+                <table>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Data Criaçao</th>
+                        <th>Tipo Conteudo</th>
+                        <th>Detalhes</th>
+                        <th>Editar</th>
+                        <th>Apagar</th>
+                    </tr>
+                
+                    <?php foreach($conteudos as $conteudo) { ?>
+                        <tr>
+                            <td><?= $conteudo["titulo"] ?></td>
+                            <td><?= $conteudo["data_criacao"] ?></td>
+                            <td><?= $conteudo["nomeServico"] ?></td>
+                            <td><a href="/admin_conteudos/<?= $conteudo["codigo"] ?>">Ver +</a></td>
+                            <td><button type="submit" name="alterarConteudo">Alterar</button></td>
+                            <td><button type="submit" name="apagarConteudo">Apagar</button></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </div><!-- .tabela-index -->
         </div><!--.body-container-admin -->
 
     </div><!--.main-container-->

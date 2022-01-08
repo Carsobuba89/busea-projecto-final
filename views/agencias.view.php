@@ -26,9 +26,9 @@
 
             <div class="agencia-container">
                 <h3>As Agencias parceiras em Portugal</h3>
-                <div class="agencia-content">
+                <div class="agencia-content content-star">
                 
-                        <?php foreach($agenciasPortugal as $key => $value){ ?>
+                    <?php foreach($agenciasPortugal as $key => $value){ ?>
                         <div class="agencia-bloco">
                             <a href="/agencias/<?= $agenciasPortugal[$key]["codigo_agencia"] ?>">
                                 <div class="agencia-info">
@@ -48,14 +48,14 @@
                                 </div><!-- .wrap-img-agencia -->
                             </a>
                         </div><!-- .agencia-bloco -->
-                        <?php } ?>    
+                    <?php } ?>    
 
                 </div><!-- .agencia-content -->
                 
                 <h3>As Agencias parceiras em Guiné Bissau</h3>
-                <div class="agencia-content">
+                <div class="agencia-content content-star">
     
-                <?php foreach($agenciasGBissau as $key => $value){ ?>
+                    <?php foreach($agenciasGBissau as $key => $value){ ?>
                         <div class="agencia-bloco">
                             <a href="/agencias/<?= $agenciasGBissau[$key]["codigo_agencia"] ?>">
                                 <div class="agencia-info">
@@ -75,13 +75,13 @@
                                 </div><!-- .wrap-img-agencia -->
                             </a>
                         </div><!-- .agencia-bloco -->
-                        <?php } ?>    
+                    <?php } ?>    
 
                 </div><!-- .agencia-content -->
                 
 
                 <h3>As Agencias parceiras em Angola </h3>
-                <div class="agencia-content">
+                <div class="agencia-content content-star">
                      
                     <?php foreach($agenciasAngola as $key => $value){ ?>
                         <div class="agencia-bloco">
@@ -108,7 +108,7 @@
                 </div><!-- .agencia-content -->
                 
                 <h3>As Agencias parceiras em Cabo Verde</h3>
-                <div class="agencia-content">
+                <div class="agencia-content content-star">
                     
                     <?php foreach($agenciasCaboverde as $key => $value){ ?>
                         <div class="agencia-bloco">

@@ -17,15 +17,15 @@
 <body>
 <header class="nav-header">
     <?php
-        if(isset($message)){
-            echo '<p role="alert">'.$message.'</p>';
-        }
-
         require("views/templates/menu.acesso.php");
     ?>
 </header>
 
-  
+  <?php
+    if(isset($message)){
+        echo '<p role="alert">'.$message.'</p>';
+    }
+  ?>
 
     <main>
         <div class="main-container">
