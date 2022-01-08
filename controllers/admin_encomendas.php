@@ -280,7 +280,15 @@
     else if(isset($_SESSION["codigo_conta"])){
 
         $encomendas = $modelEncomendas->getNovosEncomendas($_SESSION["codigo_conta"]);
-        
+
+        require("models/pagamentos.php");
+        $modelPagamentos = new Pagamentos();
+
+        $pagamentos = $modelPagamentos->getAllCodigos();
+
+        $codigo_pagamentos = [];
+
+        //var_dump($pagamentos);
         require("views/admin_encomenda.php");
     }
     

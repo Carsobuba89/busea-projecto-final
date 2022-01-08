@@ -63,7 +63,30 @@ class Encomendas extends Base{
         ]);
 
         return $query->fetch();
+    }
 
+
+    public function getDadosEncomendaParaEnvio($codigo_encomenda, $codigo_conta){
+        $query = $this->db->prepare("
+            SELECT 
+                e.codigo_encomenda, 
+                e.descricao,
+                e.referencia,
+                p.nome AS nomePais,
+                a.activo
+            FROM encomendas AS e
+            INNER JOIN paises AS p ON(p.codigo = e.pais_destinatario)
+            INNER JOIN agentes AS a USING(codigo_agente)
+            WHERE 
+                e.codigo_encomenda = ? AND a.activo = ?
+        ");
+
+        $query->execute([
+            $codigo_encomenda,
+            $codigo_conta
+        ]);
+
+        return $query->fetch();
     }
 
     public function create($encomenda){

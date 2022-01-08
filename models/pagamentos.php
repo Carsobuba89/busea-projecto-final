@@ -27,6 +27,19 @@
 
         }
 
+        public function getAllCodigos(){
+
+            $query = $this->db->prepare("
+                SELECT codigo_encomenda
+                FROM pagamentos
+            ");
+
+            $query->execute();
+
+            return $query->fetchAll( PDO::FETCH_ASSOC );
+
+        }
+
         public function efectuarPagamento($dadosPagamento){
             
             $query = $this->db->prepare("
@@ -47,6 +60,7 @@
 
             return $codigo_pagamento ? $this->db->lastInsertId() : 0;
         }
+        
     }
 
 

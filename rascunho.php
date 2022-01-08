@@ -59,3 +59,8 @@ $encomendas = $modelEncomendas->getNovosEncomendas($_SESSION["codigo_conta"]);
 
 require("views/admin_encomenda.php");
 }
+
+
+SELECT codigo_encomenda
+FROM pagamentos
+WHERE codigo_encomenda = 5

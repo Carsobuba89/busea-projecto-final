@@ -51,11 +51,11 @@
 
         require("views/admin_pagamento.php");
     }
-    else if( (isset($action) && isset($_SESSION["codigo_conta"])) ||
+    else if( (!empty($action) && isset($_SESSION["codigo_conta"])) ||
              (isset($_SESSION["codigo_conta"]) && isset($_SESSION["codigo_encomenda"]))
     ){
 
-        if($action !== $_SESSION["codigo_encomenda"]){
+        if($action !== isset($_SESSION["codigo_encomenda"])){
 
             require("models/encomendas.php");
             $modelEncomendas = new Encomendas();
