@@ -4,7 +4,7 @@
                 <a href="/admin_encomendas" class="aside-link">Encomendas Prontas</a>
             </li>
             <li class="aside-item">
-                <a href="" class="aside-link">Receber Encomenda</a>
+                <a href="/admin_rececao/listaEncomendasParaReceber" class="aside-link">Receber Encomenda</a>
             </li>
             <li class="aside-item">
                 <a href="" class="aside-link">Entregar</a>

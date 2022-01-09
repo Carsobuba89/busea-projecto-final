@@ -14,10 +14,10 @@
 
     require("models/envios.php");
     $modelEnvios = new Envios();
-
+    
     if($action === "criacaoEnvio" && isset($_SESSION["codigo_conta"])){
 
-        echo "<pre>"; print_r($_POST); echo "</pre>";
+       /*  echo "<pre>"; print_r($_POST); echo "</pre>"; */
 
         if(isset($_POST["criarEnvio"]) && in_array($_POST["tipo_envio"], $codigo_tipoEnvio)){
 
@@ -40,9 +40,11 @@
         }
 
     }
+    //Para fazer seguimento das encomendas
     else if($action === "listaEncomendasEnviados" && isset($_SESSION["codigo_conta"])){
 
         $envios = $modelEnvios->getAllEnvios();
+
         require("views/admin_envio.php");
 
     }

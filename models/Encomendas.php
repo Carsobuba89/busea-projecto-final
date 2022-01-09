@@ -37,8 +37,6 @@ class Encomendas extends Base{
 
         $query->execute([$codio_conta]);
 
-        
-
         return $query->fetchAll( PDO::FETCH_ASSOC );
     }
 
@@ -75,9 +73,11 @@ class Encomendas extends Base{
                 e.descricao,
                 e.referencia,
                 p.nome AS nomePais,
+                pr.nome AS nomePaisRemetente,
                 a.activo
             FROM encomendas AS e
             INNER JOIN paises AS p ON(p.codigo = e.pais_destinatario)
+            INNER JOIN paises AS pr ON(pr.codigo = e.pais_remetente)
             INNER JOIN agentes AS a USING(codigo_agente)
             WHERE 
                 e.codigo_encomenda = ? AND a.activo = ?
