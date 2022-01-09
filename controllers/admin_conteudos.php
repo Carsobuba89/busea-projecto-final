@@ -33,7 +33,7 @@
                 $_FILES["imagem"]["size"] < 4000000
             ){
                 $extensao = explode(".", $_FILES['imagem']['name']);
-                $extensao = end($extensao);
+                $extensao = ".".end($extensao);
 
                 $novo_nome = date("Y.m.d-H.i.s") . "_" .$_POST["tipo_conteudo"] . $extensao;
 
@@ -75,7 +75,7 @@
                 $_FILES["imagem"]["size"] < 4000000
             ){
                 $extensao = explode(".", $_FILES['imagem']['name']);
-                $extensao = end($extensao);
+                $extensao = ".".end($extensao);
 
                 $novo_nome = date("Y.m.d-H.i.s") . "_" .$_POST["tipo_conteudo"] . $extensao;
 

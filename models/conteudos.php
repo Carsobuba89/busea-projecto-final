@@ -14,7 +14,7 @@
                 FROM conteudo_paginas AS c
                 INNER JOIN tipo_conteudo AS t ON(t.codigo = c.tipo_conteudo)
                 ORDER BY prioridade DESC
-                LIMIT 20
+                LIMIT 25
             ");
 
             $query->execute();
@@ -220,6 +220,23 @@
                 $message = "Os campos nao estao correctamente preenchidas, tenta novamente";
 
             }
+        }
+
+        public function apagarConteudo($codigo_conteudo){
+
+            $query = $this->db->prepare("
+                DELETE FROM conteudo_paginas
+                WHERE codigo = ?
+            ");
+
+            $query->execute([$codigo_conteudo]);
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+
         }
 
     }
