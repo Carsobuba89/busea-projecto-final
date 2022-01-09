@@ -155,6 +155,11 @@ if($action === "conta"){
 
         require("views/agencia.view.php");
     }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
+    }
 
 /* } */
     /** ############ INICIO DE CODIGO SI A ROTA FOR AGENTE ###############*/
@@ -252,6 +257,11 @@ if($action === "conta"){
         }
 
         require("views/agente.view.php");
+    }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
     }
 
 /* } */
@@ -354,8 +364,14 @@ if($action === "conta"){
 
         require("views/agente2.view.php");
     }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
+    }
 
 /* } */
+
 
 
 

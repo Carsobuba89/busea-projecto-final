@@ -61,17 +61,31 @@
             $modelEncomendas = new Encomendas();
 
             $dadosPagamento = $modelEncomendas->getPrice($action);
+            /* var_dump($dadosPagamento); */
 
-            if($dadosPagamento[0]["volume"] > 0){
-                $valorAPagar = $dadosPagamento[0]["ValorPorVolume"];
-            }else if($dadosPagamento[0]["peso"] > 0){
-                $valorAPagar = $dadosPagamento[0]["valorPorPeso"];
+            if( 
+                (isset($dadosPagamento[0]["volume"]) && $dadosPagamento[0]["volume"] > 0) || 
+                (isset($dadosPagamento["volume"]) && $dadosPagamento["volume"] > 0 )
+            ){    
+
+                $valorAPagar = isset($dadosPagamento["volume"]) ? $dadosPagamento["volume"] : $dadosPagamento[0]["ValorPorVolume"];
+
+            }else if(
+                (isset($dadosPagamento[0]["peso"]) && $dadosPagamento[0]["peso"] > 0) ||
+                (isset($dadosPagamento["peso"]) && $dadosPagamento["peso"] > 0)
+            ){
+                $valorAPagar = isset($dadosPagamento["peso"]) ? $dadosPagamento["peso"] : $dadosPagamento[0]["valorPorPeso"];
             }else{
-                $valorAPagar = $dadosPagamento[0]["valorPadrao"];
+                $valorAPagar = isset($dadosPagamento["valorPadrao"]) ?  $dadosPagamento["valorPadrao"] : $_SESSION["valor_estimado"];
             }
         }
 
         require("views/pagamentos.view.php");
+    }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
     }
     
 

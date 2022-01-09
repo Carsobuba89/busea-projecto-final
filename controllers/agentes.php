@@ -86,9 +86,11 @@
             }
 
         }
-    }else{
-        header("HTTP/1.1 401 Unauthorized");
-        die("Nao tens permissoes de aceder esta pagina");
+    }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
     }
     
 

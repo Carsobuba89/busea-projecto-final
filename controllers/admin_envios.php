@@ -48,11 +48,14 @@
     }
     else if(!empty($action) && $_SESSION["codigo_conta"]){
 
-        
-
         $dadosEnvio = $modelEncomendas->getDadosEncomendaParaEnvio($action, $_SESSION["codigo_conta"]);
 
         require("views/envio.view.php");
+    }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
     }
 
     

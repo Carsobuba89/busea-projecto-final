@@ -37,6 +37,8 @@ class Encomendas extends Base{
 
         $query->execute([$codio_conta]);
 
+        
+
         return $query->fetchAll( PDO::FETCH_ASSOC );
     }
 

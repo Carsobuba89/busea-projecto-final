@@ -292,6 +292,11 @@
         //var_dump($pagamentos);
         require("views/admin_encomenda.php");
     }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
+    }
     
     
     

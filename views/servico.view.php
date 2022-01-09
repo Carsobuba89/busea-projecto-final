@@ -27,7 +27,8 @@
                 <div class="body-content-left">
 
                     <?php
-                        require("views/templates/sidebar_servicos.php");
+                        // Para continuar a trabalhar depois
+                        //require("views/templates/sidebar_servicos.php"); 
 
                     ?>
 

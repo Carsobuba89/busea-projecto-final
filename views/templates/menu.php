@@ -20,12 +20,7 @@
         <header class="nav-header">
 
             <nav class="navegation">
-                <div class="top-navbar">
-                    <a href="">Apoio ao Cliente Busea</a>
-                    <a href="">+351 932 303 968</a>
-                    <a href="">buseaparaclientes@gmail.com</a>
-                    <a href="">Livro de reclamaçoes</a>
-                </div><!-- .top-navbar -->
+                
                 <div class="navbar">
                     <div class="navbar-left">
 

@@ -128,6 +128,11 @@
         require("views/admin_conteudo.php");
 
     }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
+    }
     
 ?>
 

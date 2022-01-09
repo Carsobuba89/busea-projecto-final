@@ -46,8 +46,9 @@ class Contas extends Base{
             mb_strlen($registro["password"]) <= 1000
         ){
             $query = $this->db->prepare("
-                SELECT codigo, nome_utilisador, palavra_passe
-                FROM contas
+                SELECT codigo, nome_utilisador, palavra_passe, a.pais
+                FROM contas AS c
+                INNER JOIN agentes AS a ON(a.activo = c.codigo)
                 WHERE nome_utilisador = ? 
             ");
 

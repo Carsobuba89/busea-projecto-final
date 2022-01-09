@@ -60,8 +60,7 @@
                         <th>Data Criaçao</th>
                         <th>Tipo Conteudo</th>
                         <th>Detalhes</th>
-                        <th>Editar</th>
-                        <th>Apagar</th>
+            
                     </tr>
                 
                     <?php foreach($conteudos as $conteudo) { ?>
@@ -70,8 +69,6 @@
                             <td><?= $conteudo["data_criacao"] ?></td>
                             <td><?= $conteudo["nomeServico"] ?></td>
                             <td><a href="/admin_conteudos/<?= $conteudo["codigo"] ?>">Ver +</a></td>
-                            <td><button type="submit" name="alterarConteudo">Alterar</button></td>
-                            <td><button type="submit" name="apagarConteudo">Apagar</button></td>
                         </tr>
                     <?php } ?>
                 </table>

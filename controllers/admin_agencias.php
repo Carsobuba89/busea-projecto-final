@@ -174,8 +174,6 @@
     
     }
 
-
-
     //VIEW DA PAGINA ADMIN AGENCIA SI USER ESTA LOGADO SI NAO MOSTRAR WELCOME 
     if( $action === "admin_agencia" && isset($_SESSION["codigo_conta"])){
 
@@ -220,6 +218,11 @@
         $agentesAgencia = $modelAgentes->obterAgentes($_SESSION["codigo_agencia"]);
 
         require("views/welcome_agencia.php");
+    }
+    else if(!isset($_SESSION["codigo_conta"])){
+
+        header("Location:".ROOT."/acesso/login");
+        
     }
     
     
