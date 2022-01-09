@@ -35,7 +35,7 @@
                 <div class="bloco-busca">
                     <form action="">
                          <input type="text" name="buscar">
-                         <button type="submit" name="search">Encontrar</button>
+                         <button type="submit" name="search" disabled>Encontrar</button>
                     </form>
                 </div>
 
@@ -45,6 +45,7 @@
                             <th>Data envio</th>
                             <th>Referencia</th>
                             <th>Descriçao</th>
+                            <th>Pais Remetente</th>
                             <th>Pais Destino</th>
                             <th>Dt. prev. chegada</th>
                             <!-- <th>estado da encomenda</th> -->
@@ -55,6 +56,7 @@
                                 <td><?= date("d-m-y", strtotime($envio["data_envio"]) ) ?></td>
                                 <td><?= $envio["referencia"] ?></td>
                                 <td><?= $envio["descricao"] ?></td>
+                                <td><?= $envio["nomePaisRemetente"] ?></td>
                                 <td><?= $envio["nomePaisDestino"] ?></td>
                                 <td><?= date("d-m-y", strtotime($envio["data_previsto_chegada"]) ) ?></td>   
                             </tr>

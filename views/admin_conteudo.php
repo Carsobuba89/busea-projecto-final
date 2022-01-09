@@ -46,7 +46,7 @@
                 <div class="bloco-busca">
                     <form action="">
                             <input type="text" name="buscar">
-                            <button type="submit" name="search">Encontrar</button>
+                            <button type="submit" name="search" disabled>Encontrar</button>
                     </form>
                 </div><!-- .bloco-busca -->
             </div><!-- .blocoTopo -->

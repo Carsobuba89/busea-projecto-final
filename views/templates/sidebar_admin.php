@@ -6,9 +6,11 @@
             <li class="aside-item">
                 <a href="/admin_rececao/listaEncomendasParaReceber" class="aside-link">Receber Encomenda</a>
             </li>
-            <li class="aside-item">
+            
+            <!-- PARTE PARA CONTINUAR DEPOIS
+                <li class="aside-item"> 
                 <a href="" class="aside-link">Entregar</a>
-            </li>
+            </li> -->
             <li class="aside-item">
                 <a href="/admin_envios/listaEncomendasEnviados" class="aside-link">Seguimento</a>
             </li>

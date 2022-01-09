@@ -46,20 +46,20 @@
                 
         </div><!--#slide-->
 
-        <section class="follow-up my-sections">
+        <!-- <section class="follow-up my-sections">
             <div class="follow-up-container">
                 <div class="follow-up-div-text">
                     <p>Segue o estado da sua encomenda introduza o numero da referencia: &nbsp;</p>
                 </div>
                 <div class="follow-up-div-input">
-                    <form method="post" action="<?php echo ROOT; ?>/seguimentos/estadoEncomenda">
+                    <form method="post" action="/seguimentos/estadoEncomenda">
                         <input type="text" id="seguimento" name="seguimento" class="follow-up-input">
                         <button type="submit" class="btn-follow-up" name="seguirEncomenda">Seguir encomenda </button>
                     </form>
                     
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
         <section class="info-agency my-sections">

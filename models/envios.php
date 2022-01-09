@@ -8,10 +8,11 @@
             $query = $this->db->prepare("
                 SELECT
                     ev.codigo, ev.data_envio, ec.referencia, ec.descricao, 
-                    p.nome AS nomePaisDestino, ev.data_previsto_chegada
+                    p.nome AS nomePaisDestino, pr.nome AS nomePaisRemetente, ev.data_previsto_chegada
                 FROM envios AS ev
                 INNER JOIN encomendas AS ec USING(codigo_encomenda)
                 INNER  JOIN paises AS p ON(p.codigo = ec.pais_destinatario)
+                INNER  JOIN paises AS pr ON(pr.codigo = ec.pais_remetente)
                 
             ");
 
