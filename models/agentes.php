@@ -107,7 +107,7 @@ class Agentes extends Base{
             INNER JOIN 
                 agencias AS a USING(codigo_agencia)
             WHERE 
-                a.codigo_conta = ? AND ag.activo > 0
+                a.codigo_conta = ?
         ");
 
         $query->execute([$codigo_conta]);

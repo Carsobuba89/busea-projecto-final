@@ -1389,9 +1389,12 @@ align-items: center;
 .dados-responsavel{
   background: rgb(231, 231, 128);
 }
+.dados-agencia-admin{
+  grid-row: 2/4;
+}
 
 .dados-agencia{
-  grid-row: 2/4;
+  grid-row: 1/3;
 }
 
 .div-form .form-group,

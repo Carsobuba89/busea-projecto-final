@@ -41,7 +41,7 @@ class Agencias extends Base{
             FROM 
                 agencias
             WHERE 
-                codigo_conta = ? AND responsavel > 0
+                codigo_conta = ?
         ");
 
         $query->execute([$codigo_conta]);

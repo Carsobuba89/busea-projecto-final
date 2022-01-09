@@ -19,7 +19,7 @@
                     </button>
                 </div>
                 <div class="header-top-encomenda">
-                    <h2>Painel de administraçao das encomendas</h2>
+                    <h2>Painel de Seguimento das encomendas</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab explicabo neque iusto fuga officia animi iste unde, minus vel veritatis!
                     </p> 

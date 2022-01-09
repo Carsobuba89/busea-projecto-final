@@ -36,67 +36,8 @@
                 <p>No caso de algo que queira corrigir clique no butao alterar dados ou no menu gerir agencia</p>
             </div><!--.header-content-->
        </div><!--.header-container-->
-
+            <hr>
         <div class="body-container-admin">
-
-            <div class="div-form1 dados-activacao">
-                <h3>Activar ou Desactivar agente</h3>
-                <form method="post" action="<?= ROOT ?>/admin_page/activacao">
-            
-                    <div class="form-group">
-                        <div class="col-label">
-                            <label for="codigo_agente">Activaçao do Agente </label>
-                        </div><!--.col-label-->
-                        <div class="col-select">
-                            <select name="codigo_agente" id="codigo_agente">
-                                <option value="escolher"> Escolher agente </option>
-                                <?php
-                                    foreach($agentesAgencia as $agente){
-                                        echo '
-                                         <option value="'.$agente["codigo_agente"].'">'.$agente["nome"].'</option>
-                                        ';
-                                    }           
-                                ?>
-                            </select>
-                        </div><!--.col-select-->
-                    </div><!--.form-group-->
-
-                    <button type="submit" class="btn-registo" name="activar">Activar</button>
-                    <button type="submit" class="btn-registo" name="desactivar">Desactivar</button>
-
-                </form>
-
-            </div><!--.div-form dados-activacao -->
-
-            <div class="div-form1 dados-responsavel">
-       
-                <h3>Indica o responsavel da sua agencia</h3>   
-                    
-                <form method="post" action="<?= ROOT ?>/admin_page/responsabilizacao">
-            
-                    <div class="form-group">
-                        <div class="col-label">
-                            <label for="codigo_agente">Indicar Agente</label>
-                        </div><!--.col-label-->
-                        <div class="col-select">
-                            <select name="codigo_agente" id="codigo_agente">
-                            <option value="escolher"> Escolher agente Responsavel </option>
-                                <?php
-                                    foreach($agentesAgencia as $agente){
-                                        echo '
-                                         <option value="'.$agente["codigo_agente"].'">'.$agente["nome"].'</option>
-                                        ';
-                                    }
-                                ?>
-                            </select>
-                        </div><!--.col-select-->
-                    </div><!--.form-group-->
-
-                    <button type="submit" class="btn-registo" name="responsabilizar">Guardar</button>
-
-                </form>
-
-            </div><!--.div-form dados-responsavel -->
 
             <div class="div-form1 dados-agencia">
 
@@ -251,8 +192,8 @@
 
        
         <nav class="nav-welcome">
-            <a href="/admin_page/admin_agencia">Alterar Informaçao da Agencia</a>
-            <a href="/encomendas/admin_encomenda">Tudo bem, Ir para Encomendas</a>
+            <a href="/admin_agencias/admin_agencia">Alterar Informaçao da Agencia</a>
+            <a href="/admin_encomendas">Tudo bem, Ir para Encomendas</a>
         </nav>
         
 

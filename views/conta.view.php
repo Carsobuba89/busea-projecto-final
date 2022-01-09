@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <link rel="stylesheet" href="../assets/css/global-style.css">
-     <!--FontAwesome Icons -->
-     <script src="https://kit.fontawesome.com/2f1b3770e6.js" crossorigin="anonymous"></script>
 
-    <title>Criar Conta</title>
-
-   
-</head>
-<body>
     
 
-<main>
-  <header class="nav-header">
+
+ 
     <?php
         require("views/templates/menu.acesso.php");
     ?>
-  </header>  
+  
 
-  <?php
+  <main>
+        <?php
         if(isset($message)){
             echo '<p role="alert">'.$message.'</p>';
         }
-?>
-    <div class="main-container-sign">
+        ?>
+        <div class="main-container-sign">
         <div class="header-container-sign">
             <div class="header-content-sign">
                 <article>
@@ -171,5 +157,6 @@
         
     </main>
     
-</body>
-</html>
+    <?php
+        require("views/templates/footer.admin.php");
+    ?>

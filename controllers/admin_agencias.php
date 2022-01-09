@@ -203,7 +203,7 @@
         require("views/admin_agencia.php");
 
     }
-    else if($action !== "admin_agencia" && isset($_SESSION["codigo_agente2"])){
+    else if(isset($_SESSION["codigo_agente2"])){
 
         $perguntas_secretas = array(
             

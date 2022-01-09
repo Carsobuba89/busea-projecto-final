@@ -63,8 +63,8 @@ if($action === "conta"){
             $codigo_paises[] = $pais["codigo"];
         }
 
-        echo "<pre>";    var_dump( $_POST); echo "</pre>";
-        echo "<pre>";    print_r( $_FILES); echo "</pre>";
+        /* echo "<pre>";    var_dump( $_POST); echo "</pre>"; */
+        /* echo "<pre>";    print_r( $_FILES); echo "</pre>"; */
 
         if(isset($_POST["send"]) && in_array($_POST["pais"], $codigo_paises)){
             
@@ -77,7 +77,7 @@ if($action === "conta"){
 
                 //$extensao = strtolower(substr($_FILES['imagem_agencia']['name'],-4));
                 $extensao = explode(".", $_FILES['imagem_agencia']['name']);
-                $extensao = end($extensao);
+                $extensao = ".".end($extensao);
 
                 $novo_nome = date("Y.m.d-H.i.s") . "_" .$_POST["nome_agencia"] . $extensao;
 
@@ -155,11 +155,7 @@ if($action === "conta"){
 
         require("views/agencia.view.php");
     }
-    else if(!isset($_SESSION["codigo_conta"])){
-
-        header("Location:".ROOT."/acesso/login");
-        
-    }
+    
 
 /* } */
     /** ############ INICIO DE CODIGO SI A ROTA FOR AGENTE ###############*/
@@ -187,7 +183,7 @@ if($action === "conta"){
                 $_FILES["imagem_agente"]["size"] < 4000000 
             ){
                 $extensao = explode(".", $_FILES['imagem_agente']['name']);
-                $extensao = end($extensao);
+                $extensao = ".".end($extensao);
 
                 $novo_nome =date("Y.m.d-H.i.s") ."_" .$_POST["nome_agente"] . $extensao;
 
@@ -258,11 +254,7 @@ if($action === "conta"){
 
         require("views/agente.view.php");
     }
-    else if(!isset($_SESSION["codigo_conta"])){
-
-        header("Location:".ROOT."/acesso/login");
-        
-    }
+    
 
 /* } */
 
@@ -291,13 +283,13 @@ if($action === "conta"){
                 $_FILES["imagem_agente"]["size"] < 4000000 
             ){
                 $extensao = explode(".", $_FILES['imagem_agente']['name']);
-                $extensao = end($extensao);
+                $extensao = ".".end($extensao);
 
                 $novo_nome =date("Y.m.d-H.i.s") ."_" .$_POST["nome_agente"] . $extensao;
 
                 $directotio = './assets/images/img-agentes/';
 
-            /*  move_uploaded_file($_FILES['imagem_agente']['tmp_name'], $directotio.$novo_nome); */
+                /* move_uploaded_file($_FILES['imagem_agente']['tmp_name'], $directotio.$novo_nome); */
 
             }
 
@@ -363,11 +355,6 @@ if($action === "conta"){
         }
 
         require("views/agente2.view.php");
-    }
-    else if(!isset($_SESSION["codigo_conta"])){
-
-        header("Location:".ROOT."/acesso/login");
-        
     }
 
 /* } */

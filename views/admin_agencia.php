@@ -99,7 +99,7 @@
 
             </div><!--.div-form dados-responsavel -->
 
-            <div class="div-form dados-agencia">
+            <div class="div-form dados-agencia-admin">
                 <h3>Dados da agencia</h3>
 
                 <form method="post" action="<?= ROOT ?>/agencias/alteracaoDadosAgencia" enctype="multipart/form-data">
