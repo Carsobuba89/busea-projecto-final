@@ -268,8 +268,6 @@
 
         }
 
-
-
     }
     else if(!empty($action) && isset($_SESSION["codigo_conta"])){
 

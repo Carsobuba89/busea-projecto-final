@@ -25,7 +25,7 @@
                 <fieldset>
                     <legend>Detalhes do Conteudo</legend>
             
-                    <form method="post" action="<?= ROOT ?>/admin_conteudos/alterarConteudo" enctype="multipart/form-data">
+                    <form method="post" action="<?= ROOT ?>/admin_conteudos/alteracaoConteudo" enctype="multipart/form-data">
                         
                         <div class="form-group">
                             <div class="col-label">
@@ -80,11 +80,13 @@
                                     ?>
                                 </select>
                             </div><!--.col-select-->
-                        </div><!--.form-group-->          
+                        </div><!--.form-group-->    
+                        
+                        <input type="hidden" name="codigo" value="<?= $conteudodetalhe["codigo"] ?>">
 
                         <div class="btn-registo-wrap">
-                            <button type="submit" class="btn-registo" name="AlterarConteudo">Guardar alteraçao</button>
-                            <button type="submit" class="btn-registo" name="cancelarConteudo">Apagar</button>
+                            <button type="submit" class="btn-registo" name="alterarConteudo">Guardar alteraçao</button>
+                            <button type="submit" class="btn-registo" name="apagarConteudo">Apagar</button>
                             <button> <a href="/admin_conteudos">Voltar para tras</a></button>
                         </div>
         

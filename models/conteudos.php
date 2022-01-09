@@ -57,7 +57,7 @@
                     conteudo_paginas
                 WHERE 
                     tipo_conteudo = 2
-                LIMIT 6
+                LIMIT 5
             ");
 
             $query->execute();
@@ -175,6 +175,48 @@
                 return $codigo_conteudo ? $this->db->lastInsertId() : 0;
             
             }else{
+                $message = "Os campos nao estao correctamente preenchidas, tenta novamente";
+
+            }
+        }
+
+        public function alterarDadosConteudo($dadosConteudo, $nomeImagem){
+
+            if( 
+                mb_strlen($_POST["titulo"]) >= 6 &&
+                mb_strlen($_POST["titulo"]) <= 120 &&
+                mb_strlen($_POST["descricao"]) >= 60 &&
+                mb_strlen($_POST["descricao"]) <= 65535
+            ){
+
+                $query = $this->db->prepare("
+                    UPDATE conteudo_paginas
+                    SET
+                        titulo = ?,
+                        conteudo = ?,
+                        imagem = ?,
+                        tipo_conteudo = ?
+                    WHERE codigo = ?
+                    
+                ");
+
+                $query->execute(
+                    [
+                        $dadosConteudo["titulo"],
+                        nl2br($dadosConteudo["descricao"]),
+                        $nomeImagem,
+                        $dadosConteudo["tipo_conteudo"],
+                        $dadosConteudo["codigo"]
+                    ]
+                );
+
+                if($query->rowCount() > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            else{
                 $message = "Os campos nao estao correctamente preenchidas, tenta novamente";
 
             }

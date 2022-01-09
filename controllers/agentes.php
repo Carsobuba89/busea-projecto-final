@@ -81,7 +81,7 @@
 
                 move_uploaded_file($_FILES['imagem_agente']['tmp_name'], $directotio.$novo_nome);
 
-                header("Location: ".ROOT."/admin_agencias/admin_agencia");
+                header("Location:".ROOT."/admin_agencias/admin_agencia");
 
             }
 
