@@ -102,7 +102,7 @@
             <div class="div-form dados-agencia-admin">
                 <h3>Dados da agencia</h3>
 
-                <form method="post" action="<?= ROOT ?>/agencias/alteracaoDadosAgencia" enctype="multipart/form-data">
+                <form method="post" action="<?= ROOT ?>/admin_agencias/alteracaoDadosAgencia" enctype="multipart/form-data">
                     
                     <div class="form-group">
                         <div class="col-label">
@@ -216,7 +216,7 @@
                 
                 <h3>Atualisar o endereço da Agencia principal</h3>
 
-                <form method="post" action="<?php ROOT ?>/agencias/alteracaoEndereco">
+                <form method="post" action="<?php ROOT ?>/admin_agencias/alteracaoEndereco">
 
                     <div class="form-group">
                         <div class="col-label">
@@ -288,7 +288,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn-registo" name="alterarEndereco">Guardar alteraçao</button>
-                        <button type="submit" class="btn-registo" name="guardarNovoEndereco">Adicionar um outro Endereço</button>
+                        <button type="submit" class="btn-registo" name="guardarNovoEndereco" disabled>Adicionar um outro Endereço</button>
                     </div>
 
                 </form>

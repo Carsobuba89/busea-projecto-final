@@ -53,7 +53,7 @@
                                     <span class="erocampop">Este Campo e obrigatorio deve conter pelo menos um numero</span>
                                 </div><!--.form-group-->
         
-                                <p>Esqueceste da palavra passe ou de login ? <a href="#" class="blue">Recupera o agora</a></p>
+                                <!-- <p>Esqueceste da palavra passe ou de login ? <a href="#" class="blue">Recupera o agora</a></p> -->
                                 <div class="btn-sign-up-wrap">
                                 <button type="submit" class="btn-iniciar-sessao" name="send">Iniciar Sessao</button>
                                 </div>
