@@ -32,6 +32,7 @@ $controllers = [
     "admin_pagamentos",
     "admin_envios",
     "admin_rececao",
+    "admin_entregas",
     "admin_conteudos",
     "conteudo_details"
 ];

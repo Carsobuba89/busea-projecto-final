@@ -41,6 +41,25 @@
 
         }
 
+        //Lista de encomendas prontas para serem entregues
+        public function getEncomendasParaEntregar(){
+
+            $query = $this->db->prepare("
+                SELECT 
+                    ev.codigo, ev.data_recebido, e.referencia, e.descricao, 
+                    e.nome_remetente, e.nome_destinatario, e.codigo_encomenda
+                FROM 
+                    envios AS ev
+                INNER JOIN encomendas AS e USING(codigo_encomenda)
+                WHERE 
+                    e.estado_encomenda = 2 AND ev.data_levantado IS NULL
+            ");
+
+            $query->execute();
+
+            return $query->fetchAll( PDO:: FETCH_ASSOC );
+        }
+
 
         public function registarEnvio($dadosEnvio){
 
@@ -119,6 +138,10 @@
 
             }
       
+        }
+
+        public function entregarEncomenda(){
+
         }
 
     }

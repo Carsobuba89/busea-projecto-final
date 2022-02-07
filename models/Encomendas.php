@@ -188,6 +188,7 @@ class Encomendas extends Base{
 
     }
 
+    // Encomendas Canceladas ou perdidas 
     public function alterarEstadoEncomenda($codigo_encomenda){
 
         $query = $this->db->prepare("
