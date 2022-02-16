@@ -33,7 +33,7 @@
             </div>
             <div class="body-content-right">
                 <div class="bloco-busca">
-                    <form action="">
+                    <form>
                          <input type="text" name="buscar">
                          <button type="submit" name="search" disabled>Encontrar</button>
                     </form>
@@ -57,7 +57,7 @@
                                 <td><?= $entregue["nome_remetente"] ?></td>
                                 <td><?= $entregue["nome_destinatario"] ?></td>
                                 <td>
-                                    <a href="/admin_entregas/<?= $entregue["codigo_encomenda"] ?>">Entregar</a>
+                                    <a href="/admin_entregas/<?= $entregue["codigo_encomenda"] ?>">ent</a>
                                 </td>  
                             </tr>
                         <?php } ?>
